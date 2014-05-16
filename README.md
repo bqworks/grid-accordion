@@ -1,2 +1,0 @@
-grid-accordion-wp
-=================
