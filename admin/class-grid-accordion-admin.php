@@ -1292,7 +1292,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_getting_started_close() {
-		update_option( 'grid_accordion_hide_getting_started_info', false );
+		update_option( 'grid_accordion_hide_getting_started_info', true );
 
 		die();
 	}
