@@ -10,9 +10,9 @@
 		</div>
 		
 		<?php
-            $show_info = get_option( 'grid_accordion_show_inline_info', true );
+            $hide_info = get_option( 'grid_accordion_hide_inline_info' );
 
-            if ( $show_info == true ) {
+            if ( $hide_info != true ) {
         ?>
 				<div class="inline-info import-info">
 		            <input type="checkbox" id="show-hide-info" class="show-hide-info">

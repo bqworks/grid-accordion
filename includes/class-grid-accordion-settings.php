@@ -1000,14 +1000,14 @@ class BQW_Grid_Accordion_Settings {
 					'default_value' => 24,
 					'description' => __( 'Indicates the time interval after which a grid\'s cache will expire. If the cache of a grid has expired, the grid will be rendered again and cached the next time it is viewed.', 'grid-accordion' )
 				),
-				'show_inline_info' => array(
-					'label' => __( 'Show inline info', 'grid-accordion' ),
-					'default_value' => true,
+				'hide_inline_info' => array(
+					'label' => __( 'Hide inline info', 'grid-accordion' ),
+					'default_value' => false,
 					'description' => __( 'Indicates whether the inline information will be displayed in admin panels and wherever it\'s available.', 'grid-accordion' )
 				),
-				'show_getting_started_info' => array(
-					'label' => __( 'Show <i>Getting Started</i> info', 'grid-accordion' ),
-					'default_value' => true,
+				'hide_getting_started_info' => array(
+					'label' => __( 'Hide <i>Getting Started</i> info', 'grid-accordion' ),
+					'default_value' => false,
 					'description' => __( 'Indicates whether the <i>Getting Started</i> information will be displayed in the <i>All Accordions</i> page, above the list of accordions. This setting will be disabled if the <i>Close</i> button is clicked in the information box.', 'grid-accordion' )
 				),
 				'access' => array(

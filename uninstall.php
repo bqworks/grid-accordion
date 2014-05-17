@@ -40,8 +40,9 @@ function bqw_grid_accordion_delete_all_data() {
 	delete_option( 'grid_accordion_purchase_code' );
 	delete_option( 'grid_accordion_purchase_code_message' );
 	delete_option( 'grid_accordion_purchase_code_status' );
-	delete_option( 'grid_accordion_show_inline_info' );
-	delete_option( 'grid_accordion_show_getting_started_info' );
+	delete_option( 'grid_accordion_hide_inline_info' );
+	delete_option( 'grid_accordion_hide_getting_started_info' );
+	delete_option( 'grid_accordion_access' );
 	delete_option( 'grid_accordion_version' );
 
 	delete_transient( 'grid_accordion_post_names' );
