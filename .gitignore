@@ -14,3 +14,6 @@ Icon
 *.sublime-project
 *.sublime-workspace
 /notes.md
+
+/grid-accordion-wp.sublime-project
+/grid-accordion-wp.sublime-workspace
