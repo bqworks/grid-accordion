@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Grid Accordion\n"
-"POT-Creation-Date: 2014-05-15 18:43+0200\n"
-"PO-Revision-Date: 2014-05-15 18:43+0200\n"
+"POT-Creation-Date: 2014-05-17 18:04+0200\n"
+"PO-Revision-Date: 2014-05-17 18:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1777,7 +1777,7 @@ msgid ""
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:1004
-msgid "Show inline info"
+msgid "Hide inline info"
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:1006
@@ -1787,7 +1787,7 @@ msgid ""
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:1009
-msgid "Show <i>Getting Started</i> info"
+msgid "Hide <i>Getting Started</i> info"
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:1011
