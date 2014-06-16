@@ -34,6 +34,10 @@ class BQW_Grid_Accordion_Updates {
 	public function __construct() {
 		$this->db_version = get_option( 'grid_accordion_version', '1.0.0' );
 
+		if ( class_exists( 'BQW_Grid_Accordion_Lite' ) ) {
+			deactivate_plugins( 'grid-accordion-lite/grid-accordion-lite.php' );
+		}
+
 		if ( version_compare( $this->db_version, BQW_Grid_Accordion::VERSION, '>=' ) ) {
 			return;
 		}
