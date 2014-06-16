@@ -602,7 +602,8 @@ class BQW_Grid_Accordion_Settings {
 					'label' => __( 'Keyboard', 'grid-accordion' ),
 					'list' => array(
 						'keyboard',
-						'keyboard_only_on_focus'
+						'keyboard_only_on_focus',
+						'keyboard_target'
 					)
 				),
 
