@@ -205,6 +205,13 @@ class BQW_Grid_Accordion_Settings {
 					'default_value' => 0,
 					'description' => __( 'Indicates which page will be opened when the accordion loads, if the panels are displayed on more than one page.', 'grid-accordion' )
 				),
+				'shuffle' => array(
+					'js_name' => 'shuffle',
+					'label' => __( 'Shuffle', 'grid-accordion' ),
+					'type' => 'boolean',
+					'default_value' => false,
+					'description' => __( 'Indicates if the panels will be randomized.', 'grid-accordion' )
+				),
 				'lazy_loading' => array(
 					'label' => __( 'Lazy Loading', 'grid-accordion' ),
 					'type' => 'boolean',
@@ -557,6 +564,7 @@ class BQW_Grid_Accordion_Settings {
 						'panel_distance',
 						'start_panel',
 						'start_page',
+						'shuffle',
 						'lazy_loading',
 						'custom_class'
 					)
