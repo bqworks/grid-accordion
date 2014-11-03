@@ -218,6 +218,12 @@ class BQW_Grid_Accordion_Settings {
 					'default_value' => false,
 					'description' => __( 'Indicates if the background images will be loaded only when they are visible. Images from accordion pages that are not visible, will not be loaded.', 'grid-accordion' )
 				),
+				'hide_image_title' => array(
+					'label' => __( 'Hide Image Title', 'grid-accordion' ),
+					'type' => 'boolean',
+					'default_value' => true,
+					'description' => __( 'Indicates if the title tag will be removed from images in order to prevent the title to show up in a tooltip when the image is hovered.', 'grid-accordion' )
+				),
 				'custom_class' => array(
 					'label' => __( 'Custom Class', 'grid-accordion' ),
 					'type' => 'text',
@@ -566,6 +572,7 @@ class BQW_Grid_Accordion_Settings {
 						'start_page',
 						'shuffle',
 						'lazy_loading',
+						'hide_image_title',
 						'custom_class'
 					)
 				),
