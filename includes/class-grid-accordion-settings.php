@@ -90,6 +90,7 @@ class BQW_Grid_Accordion_Settings {
 		'touch_swipe' => 'closed',
 		'lightbox' => 'closed',
 		'video' => 'closed',
+		'miscellaneous' => 'closed',
 		'breakpoints'  => 'closed'
 	);
 
@@ -211,18 +212,6 @@ class BQW_Grid_Accordion_Settings {
 					'type' => 'boolean',
 					'default_value' => false,
 					'description' => __( 'Indicates if the panels will be randomized.', 'grid-accordion' )
-				),
-				'lazy_loading' => array(
-					'label' => __( 'Lazy Loading', 'grid-accordion' ),
-					'type' => 'boolean',
-					'default_value' => false,
-					'description' => __( 'Indicates if the background images will be loaded only when they are visible. Images from accordion pages that are not visible, will not be loaded.', 'grid-accordion' )
-				),
-				'hide_image_title' => array(
-					'label' => __( 'Hide Image Title', 'grid-accordion' ),
-					'type' => 'boolean',
-					'default_value' => true,
-					'description' => __( 'Indicates if the title tag will be removed from images in order to prevent the title to show up in a tooltip when the image is hovered.', 'grid-accordion' )
 				),
 				'custom_class' => array(
 					'label' => __( 'Custom Class', 'grid-accordion' ),
@@ -532,6 +521,32 @@ class BQW_Grid_Accordion_Settings {
 						'none' => 'None'
 					),
 					'description' => __( 'Sets what the accordion will do when a video ends. Can be set to \'Start Autoplay\', \'Next Panel\', \'Replay Video\' or \'None\'.', 'grid-accordion' )
+				),
+
+				'lazy_loading' => array(
+					'label' => __( 'Lazy Loading', 'grid-accordion' ),
+					'type' => 'boolean',
+					'default_value' => false,
+					'description' => __( 'Indicates if the background images will be loaded only when they are visible. Images from accordion pages that are not visible, will not be loaded.', 'grid-accordion' )
+				),
+				'hide_image_title' => array(
+					'label' => __( 'Hide Image Title', 'grid-accordion' ),
+					'type' => 'boolean',
+					'default_value' => true,
+					'description' => __( 'Indicates if the title tag will be removed from images in order to prevent the title to show up in a tooltip when the image is hovered.', 'grid-accordion' )
+				),
+				'link_target' => array(
+					'js_name' => 'linkTarget',
+					'label' => __( 'Link Target', 'grid-accordion' ),
+					'type' => 'select',
+					'default_value' => '_self',
+					'available_values' => array(
+						'_self' => __( 'Self', 'grid-accordion' ),
+						'_blank' => __( 'Blank', 'grid-accordion' ),
+						'_parent' => __( 'Parent', 'grid-accordion' ),
+						'_top' => __( 'Top', 'grid-accordion' )
+					),
+					'description' => __( 'Sets the location where the slide links will be opened.', 'grid-accordion' )
 				)
 			);
 
@@ -571,8 +586,6 @@ class BQW_Grid_Accordion_Settings {
 						'start_panel',
 						'start_page',
 						'shuffle',
-						'lazy_loading',
-						'hide_image_title',
 						'custom_class'
 					)
 				),
@@ -657,6 +670,15 @@ class BQW_Grid_Accordion_Settings {
 						'play_video_action',
 						'pause_video_action',
 						'end_video_action'
+					)
+				),
+
+				'miscellaneous' => array(
+					'label' => __( 'Miscellaneous', 'accordion-slider' ),
+					'list' => array(
+						'lazy_loading',
+						'hide_image_title',
+						'link_target'
 					)
 				)
 			);
