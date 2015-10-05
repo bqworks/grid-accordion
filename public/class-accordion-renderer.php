@@ -268,10 +268,28 @@ class BQW_GA_Accordion_Renderer {
 			$this->add_css_dependency( 'lightbox' );
 			$accordionIdAttribute = '#grid-accordion-' . $this->id;
 
+			$lightbox_options = array();
+			$lightbox_options = apply_filters( 'grid_accordion_lightbox_options', $lightbox_options, $this->id );
+			$lightbox_options_string = '';
+
+			if ( is_null( $lightbox_options ) === false && empty( $lightbox_options ) === false ) {
+				foreach ( $lightbox_options as $key => $value) {
+					$lightbox_option_value = $value;
+
+					if ( is_bool( $lightbox_option_value ) ) {
+						$lightbox_option_value = $lightbox_option_value === true ? 'true' : 'false';
+					} else if ( is_numeric( $lightbox_option_value ) === false ) {
+						$lightbox_option_value = "'" . $lightbox_option_value . "'";
+					}
+
+					$lightbox_options_string .= ', ' . $key . ': ' . $lightbox_option_value;
+				}
+			}
+			
 			$js_output .= "\r\n" . '		$( "' . $accordionIdAttribute . ' .ga-panel > a" ).on( "click", function( event ) {' .
 							"\r\n" . '			event.preventDefault();' .
 							"\r\n" . '			if ( $( "' . $accordionIdAttribute . '" ).hasClass( "ga-swiping" ) === false ) {' .
-							"\r\n" . '				$.fancybox.open( $( "' . $accordionIdAttribute . ' .ga-panel > a" ), { index: $( this ).parent().index() } );' .
+							"\r\n" . '				$.fancybox.open( $( "' . $accordionIdAttribute . ' .ga-panel > a" ), { index: $( this ).parent().index()' . $lightbox_options_string . ' } );' .
 							"\r\n" . '			}' .
 							"\r\n" . '		});' . "\r\n";
 		}
