@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Grid Accordion\n"
-"POT-Creation-Date: 2014-11-03 22:55+0200\n"
-"PO-Revision-Date: 2014-11-03 22:55+0200\n"
+"POT-Creation-Date: 2015-02-27 19:50+0200\n"
+"PO-Revision-Date: 2015-02-27 19:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -273,7 +273,7 @@ msgstr ""
 
 #: admin/views/accordions.php:47 admin/views/accordions.php:84
 #: admin/views/flickr-panel-settings.php:26
-#: includes/class-grid-accordion-settings.php:961
+#: includes/class-grid-accordion-settings.php:983
 msgid "ID"
 msgstr ""
 
@@ -529,19 +529,19 @@ msgid ""
 msgstr ""
 
 #: admin/views/flickr-panel-settings.php:3
-#: includes/class-grid-accordion-settings.php:945
+#: includes/class-grid-accordion-settings.php:967
 msgid "API Key"
 msgstr ""
 
 #: admin/views/flickr-panel-settings.php:11
-#: includes/class-grid-accordion-settings.php:951
+#: includes/class-grid-accordion-settings.php:973
 msgid "Load By"
 msgstr ""
 
 #: admin/views/flickr-panel-settings.php:34
 #: admin/views/posts-panel-settings.php:109
-#: includes/class-grid-accordion-settings.php:939
-#: includes/class-grid-accordion-settings.php:967
+#: includes/class-grid-accordion-settings.php:961
+#: includes/class-grid-accordion-settings.php:989
 msgid "Limit"
 msgstr ""
 
@@ -663,7 +663,7 @@ msgid "Content"
 msgstr ""
 
 #: admin/views/layer-settings.php:21
-#: includes/class-grid-accordion-settings.php:714
+#: includes/class-grid-accordion-settings.php:736
 msgid "Heading Type"
 msgstr ""
 
@@ -684,24 +684,24 @@ msgid "Video Embed/Code"
 msgstr ""
 
 #: admin/views/layer-settings.php:88
-#: includes/class-grid-accordion-settings.php:559
+#: includes/class-grid-accordion-settings.php:574
 msgid "Appearance"
 msgstr ""
 
 #: admin/views/layer-settings.php:94
-#: includes/class-grid-accordion-settings.php:728
+#: includes/class-grid-accordion-settings.php:750
 msgid "Display"
 msgstr ""
 
 #: admin/views/layer-settings.php:105
-#: includes/class-grid-accordion-settings.php:175
-#: includes/class-grid-accordion-settings.php:763
+#: includes/class-grid-accordion-settings.php:176
+#: includes/class-grid-accordion-settings.php:785
 msgid "Horizontal"
 msgstr ""
 
 #: admin/views/layer-settings.php:109
-#: includes/class-grid-accordion-settings.php:118
-#: includes/class-grid-accordion-settings.php:751
+#: includes/class-grid-accordion-settings.php:119
+#: includes/class-grid-accordion-settings.php:773
 msgid "Width"
 msgstr ""
 
@@ -710,25 +710,25 @@ msgid "Preset styles"
 msgstr ""
 
 #: admin/views/layer-settings.php:126
-#: includes/class-grid-accordion-settings.php:739
+#: includes/class-grid-accordion-settings.php:761
 msgid "Position"
 msgstr ""
 
 #: admin/views/layer-settings.php:137
-#: includes/class-grid-accordion-settings.php:176
-#: includes/class-grid-accordion-settings.php:769
+#: includes/class-grid-accordion-settings.php:177
+#: includes/class-grid-accordion-settings.php:791
 msgid "Vertical"
 msgstr ""
 
 #: admin/views/layer-settings.php:141
-#: includes/class-grid-accordion-settings.php:125
-#: includes/class-grid-accordion-settings.php:757
+#: includes/class-grid-accordion-settings.php:126
+#: includes/class-grid-accordion-settings.php:779
 msgid "Height"
 msgstr ""
 
 #: admin/views/layer-settings.php:145
-#: includes/class-grid-accordion-settings.php:228
-#: includes/class-grid-accordion-settings.php:787
+#: includes/class-grid-accordion-settings.php:217
+#: includes/class-grid-accordion-settings.php:809
 msgid "Custom Class"
 msgstr ""
 
@@ -737,42 +737,42 @@ msgid "Animation"
 msgstr ""
 
 #: admin/views/layer-settings.php:162
-#: includes/class-grid-accordion-settings.php:793
+#: includes/class-grid-accordion-settings.php:815
 msgid "Show Transition"
 msgstr ""
 
 #: admin/views/layer-settings.php:173
-#: includes/class-grid-accordion-settings.php:806
+#: includes/class-grid-accordion-settings.php:828
 msgid "Show Offset"
 msgstr ""
 
 #: admin/views/layer-settings.php:177
-#: includes/class-grid-accordion-settings.php:812
+#: includes/class-grid-accordion-settings.php:834
 msgid "Show Delay"
 msgstr ""
 
 #: admin/views/layer-settings.php:181
-#: includes/class-grid-accordion-settings.php:818
+#: includes/class-grid-accordion-settings.php:840
 msgid "Show Duration"
 msgstr ""
 
 #: admin/views/layer-settings.php:187
-#: includes/class-grid-accordion-settings.php:824
+#: includes/class-grid-accordion-settings.php:846
 msgid "Hide Transition"
 msgstr ""
 
 #: admin/views/layer-settings.php:198
-#: includes/class-grid-accordion-settings.php:837
+#: includes/class-grid-accordion-settings.php:859
 msgid "Hide Offset"
 msgstr ""
 
 #: admin/views/layer-settings.php:202
-#: includes/class-grid-accordion-settings.php:843
+#: includes/class-grid-accordion-settings.php:865
 msgid "Hide Delay"
 msgstr ""
 
 #: admin/views/layer-settings.php:206
-#: includes/class-grid-accordion-settings.php:849
+#: includes/class-grid-accordion-settings.php:871
 msgid "Hide Duration"
 msgstr ""
 
@@ -888,32 +888,32 @@ msgid "Purchase Code:"
 msgstr ""
 
 #: admin/views/posts-panel-settings.php:3
-#: includes/class-grid-accordion-settings.php:885
+#: includes/class-grid-accordion-settings.php:907
 msgid "Post Types"
 msgstr ""
 
 #: admin/views/posts-panel-settings.php:18
-#: includes/class-grid-accordion-settings.php:891
+#: includes/class-grid-accordion-settings.php:913
 msgid "Taxonomies"
 msgstr ""
 
 #: admin/views/posts-panel-settings.php:49
-#: includes/class-grid-accordion-settings.php:897
+#: includes/class-grid-accordion-settings.php:919
 msgid "Match"
 msgstr ""
 
 #: admin/views/posts-panel-settings.php:64
-#: includes/class-grid-accordion-settings.php:907
+#: includes/class-grid-accordion-settings.php:929
 msgid "With selected"
 msgstr ""
 
 #: admin/views/posts-panel-settings.php:79
-#: includes/class-grid-accordion-settings.php:917
+#: includes/class-grid-accordion-settings.php:939
 msgid "Order By"
 msgstr ""
 
 #: admin/views/posts-panel-settings.php:94
-#: includes/class-grid-accordion-settings.php:929
+#: includes/class-grid-accordion-settings.php:951
 msgid "Order"
 msgstr ""
 
@@ -940,7 +940,7 @@ msgid ""
 msgstr ""
 
 #: admin/views/settings-editor.php:10
-#: includes/class-grid-accordion-settings.php:873
+#: includes/class-grid-accordion-settings.php:895
 msgid "Content Type"
 msgstr ""
 
@@ -948,7 +948,7 @@ msgstr ""
 msgid " To activate automatic updates, you need to enter your purchase code "
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:121
+#: includes/class-grid-accordion-settings.php:122
 msgid ""
 "Sets the width of the accordion. Can be set to a fixed value, like 900 "
 "(indicating 900 pixels), or to a percentage value, like 100%. In order to "
@@ -956,7 +956,7 @@ msgid ""
 "More about this in the description of the Responsive option."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:128
+#: includes/class-grid-accordion-settings.php:129
 msgid ""
 "Sets the height of the accordion. Can be set to a fixed value, like 400 "
 "(indicating 400 pixels). It's not recommended to set this to a percentage "
@@ -964,11 +964,11 @@ msgid ""
 "with a fixed value set for the height."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:132
+#: includes/class-grid-accordion-settings.php:133
 msgid "Columns"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:135
+#: includes/class-grid-accordion-settings.php:136
 msgid ""
 "Sets the number of columns. If it's set to -1, the number of columns will be "
 "determined automatically, based on the number of rows. <br/> Note: The "
@@ -977,11 +977,11 @@ msgid ""
 "contained in a single page."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:139
+#: includes/class-grid-accordion-settings.php:140
 msgid "Rows"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:142
+#: includes/class-grid-accordion-settings.php:143
 msgid ""
 "Sets the number of rows. If it's set to -1, the number of rows will be "
 "determined automatically, based on the number of columns. <br/> Note: The "
@@ -990,30 +990,30 @@ msgid ""
 "contained in a single page."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:146
+#: includes/class-grid-accordion-settings.php:147
 msgid "Responsive"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:149
+#: includes/class-grid-accordion-settings.php:150
 msgid ""
 "Makes the accordion responsive. The accordion can be responsive even if the "
 "Width and/or Height options are set to fixed values. In this situation, the "
 "Width and Height will act as the maximum width and height of the accordion."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:153
+#: includes/class-grid-accordion-settings.php:154
 msgid "Responsive Mode"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:157
+#: includes/class-grid-accordion-settings.php:158
 msgid "Auto"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:158
+#: includes/class-grid-accordion-settings.php:159
 msgid "Custom"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:160
+#: includes/class-grid-accordion-settings.php:161
 msgid ""
 "'Auto' resizes the accordion and all of its elements (e.g., layers, videos) "
 "automatically, while 'Custom' resizes only the accordion container and "
@@ -1027,11 +1027,11 @@ msgid ""
 "scale."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:164
+#: includes/class-grid-accordion-settings.php:165
 msgid "Aspect Ratio"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:167
+#: includes/class-grid-accordion-settings.php:168
 msgid ""
 "Sets the aspect ratio of the accordion. The accordion will set its height "
 "depending on what value its width has, so that this ratio is maintained. For "
@@ -1040,94 +1040,73 @@ msgid ""
 "'Aspect Ratio' needs to remain -1."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:171
+#: includes/class-grid-accordion-settings.php:172
 msgid "Orientation"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:178
+#: includes/class-grid-accordion-settings.php:179
 msgid "Sets the orientation of the panels."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:182
+#: includes/class-grid-accordion-settings.php:183
 msgid "Shadow"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:185
+#: includes/class-grid-accordion-settings.php:186
 msgid "Indicates if the panels will have a drop shadow effect."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:189
+#: includes/class-grid-accordion-settings.php:190
 msgid "Panel Distance"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:192
+#: includes/class-grid-accordion-settings.php:193
 msgid ""
 "Sets the distance between consecutive panels. Can be set to a percentage or "
 "fixed value."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:196
+#: includes/class-grid-accordion-settings.php:197
 msgid "Start Panel"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:199
+#: includes/class-grid-accordion-settings.php:200
 msgid ""
 "Indicates which panel will be opened when the accordion loads (0 for the "
 "first panel, 1 for the second panel, etc.). If set to -1, no panel will be "
 "opened."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:203
+#: includes/class-grid-accordion-settings.php:204
 msgid "Start Page"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:206
+#: includes/class-grid-accordion-settings.php:207
 msgid ""
 "Indicates which page will be opened when the accordion loads, if the panels "
 "are displayed on more than one page."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:210
+#: includes/class-grid-accordion-settings.php:211
 msgid "Shuffle"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:213
+#: includes/class-grid-accordion-settings.php:214
 msgid "Indicates if the panels will be randomized."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:216
-msgid "Lazy Loading"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:219
-msgid ""
-"Indicates if the background images will be loaded only when they are "
-"visible. Images from accordion pages that are not visible, will not be "
-"loaded."
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:222
-msgid "Hide Image Title"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:225
-msgid ""
-"Indicates if the title tag will be removed from images in order to prevent "
-"the title to show up in a tooltip when the image is hovered."
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:231
+#: includes/class-grid-accordion-settings.php:220
 msgid ""
 "Adds a custom class to the accordion, for use in custom CSS. Add the class "
 "name without the dot, i.e., you need to add <i>my-accordion</i>, not <i>.my-"
 "accordion</i>."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:235
+#: includes/class-grid-accordion-settings.php:224
 msgid "Opened Panel Width"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:238
+#: includes/class-grid-accordion-settings.php:227
 msgid ""
 "Sets the width of the opened panel. Possible values are: 'max', which will "
 "open the panel to its maximum width, so that all the inner content is "
@@ -1137,11 +1116,11 @@ msgid ""
 "without any of these panels opening more than their size."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:242
+#: includes/class-grid-accordion-settings.php:231
 msgid "Opened Panel Height"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:245
+#: includes/class-grid-accordion-settings.php:234
 msgid ""
 "Sets the height of the opened panel. Possible values are: 'max', which will "
 "open the panel to its maximum height, so that all the inner content is "
@@ -1151,11 +1130,11 @@ msgid ""
 "without any of these panels opening more than their size."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:249
+#: includes/class-grid-accordion-settings.php:238
 msgid "Max Opened Panel Width"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:252
+#: includes/class-grid-accordion-settings.php:241
 msgid ""
 "Sets the maximum allowed width of the opened panel. This should be used when "
 "the 'Opened Panel Width' setting is set to 'max', because sometimes the "
@@ -1164,11 +1143,11 @@ msgid ""
 "to a fixed value."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:256
+#: includes/class-grid-accordion-settings.php:245
 msgid "Max Opened Panel Height"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:259
+#: includes/class-grid-accordion-settings.php:248
 msgid ""
 "Sets the maximum allowed height of the opened panel. This should be used "
 "when the 'Opened Panel Width' setting is set to 'max', because sometimes the "
@@ -1177,44 +1156,44 @@ msgid ""
 "or to a fixed value."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:263
+#: includes/class-grid-accordion-settings.php:252
 msgid "Open Panel On"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:267
+#: includes/class-grid-accordion-settings.php:256
 msgid "Hover"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:268
+#: includes/class-grid-accordion-settings.php:257
 msgid "Click"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:269
+#: includes/class-grid-accordion-settings.php:258
 msgid "Never"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:271
+#: includes/class-grid-accordion-settings.php:260
 msgid ""
 "If set to 'Hover', the panels will be opened by moving the mouse pointer "
 "over them; if set to 'Click', the panels will open when clicked. Can also be "
 "set to 'never' to disable the opening of the panels."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:275
+#: includes/class-grid-accordion-settings.php:264
 msgid "Close Panels On Mouse Out"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:278
+#: includes/class-grid-accordion-settings.php:267
 msgid ""
 "Determines whether the opened panel closes or remains open when the mouse "
 "pointer is moved away."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:282
+#: includes/class-grid-accordion-settings.php:271
 msgid "Mouse Delay"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:285
+#: includes/class-grid-accordion-settings.php:274
 msgid ""
 "Sets the delay in milliseconds between the movement of the mouse pointer and "
 "the opening of the panel. Setting a delay ensures that panels are not opened "
@@ -1222,133 +1201,133 @@ msgid ""
 "panel."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:289
+#: includes/class-grid-accordion-settings.php:278
 msgid "Open Panel Duration"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:292
+#: includes/class-grid-accordion-settings.php:281
 msgid ""
 "Determines the duration in milliseconds for the opening animation of the "
 "panel."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:296
+#: includes/class-grid-accordion-settings.php:285
 msgid "Close Panel Duration"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:299
+#: includes/class-grid-accordion-settings.php:288
 msgid ""
 "Determines the duration in milliseconds for the closing animation of the "
 "panel."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:303
+#: includes/class-grid-accordion-settings.php:292
 msgid "Page Scroll Duration"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:306
+#: includes/class-grid-accordion-settings.php:295
 msgid "Indicates the duration of the page scrolling animation."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:310
+#: includes/class-grid-accordion-settings.php:299
 msgid "Page Scroll Easing"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:346
+#: includes/class-grid-accordion-settings.php:335
 msgid "Indicates the easing type of the page scrolling animation."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:351
-#: includes/class-grid-accordion-settings.php:598
+#: includes/class-grid-accordion-settings.php:340
+#: includes/class-grid-accordion-settings.php:611
 msgid "Autoplay"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:354
+#: includes/class-grid-accordion-settings.php:343
 msgid "Indicates if the autoplay will be enabled."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:358
+#: includes/class-grid-accordion-settings.php:347
 msgid "Autoplay Delay"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:361
+#: includes/class-grid-accordion-settings.php:350
 msgid "Sets the delay, in milliseconds, of the autoplay cycle."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:365
+#: includes/class-grid-accordion-settings.php:354
 msgid "Autoplay Direction"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:369
+#: includes/class-grid-accordion-settings.php:358
 msgid "Normal"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:370
+#: includes/class-grid-accordion-settings.php:359
 msgid "Backwards"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:372
+#: includes/class-grid-accordion-settings.php:361
 msgid ""
 "Sets the direction in which the panels will be opened. Can be set to "
 "'Normal' (ascending order) or 'Backwards' (descending order)."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:376
+#: includes/class-grid-accordion-settings.php:365
 msgid "Autoplay On Hover"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:380
+#: includes/class-grid-accordion-settings.php:369
 msgid "Pause"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:381
+#: includes/class-grid-accordion-settings.php:370
 msgid "Stop"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:382
-#: includes/class-grid-accordion-settings.php:486
-#: includes/class-grid-accordion-settings.php:508
+#: includes/class-grid-accordion-settings.php:371
+#: includes/class-grid-accordion-settings.php:475
+#: includes/class-grid-accordion-settings.php:497
 msgid "None"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:384
+#: includes/class-grid-accordion-settings.php:373
 msgid "Indicates if the autoplay will be paused when the accordion is hovered."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:389
-#: includes/class-grid-accordion-settings.php:608
+#: includes/class-grid-accordion-settings.php:378
+#: includes/class-grid-accordion-settings.php:621
 msgid "Mouse Wheel"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:392
+#: includes/class-grid-accordion-settings.php:381
 msgid "Indicates if the accordion will respond to mouse wheel input."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:396
+#: includes/class-grid-accordion-settings.php:385
 msgid "Mouse Wheel Sensitivity"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:399
+#: includes/class-grid-accordion-settings.php:388
 msgid ""
 "Sets how sensitive the accordion will be to mouse wheel input. Lower values "
 "indicate stronger sensitivity."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:403
+#: includes/class-grid-accordion-settings.php:392
 msgid "Mouse Wheel Target"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:407
-#: includes/class-grid-accordion-settings.php:435
+#: includes/class-grid-accordion-settings.php:396
+#: includes/class-grid-accordion-settings.php:424
 msgid "Panel"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:408
-#: includes/class-grid-accordion-settings.php:436
+#: includes/class-grid-accordion-settings.php:397
+#: includes/class-grid-accordion-settings.php:425
 msgid "Page"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:410
+#: includes/class-grid-accordion-settings.php:399
 msgid ""
 "Sets what elements will be targeted by the mouse wheel input. Can be set to "
 "'Panel' or 'Page'. Setting it to 'Panel' will indicate that the panels will "
@@ -1356,30 +1335,30 @@ msgid ""
 "scrolled."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:415
-#: includes/class-grid-accordion-settings.php:617
+#: includes/class-grid-accordion-settings.php:404
+#: includes/class-grid-accordion-settings.php:630
 msgid "Keyboard"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:418
+#: includes/class-grid-accordion-settings.php:407
 msgid "Indicates if the accordion will respond to keyboard input."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:423
+#: includes/class-grid-accordion-settings.php:412
 msgid "Keyboard Only On Focus"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:426
+#: includes/class-grid-accordion-settings.php:415
 msgid ""
 "Indicates if the accordion will respond to keyboard input only if the "
 "accordion has focus."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:431
+#: includes/class-grid-accordion-settings.php:420
 msgid "Keyboard Target"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:438
+#: includes/class-grid-accordion-settings.php:427
 msgid ""
 "Sets what elements will be targeted by the keyboard input. Can be set to "
 "'Panel' or 'Page'. Setting it to 'Panel' will indicate that the panels will "
@@ -1387,357 +1366,406 @@ msgid ""
 "scrolled."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:443
+#: includes/class-grid-accordion-settings.php:432
 msgid "Swap Background Duration"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:446
+#: includes/class-grid-accordion-settings.php:435
 msgid "Sets the duration, in milliseconds, of the transition effect."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:450
+#: includes/class-grid-accordion-settings.php:439
 msgid "Fade Out Background"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:453
+#: includes/class-grid-accordion-settings.php:442
 msgid ""
 "Indicates if the main image background will be faded out when the opened/"
 "alternative background fades in."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:458
-#: includes/class-grid-accordion-settings.php:634
+#: includes/class-grid-accordion-settings.php:447
+#: includes/class-grid-accordion-settings.php:647
 msgid "Touch Swipe"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:461
+#: includes/class-grid-accordion-settings.php:450
 msgid "Indicates if the touch swipe functionality will be enabled."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:465
+#: includes/class-grid-accordion-settings.php:454
 msgid "Touch Swipe Threshold"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:468
+#: includes/class-grid-accordion-settings.php:457
 msgid ""
 "Sets how many pixels the distance of the swipe gesture needs to be in order "
 "to trigger a page change."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:473
-#: includes/class-grid-accordion-settings.php:642
+#: includes/class-grid-accordion-settings.php:462
+#: includes/class-grid-accordion-settings.php:655
 msgid "Lightbox"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:476
+#: includes/class-grid-accordion-settings.php:465
 msgid ""
 "Indicates if the links specified to the background images will be opened in "
 "a lightbox."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:481
+#: includes/class-grid-accordion-settings.php:470
 msgid "Open Panel Video Action"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:485
+#: includes/class-grid-accordion-settings.php:474
 msgid "Play Video"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:488
+#: includes/class-grid-accordion-settings.php:477
 msgid ""
 "Sets what the video will do when the panel is opened. Can be set to 'Play "
 "Video' or 'None'."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:492
+#: includes/class-grid-accordion-settings.php:481
 msgid "Close Panel Video Action"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:496
+#: includes/class-grid-accordion-settings.php:485
 msgid "Pause Video"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:497
+#: includes/class-grid-accordion-settings.php:486
 msgid "Stop Video"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:499
+#: includes/class-grid-accordion-settings.php:488
 msgid ""
 "Sets what the video will do when the panel is closed. Can be set to 'Pause "
 "Video' or 'Stop Video'."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:503
+#: includes/class-grid-accordion-settings.php:492
 msgid "Play Video Action"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:507
+#: includes/class-grid-accordion-settings.php:496
 msgid "Stop Autoplay"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:510
+#: includes/class-grid-accordion-settings.php:499
 msgid ""
 "Sets what the accordion will do when a video starts playing. Can be set to "
 "'Stop Autoplay' or 'None'."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:514
+#: includes/class-grid-accordion-settings.php:503
 msgid "Pause Video Action"
 msgstr ""
 
+#: includes/class-grid-accordion-settings.php:507
 #: includes/class-grid-accordion-settings.php:518
-#: includes/class-grid-accordion-settings.php:529
 msgid "Start Autoplay"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:521
+#: includes/class-grid-accordion-settings.php:510
 msgid ""
 "Sets what the accordion will do when a video is paused. Can be set to 'Start "
 "Autoplay' or 'None'."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:525
+#: includes/class-grid-accordion-settings.php:514
 msgid "End Video Action"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:530
+#: includes/class-grid-accordion-settings.php:519
 msgid "Next Panel"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:531
+#: includes/class-grid-accordion-settings.php:520
 msgid "Replay Video"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:534
+#: includes/class-grid-accordion-settings.php:523
 msgid ""
 "Sets what the accordion will do when a video ends. Can be set to 'Start "
 "Autoplay', 'Next Panel', 'Replay Video' or 'None'."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:581
+#: includes/class-grid-accordion-settings.php:527
+msgid "Lazy Loading"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:530
+msgid ""
+"Indicates if the background images will be loaded only when they are "
+"visible. Images from accordion pages that are not visible, will not be "
+"loaded."
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:533
+msgid "Hide Image Title"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:536
+msgid ""
+"Indicates if the title tag will be removed from images in order to prevent "
+"the title to show up in a tooltip when the image is hovered."
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:540
+msgid "Link Target"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:544
+msgid "Self"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:545
+msgid "Blank"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:546
+msgid "Parent"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:547
+msgid "Top"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:549
+msgid "Sets the location where the slide links will be opened."
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:594
 msgid "Animations"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:626
+#: includes/class-grid-accordion-settings.php:639
 msgid "Swap Background"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:647
+#: includes/class-grid-accordion-settings.php:660
 msgid ""
 "By default, the accordion will open the background image in the lightbox, "
 "but at its full size."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:648
+#: includes/class-grid-accordion-settings.php:661
 msgid ""
 "If you want to open a different image or other content, you need to specify "
 "the custom content in the <i>Background Image</i> editor, in the <i>Link</i> "
 "field."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:653
-#: includes/class-grid-accordion-settings.php:708
+#: includes/class-grid-accordion-settings.php:666
+#: includes/class-grid-accordion-settings.php:730
 msgid "Video"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:701
-msgid "Type"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:705
-msgid "Paragraph"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:706
-msgid "Heading"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:707
-msgid "Image"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:709
-msgid "DIV"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:718
-msgid "H1"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:719
-msgid "H2"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:720
-msgid "H3"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:721
-msgid "H4"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:722
-msgid "H5"
+#: includes/class-grid-accordion-settings.php:677
+msgid "Miscellaneous"
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:723
-msgid "H6"
+msgid "Type"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:732
-msgid "Always"
+#: includes/class-grid-accordion-settings.php:727
+msgid "Paragraph"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:733
-msgid "When opened"
+#: includes/class-grid-accordion-settings.php:728
+msgid "Heading"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:734
-msgid "When closed"
+#: includes/class-grid-accordion-settings.php:729
+msgid "Image"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:731
+msgid "DIV"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:740
+msgid "H1"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:741
+msgid "H2"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:742
+msgid "H3"
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:743
-msgid "Top Left"
+msgid "H4"
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:744
-msgid "Top Right"
+msgid "H5"
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:745
+msgid "H6"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:754
+msgid "Always"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:755
+msgid "When opened"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:756
+msgid "When closed"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:765
+msgid "Top Left"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:766
+msgid "Top Right"
+msgstr ""
+
+#: includes/class-grid-accordion-settings.php:767
 msgid "Bottom Left"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:746
+#: includes/class-grid-accordion-settings.php:768
 msgid "Bottom Right"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:775
+#: includes/class-grid-accordion-settings.php:797
 msgid "Preset Styles"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:779
+#: includes/class-grid-accordion-settings.php:801
 msgid "Black"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:780
+#: includes/class-grid-accordion-settings.php:802
 msgid "White"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:781
+#: includes/class-grid-accordion-settings.php:803
 msgid "Padding"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:782
+#: includes/class-grid-accordion-settings.php:804
 msgid "Round Corners"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:797
-#: includes/class-grid-accordion-settings.php:828
+#: includes/class-grid-accordion-settings.php:819
+#: includes/class-grid-accordion-settings.php:850
 msgid "Fade"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:798
-#: includes/class-grid-accordion-settings.php:829
+#: includes/class-grid-accordion-settings.php:820
+#: includes/class-grid-accordion-settings.php:851
 msgid "Left"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:799
-#: includes/class-grid-accordion-settings.php:830
+#: includes/class-grid-accordion-settings.php:821
+#: includes/class-grid-accordion-settings.php:852
 msgid "Right"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:800
-#: includes/class-grid-accordion-settings.php:831
+#: includes/class-grid-accordion-settings.php:822
+#: includes/class-grid-accordion-settings.php:853
 msgid "Up"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:801
-#: includes/class-grid-accordion-settings.php:832
+#: includes/class-grid-accordion-settings.php:823
+#: includes/class-grid-accordion-settings.php:854
 msgid "Down"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:877
+#: includes/class-grid-accordion-settings.php:899
 msgid "Custom Content"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:878
+#: includes/class-grid-accordion-settings.php:900
 msgid "Content from posts"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:879
+#: includes/class-grid-accordion-settings.php:901
 msgid "Images from post's gallery"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:880
+#: includes/class-grid-accordion-settings.php:902
 msgid "Flickr images"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:901
+#: includes/class-grid-accordion-settings.php:923
 msgid "At least one"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:902
+#: includes/class-grid-accordion-settings.php:924
 msgid "All"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:911
+#: includes/class-grid-accordion-settings.php:933
 msgid "Include"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:912
+#: includes/class-grid-accordion-settings.php:934
 msgid "Exclude"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:921
+#: includes/class-grid-accordion-settings.php:943
 msgid "Date"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:922
+#: includes/class-grid-accordion-settings.php:944
 msgid "Comments"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:923
+#: includes/class-grid-accordion-settings.php:945
 msgid "Title"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:924
+#: includes/class-grid-accordion-settings.php:946
 msgid "Random"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:933
+#: includes/class-grid-accordion-settings.php:955
 msgid "Descending"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:934
+#: includes/class-grid-accordion-settings.php:956
 msgid "Ascending"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:955
+#: includes/class-grid-accordion-settings.php:977
 msgid "Set ID"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:956
+#: includes/class-grid-accordion-settings.php:978
 msgid "User ID"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:991
+#: includes/class-grid-accordion-settings.php:1013
 msgid "Load stylesheets"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:994
+#: includes/class-grid-accordion-settings.php:1016
 msgid "Automatically"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:995
+#: includes/class-grid-accordion-settings.php:1017
 msgid "On homepage"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:996
+#: includes/class-grid-accordion-settings.php:1018
 msgid "On all pages"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:998
+#: includes/class-grid-accordion-settings.php:1020
 msgid ""
 "The plugin can detect the presence of the accordion in a post, page or "
 "widget, and will automatically load the necessary stylesheets. However, when "
@@ -1748,19 +1776,19 @@ msgid ""
 "multiple pages, select <i>On all pages</i>."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1001
+#: includes/class-grid-accordion-settings.php:1023
 msgid "Load custom CSS and JavaScript"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1004
+#: includes/class-grid-accordion-settings.php:1026
 msgid "Inline"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1005
+#: includes/class-grid-accordion-settings.php:1027
 msgid "In files"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1007
+#: includes/class-grid-accordion-settings.php:1029
 msgid ""
 "By default, custom CSS and JavaScript code added to the accordion will be "
 "loaded inline. However, if you want to add large amounts of custom CSS or "
@@ -1773,42 +1801,42 @@ msgid ""
 "credentials if the files can't be created due to folder permission issues."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1010
+#: includes/class-grid-accordion-settings.php:1032
 msgid "Load unminified scripts"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1012
+#: includes/class-grid-accordion-settings.php:1034
 msgid ""
 "Check this option if you want to load the unminified/uncompressed CSS and "
 "JavaScript files for the accordion. This is useful for debugging purposes."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1015
+#: includes/class-grid-accordion-settings.php:1037
 msgid "Cache expiry interval"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1017
+#: includes/class-grid-accordion-settings.php:1039
 msgid ""
 "Indicates the time interval after which a grid's cache will expire. If the "
 "cache of a grid has expired, the grid will be rendered again and cached the "
 "next time it is viewed."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1020
+#: includes/class-grid-accordion-settings.php:1042
 msgid "Hide inline info"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1022
+#: includes/class-grid-accordion-settings.php:1044
 msgid ""
 "Indicates whether the inline information will be displayed in admin panels "
 "and wherever it's available."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1025
+#: includes/class-grid-accordion-settings.php:1047
 msgid "Hide <i>Getting Started</i> info"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1027
+#: includes/class-grid-accordion-settings.php:1049
 msgid ""
 "Indicates whether the <i>Getting Started</i> information will be displayed "
 "in the <i>All Accordions</i> page, above the list of accordions. This "
@@ -1816,27 +1844,27 @@ msgid ""
 "information box."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1030
+#: includes/class-grid-accordion-settings.php:1052
 msgid "Access"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1033
+#: includes/class-grid-accordion-settings.php:1055
 msgid "Administrator"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1034
+#: includes/class-grid-accordion-settings.php:1056
 msgid "Editor"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1035
+#: includes/class-grid-accordion-settings.php:1057
 msgid "Author"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1036
+#: includes/class-grid-accordion-settings.php:1058
 msgid "Contributor"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1038
+#: includes/class-grid-accordion-settings.php:1060
 msgid ""
 "Sets what category of users will have access to the plugin's admin area."
 msgstr ""
