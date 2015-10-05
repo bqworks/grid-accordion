@@ -18,7 +18,7 @@ class BQW_Grid_Accordion_Widget extends WP_Widget {
 			'description' => 'Display a Grid Accordion instance in the widgets area.'
 		);
 		
-		$this->WP_Widget( 'bqw-grid-accordion-widget', 'Grid Accordion', $widget_opts );
+		parent::__construct( 'bqw-grid-accordion-widget', 'Grid Accordion', $widget_opts );
 	}
 	
 	/**
