@@ -289,7 +289,25 @@ class BQW_GA_Accordion_Renderer {
 			$js_output .= "\r\n" . '		$( "' . $accordionIdAttribute . ' .ga-panel > a" ).on( "click", function( event ) {' .
 							"\r\n" . '			event.preventDefault();' .
 							"\r\n" . '			if ( $( "' . $accordionIdAttribute . '" ).hasClass( "ga-swiping" ) === false ) {' .
-							"\r\n" . '				$.fancybox.open( $( "' . $accordionIdAttribute . ' .ga-panel > a" ), { index: $( this ).parent().index()' . $lightbox_options_string . ' } );' .
+							"\r\n" . '				var gridInstance = $( "' . $accordionIdAttribute . '" ).data( "gridAccordion" ),' .
+							"\r\n" . '					isAutoplay = gridInstance.settings.autoplay;' .
+							"\r\n" .
+							"\r\n" . '				$.fancybox.open( $( "' . $accordionIdAttribute . ' .ga-panel > a" ), {' .
+							"\r\n" . '					index: $( this ).parent().index(),' .
+							"\r\n" . '					afterShow: function() {' .
+							"\r\n" . '						if ( isAutoplay === true ) {' .
+							"\r\n" . '							gridInstance.settings.autoplay = false;' .
+							"\r\n" . '							gridInstance.stopAutoplay();' .
+							"\r\n" . '						}' .
+							"\r\n" . '					},' .
+							"\r\n" . '					afterClose: function() {' .
+							"\r\n" . '						if ( isAutoplay === true ) {' .
+							"\r\n" . '							gridInstance.settings.autoplay = true;' .
+							"\r\n" . '							gridInstance.startAutoplay();' .
+							"\r\n" . '						}' .
+							"\r\n" . '					}' .
+							"\r\n" . '					' . $lightbox_options_string . 
+							"\r\n" . '				});' .
 							"\r\n" . '			}' .
 							"\r\n" . '		});' . "\r\n";
 		}
