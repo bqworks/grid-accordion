@@ -57,10 +57,6 @@
 			} else if ( ga_js_vars.page === 'all' ) {
 				this.initAllAccordionsPage();
 			}
-
-			if ( $( '.grid-accordion-documentation' ).length === 1 ) {
-				$( '.grid-accordion-documentation' ).attr( 'height', $( 'body' ).height() );
-			}
 		},
 
 		/*
