@@ -695,7 +695,7 @@ class BQW_Grid_Accordion_Settings {
 	 * @return array The array of breakpoint settings.
 	 */
 	public static function getBreakpointSettings() {
-		return self::$breakpoint_settings;
+		return apply_filters( 'grid_accordion_breakpoint_settings', self::$breakpoint_settings );
 	}
 
 	/**
