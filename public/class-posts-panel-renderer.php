@@ -57,7 +57,7 @@ class BQW_GA_Posts_Panel_Renderer extends BQW_GA_Dynamic_Panel_Renderer {
 		$result = $this->query();
 		$output_html = $this->replace_tags( $result );
 
-		return $output_html;
+		return do_shortcode( $output_html );
 	}
 
 	/**
