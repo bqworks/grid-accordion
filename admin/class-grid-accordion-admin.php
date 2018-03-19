@@ -784,6 +784,8 @@ class BQW_Grid_Accordion_Admin {
 
 		$wpdb->query( $wpdb->prepare( "DELETE FROM " . $wpdb->prefix . "gridaccordion_panels WHERE accordion_id = %d", $id ) );
 
+		$wpdb->query( $wpdb->prepare( "DELETE FROM " . $wpdb->prefix . "gridaccordion_layers WHERE accordion_id = %d", $id ) );
+		
 		$wpdb->query( $wpdb->prepare( "DELETE FROM " . $wpdb->prefix . "gridaccordion_accordions WHERE id = %d", $id ) );
 
 		return $id;
