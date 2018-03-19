@@ -135,8 +135,6 @@ class BQW_Grid_Accordion_API {
 		if ( empty( $transient->checked ) ) {
 			return $transient;
 		}
-
-		$current_version = $transient->checked[ $this->plugin_reference ];
 		
 		$args = array(
 			'action' => 'update-check',
@@ -146,7 +144,7 @@ class BQW_Grid_Accordion_API {
 
 		$response = $this->api_request( $args );
 		
-		if ( $response !== false && version_compare( $current_version, $response->new_version, '<' ) )	{	
+		if ( $response !== false && version_compare( BQW_Grid_Accordion::VERSION, $response->new_version, '<' ) ) {
 			$transient->response[ $this->plugin_reference ] = $response;
 		}
 
