@@ -290,10 +290,11 @@ class BQW_GA_Accordion_Renderer {
 							"\r\n" . '			event.preventDefault();' .
 							"\r\n" . '			if ( $( "' . $accordionIdAttribute . '" ).hasClass( "ga-swiping" ) === false ) {' .
 							"\r\n" . '				var gridInstance = $( "' . $accordionIdAttribute . '" ).data( "gridAccordion" ),' .
-							"\r\n" . '					isAutoplay = gridInstance.settings.autoplay;' .
+							"\r\n" . '					isAutoplay = gridInstance.settings.autoplay,' .
+							"\r\n" . '					index = $( "' . $accordionIdAttribute . ' .ga-panel > a" ).index( $( this ) );' .
 							"\r\n" .
 							"\r\n" . '				$.fancybox.open( $( "' . $accordionIdAttribute . ' .ga-panel > a" ), {' .
-							"\r\n" . '					index: $( this ).parent().index(),' .
+							"\r\n" . '					index: index,' .
 							"\r\n" . '					afterShow: function() {' .
 							"\r\n" . '						if ( isAutoplay === true ) {' .
 							"\r\n" . '							gridInstance.settings.autoplay = false;' .
