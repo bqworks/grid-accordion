@@ -2037,22 +2037,19 @@
 			var accordionWidth = $( '.sidebar-settings' ).find( '.setting[name="width"]' ).val(),
 				accordionHeight = $( '.sidebar-settings' ).find( '.setting[name="height"]' ).val(),
 				orientation = $( '.sidebar-settings' ).find( '.setting[name="orientation"]' ).val(),
-				backgroundData = this.currentPanel.getData( 'background' );
-
-			if ( accordionWidth.indexOf( '%' ) !== -1 ) {
-				accordionWidth = $( window ).width() - 200;
-			} else {
-				accordionWidth = parseInt( accordionWidth, 10 );
-			}
-
-			if ( accordionHeight.indexOf( '%' ) !== -1 ) {
-				accordionHeight = $( window ).height() - 200;
-			} else {
-				accordionHeight = parseInt( accordionHeight, 10 );
-			}
-
-			var $viewport = this.$editor.find( '.layer-viewport' ),
+				customClass = $( '.sidebar-settings' ).find( '.setting[name="custom_class"]' ).val(),
+				panelWidth = $( '.sidebar-settings' ).find( '.setting[name="opened_panel_width"]' ).val(),
+				panelHeight = $( '.sidebar-settings' ).find( '.setting[name="opened_panel_height"]' ).val(),
+				maxPanelWidth = $( '.sidebar-settings' ).find( '.setting[name="max_opened_panel_width"]' ).val(),
+				maxPanelHeight = $( '.sidebar-settings' ).find( '.setting[name="max_opened_panel_height"]' ).val(),
+				viewportWidth,
+				viewportHeight,
+				backgroundSource = this.currentPanel.getData( 'background' )['background_source'],
+				$viewport = this.$editor.find( '.layer-viewport' ),
 				$viewportLayers = $( '<div class="grid-accordion viewport-layers"></div>' ).appendTo( $viewport );
+
+			accordionWidth = isNaN( accordionWidth ) ? parseInt( accordionWidth, 10 ) / 100 * $( window ).width() : parseInt( accordionWidth, 10 );
+			accordionHeight = isNaN( accordionHeight ) ? parseInt( accordionHeight, 10 ) / 100 * $( window ).height() : parseInt( accordionHeight, 10 );
 
 			if ( orientation === 'horizontal' ) {
 				$viewport.css( 'height', accordionHeight );
@@ -2060,37 +2057,25 @@
 				$viewport.css( 'width', accordionWidth );
 			}
 
-			var customClass = $( '.sidebar-settings' ).find( '.setting[name="custom_class"]' ).val();
-
 			if ( customClass !== '' ) {
 				$viewportLayers.addClass( customClass );
 			}
 
-			var panelWidth = $( '.sidebar-settings' ).find( '.setting[name="opened_panel_width"]' ).val(),
-				panelHeight = $( '.sidebar-settings' ).find( '.setting[name="opened_panel_height"]' ).val(),
-				maxPanelWidth = $( '.sidebar-settings' ).find( '.setting[name="max_opened_panel_width"]' ).val(),
-				maxPanelHeight = $( '.sidebar-settings' ).find( '.setting[name="max_opened_panel_height"]' ).val(),
-				viewportWidth,
-				viewportHeight;
-
 			// calculate the maximum allowed size for the panels
 			if ( panelWidth === 'max' || panelWidth === 'auto' ) {
-				viewportWidth = maxPanelWidth.indexOf('%') !== -1 ? ( parseInt( maxPanelWidth, 10 ) / 100 ) * accordionWidth : parseInt( maxPanelWidth, 10 );
+				viewportWidth = isNaN( maxPanelWidth ) ? ( parseInt( maxPanelWidth, 10 ) / 100 ) * accordionWidth : parseInt( maxPanelWidth, 10 );
 			} else {
-				viewportWidth = panelWidth.indexOf('%') !== -1 ? ( parseInt( panelWidth, 10 ) / 100 ) * accordionWidth : parseInt( panelWidth, 10 );
+				viewportWidth = isNaN( panelWidth ) ? ( parseInt( panelWidth, 10 ) / 100 ) * accordionWidth : parseInt( panelWidth, 10 );
 			}
 
 			if ( panelHeight === 'max' || panelHeight === 'auto' ) {
-				viewportHeight = maxPanelHeight.indexOf('%') !== -1 ? ( parseInt( maxPanelHeight, 10 ) / 100 ) * accordionHeight : parseInt( maxPanelHeight, 10 );
+				viewportHeight = isNaN( maxPanelHeight ) ? ( parseInt( maxPanelHeight, 10 ) / 100 ) * accordionHeight : parseInt( maxPanelHeight, 10 );
 			} else {
-				viewportHeight = panelHeight.indexOf('%') !== -1 ? ( parseInt( panelHeight, 10 ) / 100 ) * accordionHeight : parseInt( panelHeight, 10 );
+				viewportHeight = isNaN( panelHeight ) ? ( parseInt( panelHeight, 10 ) / 100 ) * accordionHeight : parseInt( panelHeight, 10 );
 			}
 
-			if ( typeof backgroundData.background_source !== 'undefined' &&
-				backgroundData.background_source !== '' &&
-				backgroundData.background_source.indexOf( '[' ) === -1 ) {
-				
-				var $viewportImage = $( '<img class="viewport-image" src="' + backgroundData.background_source + '" />' ).prependTo( $viewport );
+			if ( typeof backgroundSource !== 'undefined' && backgroundSource !== '' && backgroundSource.indexOf( '[' ) === -1 ) {
+				var $viewportImage = $( '<img class="viewport-image" src="' + backgroundSource + '" />' ).prependTo( $viewport );
 
 				// set the size of the layer's container after the image has
 				// loaded and its size can be retrieved
@@ -2098,7 +2083,7 @@
 					if ( $viewportImage[0].complete === true ) {
 						clearInterval( checkImageLoaded );
 
-						$viewportImage.css( { 'max-width': viewportWidth, 'max-height': viewportHeight } );
+						$viewportImage.css({ 'max-width': viewportWidth, 'max-height': viewportHeight });
 
 						var imageWidth = $viewportImage.width(),
 							imageHeight = $viewportImage.height();
@@ -2111,23 +2096,16 @@
 							viewportHeight = imageHeight;
 						}
 
-						$viewport.css( 'width', viewportWidth );
-						$viewport.css( 'height', viewportHeight );
-
-						$viewportLayers.css( {
-							'width': viewportWidth,
-							'height': viewportHeight,
-							'left': $viewportImage.position().left,
-							'top': $viewportImage.position().top
-						});
+						$viewport.css({ 'width': viewportWidth, 'height': viewportHeight });
+						$viewportLayers.css({ 'width': viewportWidth, 'height': viewportHeight });
 					}
 				}, 10 );
 			} else {
-				$viewport.css( 'width', viewportWidth );
-				$viewport.css( 'height', viewportHeight );
+				$viewport.css({ 'width': viewportWidth, 'height': viewportHeight });
+				$viewportLayers.css({ 'width': viewportWidth, 'height': viewportHeight });
 			}
 
-			$( '.layers-editor-info' ).css( 'maxWidth', $viewport.width() );
+			$( '.layers-editor-info' ).css( 'max-width', $viewport.width() );
 		},
 
 		/**

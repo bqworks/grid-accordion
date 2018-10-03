@@ -628,10 +628,12 @@ Single accordion page
 /* Layers editor
 --------------------------------------------------*/
 .layers-editor .modal-window {
-	min-width: 625px;
+	min-width: 685px;
+	max-width: 95%;
+	box-sizing: border-box;
 }
 
-@media (max-width: 625px) {
+@media (max-width: 685px) {
 	.layers-editor:before {
 		display: none;
 	}
@@ -923,9 +925,8 @@ Single accordion page
 -----------------*/
 .layer-viewport {
 	position: relative;
-	width: 100%;
-	min-width: inherit;
-	overflow: hidden;
+	max-width: 100%;
+	overflow: auto;
 	background-image:
 	    -moz-linear-gradient(45deg, #EEE 25%, transparent 25%,transparent 75%, #EEE 75%, #EEE 100%),
 	    -moz-linear-gradient(45deg, #EEE 25%, transparent 25%,transparent 75%, #EEE 75%, #EEE 100%);
