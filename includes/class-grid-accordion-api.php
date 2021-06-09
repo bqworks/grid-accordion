@@ -13,7 +13,7 @@ class BQW_Grid_Accordion_API {
 	 *
 	 * @var string
 	 */
-	const GRID_ACCORDION_API = 'http://api.bqworks.com/grid-accordion/';
+	const GRID_ACCORDION_API = 'http://api.bqworks.net/grid-accordion/';
 
 	/**
 	 * Current class instance.

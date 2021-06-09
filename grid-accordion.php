@@ -2,11 +2,11 @@
 
 /*
 	Plugin Name: Grid Accordion
-	Plugin URI:  http://bqworks.com/grid-accordion/
+	Plugin URI:  http://bqworks.net/grid-accordion/
 	Description: Responsive and touch-enabled grid accordion.
 	Version:     1.7.0
 	Author:      bqworks
-	Author URI:  http://bqworks.com
+	Author URI:  http://bqworks.net
 */
 
 // if the file is called directly, abort
