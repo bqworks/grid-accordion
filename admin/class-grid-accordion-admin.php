@@ -382,9 +382,6 @@ class BQW_Grid_Accordion_Admin {
 	 *
 	 * It also checks if new data was posted, and saves
 	 * it in the options table.
-	 *
-	 * It verifies the purchase code supplied and displays
-	 * if it's valid.
 	 * 
 	 * @since 1.0.0
 	 */
@@ -443,36 +440,6 @@ class BQW_Grid_Accordion_Admin {
 			if ( isset( $_POST['access'] ) ) {
 				$access = $_POST['access'];
 				update_option( 'grid_accordion_access', $access );
-			}
-		}
-
-		$purchase_code = get_option( 'grid_accordion_purchase_code', '' );
-		$purchase_code_status = get_option( 'grid_accordion_purchase_code_status', '0' );
-		
-		if ( isset( $_POST['purchase_code_update'] ) ) {
-			check_admin_referer( 'purchase-code-update', 'purchase-code-nonce' );
-
-			if ( isset( $_POST['purchase_code'] ) ) {
-				$purchase_code = $_POST['purchase_code'];
-				update_option( 'grid_accordion_purchase_code', $purchase_code );
-
-				if ( $_POST['purchase_code'] === '' ) {
-					$purchase_code_status = '0';
-				} else {
-					$api = BQW_Grid_Accordion_API::get_instance();
-
-					$verification_result = $api->verify_purchase_code( $purchase_code );
-
-					if ( $verification_result === 'yes' ) {
-						$purchase_code_status = '1';
-					} else if ( $verification_result === 'no' ) {
-						$purchase_code_status = '2';
-					} else if ( $verification_result === 'error' ) {
-						$purchase_code_status = '3';
-					}
-				}
-
-				update_option( 'grid_accordion_purchase_code_status', $purchase_code_status );
 			}
 		}
 		

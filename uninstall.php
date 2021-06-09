@@ -37,9 +37,6 @@ function bqw_grid_accordion_delete_all_data() {
 	delete_option( 'grid_accordion_load_stylesheets' );
 	delete_option( 'grid_accordion_load_custom_css_js' );
 	delete_option( 'grid_accordion_load_unminified_scripts' );
-	delete_option( 'grid_accordion_purchase_code' );
-	delete_option( 'grid_accordion_purchase_code_message' );
-	delete_option( 'grid_accordion_purchase_code_status' );
 	delete_option( 'grid_accordion_hide_inline_info' );
 	delete_option( 'grid_accordion_hide_getting_started_info' );
 	delete_option( 'grid_accordion_cache_expiry_interval' );
