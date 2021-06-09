@@ -15,7 +15,7 @@
                 <p><?php _e( 'The fields below can be used for all your custom CSS or JavaScript code.', 'grid-accordion' ); ?></p>
                 <p><?php _e( 'If you want to target a specific accordion, you need to assign a <i>Custom Class</i> to the accordion, in the accordion\'s settings, and then use that custom class in the <i>Custom CSS</i> or <i>Custom JavaScript</i> fields below.', 'grid-accordion' ); ?></p>
                 <p><?php _e( 'By default, the custom CSS and JavaScript code will be loaded inline, but in the', 'grid-accordion' ); ?> <a href="<?php echo admin_url('admin.php?page=grid-accordion-settings') ?>"><?php _e( 'Plugin Settings', 'grid-accordion' ); ?></a> <?php _e( 'page you can set to load the code in files instead of inline.', 'grid-accordion' ); ?></p>
-                <p><a href="https://www.youtube.com/watch?v=UUruvGnrIWk&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+                <p><a href="http://bqworks.net/grid-accordion/screencasts/#custom-css" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
             </div>
         </div>
     <?php

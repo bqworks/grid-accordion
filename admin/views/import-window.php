@@ -21,7 +21,7 @@
 		            
 		            <div class="info-content">
 		                <p><?php _e( 'In the field above you need to copy the new accordion\'s data, as it was exported. Then, click in the <i>Import</i> button.', 'grid-accordion' ); ?></p>
-		            	<p><a href="https://www.youtube.com/watch?v=HtLvqSPxVQE&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+		            	<p><a href="http://bqworks.net/grid-accordion/screencasts/#import-export" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
 		            </div>
 		        </div>
 		<?php

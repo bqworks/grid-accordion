@@ -12,13 +12,13 @@
 			<p><?php _e( 'The examples can be found in the <i>examples</i> folder, which is included in the plugin\'s folder, and can be imported using the <i>Import Accordion</i> button below.', 'grid-accordion' ); ?></p>
 			<p><?php _e( 'For quick usage instructions, please see the video tutorials below. For more detailed instructions, please see the', 'grid-accordion' ); ?> <a href="<?php echo admin_url('admin.php?page=grid-accordion-documentation'); ?>"><?php _e( 'Documentation', 'grid-accordion' ); ?></a> <?php _e( 'page.', 'grid-accordion' ); ?></p>
 			<ul class="video-tutorials-list">
-				<li><a href="https://www.youtube.com/watch?v=XqeHLv052Bc&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '1. Create and publish accordions', 'grid-accordion' ); ?></a></li>
-				<li><a href="https://www.youtube.com/watch?v=00SK6lwTlBg&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '2. Create accordions from posts', 'grid-accordion' ); ?></a></li>
-				<li><a href="https://www.youtube.com/watch?v=y1hr3PSJdGQ&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '3. Create accordions from galleries', 'grid-accordion' ); ?></a></li>
-				<li><a href="https://www.youtube.com/watch?v=T0gvsDDnzqw&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '4. Working with layers', 'grid-accordion' ); ?></a></li>
-				<li><a href="https://www.youtube.com/watch?v=UUruvGnrIWk&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '5. Adding custom CSS', 'grid-accordion' ); ?></a></li>
-				<li><a href="https://www.youtube.com/watch?v=4hJac-xPQ5M&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '6. Working with breakpoints', 'grid-accordion' ); ?></a></li>
-				<li><a href="https://www.youtube.com/watch?v=HtLvqSPxVQE&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( '7. Import and Export accordions', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#simple-accordion" target="_blank"><?php _e( '1. Create and publish accordions', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#accordion-from-posts" target="_blank"><?php _e( '2. Create accordions from posts', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#accordion-from-gallery" target="_blank"><?php _e( '3. Create accordions from galleries', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#working-with-layers" target="_blank"><?php _e( '4. Working with layers', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#custom-css" target="_blank"><?php _e( '5. Adding custom CSS', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#working-with-breakpoints" target="_blank"><?php _e( '6. Working with breakpoints', 'grid-accordion' ); ?></a></li>
+				<li><a href="http://bqworks.net/grid-accordion/screencasts/#import-export" target="_blank"><?php _e( '7. Import and Export accordions', 'grid-accordion' ); ?></a></li>
 			</ul>
 
 			<a href="#" class="getting-started-close">Close</a>

@@ -60,7 +60,7 @@
 				<div class="info-content">
 					<div class="no-layers-info">
 						<p><?php _e( 'To add a new layer, hover on the plus sign above and select a layer type.', 'grid-accordion' ); ?></p>
-						<p><a href="https://www.youtube.com/watch?v=T0gvsDDnzqw&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+						<p><a href="http://bqworks.net/grid-accordion/screencasts/#working-with-layers" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
 					</div>
 
         			<div class="has-layers-info">
@@ -68,7 +68,7 @@
 		                <p><?php _e( 'The <i>Position</i> setting allows you to set the reference point for the layer\'s horizontal and vertical position. The <i>Horizontal</i> and <i>Vertical</i> settings can be set to fixed or percentage values. Also, in order to center a layer, you can set the <i>Horizontal</i> and/or <i>Vertical</i> settings to <i>center</i>. The <i>Width</i> and <i>Height</i> settings can be set to fixed or percentage values, or to <i>auto</i>.', 'grid-accordion' ); ?></p>
 						<p><?php _e( 'To style the layer, you can select one or more of the <i>Preset Styles</i>, or assign it a <i>Custom Class</i> and add some', 'grid-accordion' ); ?> <a target="_blank" href="<?php echo admin_url( 'admin.php?page=grid-accordion-custom' ); ?>"><?php _e( 'custom CSS', 'grid-accordion' ); ?></a> <?php _e( 'for it.', 'grid-accordion' ); ?></p>
 						<p><?php _e( '<strong>Note:</strong> The style of <i>Paragraph</i>, <i>Heading</i> or <i>Image</i> layers might be affected by the theme\'s CSS code when you publish the accordion in a page. More details in the', 'grid-accordion' ); ?> <a target="_blank" href="<?php echo admin_url( 'admin.php?page=grid-accordion-documentation' ); ?>"><?php _e( 'Troubleshooting chapter', 'grid-accordion' ); ?></a>.</p>
-						<p><a href="https://www.youtube.com/watch?v=T0gvsDDnzqw&list=PLh-6IaZNuPo7Skwefhb9T2CSazDjC56Lg" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+						<p><a href="http://bqworks.net/grid-accordion/screencasts/#working-with-layers" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
 						
 						<?php
 							if ( $content_type === 'posts' || $content_type === 'gallery' || $content_type === 'flickr' ) {
