@@ -49,8 +49,6 @@ add_action( 'widgets_init', 'bqw_ga_register_widget' );
 if ( is_admin() ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-grid-accordion-admin.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-grid-accordion-updates.php' );
-	require_once( plugin_dir_path( __FILE__ ) . 'includes/class-grid-accordion-api.php' );
 	add_action( 'plugins_loaded', array( 'BQW_Grid_Accordion_Admin', 'get_instance' ) );
-	add_action( 'plugins_loaded', array( 'BQW_Grid_Accordion_API', 'get_instance' ) );
 	add_action( 'admin_init', array( 'BQW_Grid_Accordion_Updates', 'get_instance' ) );
 }
