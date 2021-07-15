@@ -76,6 +76,7 @@ class BQW_Grid_Accordion_Admin {
 		add_action( 'wp_ajax_grid_accordion_get_taxonomies', array( $this, 'ajax_get_taxonomies' ) );
 		add_action( 'wp_ajax_grid_accordion_clear_all_cache', array( $this, 'ajax_clear_all_cache' ) );
 		add_action( 'wp_ajax_grid_accordion_getting_started_close', array( $this, 'ajax_getting_started_close' ) );
+		add_action( 'wp_ajax_grid_accordion_close_custom_css_js_warning', array( $this, 'ajax_close_custom_css_js_warning' ) );
 	}
 
 	/**
@@ -121,23 +122,7 @@ class BQW_Grid_Accordion_Admin {
 			wp_enqueue_style( $this->plugin_slug . '-video-js-style', plugins_url( 'public/assets/libs/video-js/video-js.min.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 
 			if ( get_option( 'grid_accordion_is_custom_css') == true ) {
-				if ( get_option( 'grid_accordion_load_custom_css_js' ) === 'in_files' ) {
-					global $blog_id;
-					$file_suffix = '';
-
-					if ( ! is_main_site( $blog_id ) ) {
-						$file_suffix = '-' . $blog_id;
-					}
-
-					$custom_css_path = plugins_url( 'grid-accordion-custom/custom' . $file_suffix . '.css' );
-					$custom_css_dir_path = WP_PLUGIN_DIR . '/grid-accordion-custom/custom' . $file_suffix . '.css';
-
-					if ( file_exists( $custom_css_dir_path ) ) {
-						wp_enqueue_style( $this->plugin_slug . '-plugin-custom-style', $custom_css_path, array(), BQW_Grid_Accordion::VERSION );
-					}
-				} else {
-					wp_add_inline_style( $this->plugin_slug . '-plugin-style', stripslashes( get_option( 'grid_accordion_custom_css' ) ) );
-				}
+				wp_add_inline_style( $this->plugin_slug . '-plugin-style', stripslashes( get_option( 'grid_accordion_custom_css' ) ) );
 			}
 		}
 	}
@@ -145,7 +130,7 @@ class BQW_Grid_Accordion_Admin {
 	/**
 	 * Loads the admin JS files.
 	 *
-	 * It loads the public and admin JS, and also the public custom JS.
+	 * It loads the public and admin JS.
 	 * Also, it passes the PHP variables to the admin JS file.
 	 *
 	 * @since 1.0.0
@@ -174,22 +159,6 @@ class BQW_Grid_Accordion_Admin {
 
 			wp_enqueue_script( $this->plugin_slug . '-easing-script', plugins_url( 'public/assets/libs/easing/jquery.easing.1.3.min.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 			wp_enqueue_script( $this->plugin_slug . '-video-js-script', plugins_url( 'public/assets/libs/video-js/video.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
-
-			if ( get_option( 'grid_accordion_is_custom_js' ) == true && get_option( 'grid_accordion_load_custom_css_js' ) === 'in_files' ) {
-				global $blog_id;
-				$file_suffix = '';
-
-				if ( ! is_main_site( $blog_id ) ) {
-					$file_suffix = '-' . $blog_id;
-				}
-
-				$custom_js_path = plugins_url( 'grid-accordion-custom/custom' . $file_suffix . '.js' );
-				$custom_js_dir_path = WP_PLUGIN_DIR . '/grid-accordion-custom/custom' . $file_suffix . '.js';
-
-				if ( file_exists( $custom_js_dir_path ) ) {
-					wp_enqueue_script( $this->plugin_slug . '-plugin-custom-script', $custom_js_path, array(), BQW_Grid_Accordion::VERSION );
-				}
-			}
 
 			$id = isset( $_GET['id'] ) ? $_GET['id'] : -1;
 
@@ -249,15 +218,6 @@ class BQW_Grid_Accordion_Admin {
 			$access,
 			$this->plugin_slug . '-new',
 			array( $this, 'render_new_accordion_page' )
-		);
-
-		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
-			$this->plugin_slug,
-			__( 'Custom CSS and JavaScript', $this->plugin_slug ),
-			__( 'Custom CSS & JS', $this->plugin_slug ),
-			$access,
-			$this->plugin_slug . '-custom',
-			array( $this, 'render_custom_css_js_page' )
 		);
 
 		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
@@ -335,51 +295,6 @@ class BQW_Grid_Accordion_Admin {
 	}
 
 	/**
-	 * Renders the custom CSS and JavaScript page.
-	 *
-	 * It also checks if new data was posted, and saves
-	 * it in the options table.
-	 * 
-	 * @since 1.0.0
-	 */
-	public function render_custom_css_js_page() {
-		$custom_css = get_option( 'grid_accordion_custom_css', '' );
-		$custom_js = get_option( 'grid_accordion_custom_js', '' );
-
-		if ( isset( $_POST['custom_css_update'] ) || isset( $_POST['custom_js_update'] ) ) {
-			check_admin_referer( 'custom-css-js-update', 'custom-css-js-nonce' );
-
-			if ( isset( $_POST['custom_css'] ) ) {
-				$custom_css = $_POST['custom_css'];
-				update_option( 'grid_accordion_custom_css', $custom_css );
-
-				if ( $custom_css !== '' ) {
-					update_option( 'grid_accordion_is_custom_css', true );
-				} else {
-					update_option( 'grid_accordion_is_custom_css', false );
-				}
-			}
-
-			if ( isset( $_POST['custom_js'] ) ) {
-				$custom_js = $_POST['custom_js'];
-				update_option( 'grid_accordion_custom_js', $custom_js );
-
-				if ( $custom_js !== '' ) {
-					update_option( 'grid_accordion_is_custom_js', true );
-				} else {
-					update_option( 'grid_accordion_is_custom_js', false );
-				}
-			}
-
-			if ( get_option( 'grid_accordion_load_custom_css_js' ) === 'in_files' ) {
-				$this->save_custom_css_js_in_files( $custom_css, $custom_js );
-			}
-		}
-
-		include_once( 'views/custom-css-js.php' );
-	}
-
-	/**
 	 * Renders the plugin settings page.
 	 *
 	 * It also checks if new data was posted, and saves
@@ -390,7 +305,6 @@ class BQW_Grid_Accordion_Admin {
 	public function render_plugin_settings_page() {
 		$plugin_settings = BQW_Grid_Accordion_Settings::getPluginSettings();
 		$load_stylesheets = get_option( 'grid_accordion_load_stylesheets', $plugin_settings['load_stylesheets']['default_value'] );
-		$load_custom_css_js = get_option( 'grid_accordion_load_custom_css_js', $plugin_settings['load_custom_css_js']['default_value'] );
 		$load_unminified_scripts = get_option( 'grid_accordion_load_unminified_scripts', $plugin_settings['load_unminified_scripts']['default_value'] );
 		$cache_expiry_interval = get_option( 'grid_accordion_cache_expiry_interval', $plugin_settings['cache_expiry_interval']['default_value'] );
 		$hide_inline_info = get_option( 'grid_accordion_hide_inline_info', $plugin_settings['hide_inline_info']['default_value'] );
@@ -403,11 +317,6 @@ class BQW_Grid_Accordion_Admin {
 			if ( isset( $_POST['load_stylesheets'] ) ) {
 				$load_stylesheets = $_POST['load_stylesheets'];
 				update_option( 'grid_accordion_load_stylesheets', $load_stylesheets );
-			}
-
-			if ( isset( $_POST['load_custom_css_js'] ) ) {
-				$load_custom_css_js = $_POST['load_custom_css_js'];
-				update_option( 'grid_accordion_load_custom_css_js', $load_custom_css_js );
 			}
 
 			if ( isset( $_POST['load_unminified_scripts'] ) ) {
@@ -455,49 +364,6 @@ class BQW_Grid_Accordion_Admin {
 	 */
 	public function render_documentation_page() {
 		echo '<iframe class="grid-accordion-documentation" src="' . plugins_url( 'documentation/documentation.html', dirname( __FILE__ ) ) . '" width="100%" height="100%"></iframe>';
-	}
-
-	/**
-	 * Add the custom CSS and JS in files, using the WP Filesystem API.
-	 *
-	 * @since 1.0.0
-	 * 
-	 * @param  string $custom_css The custom CSS.
-	 * @param  string $custom_js  The custom JavaScript.
-	 */
-	private function save_custom_css_js_in_files ( $custom_css, $custom_js ) {
-		$url = wp_nonce_url( 'admin.php?page=grid-accordion-custom', 'custom-css-js-update', 'custom-css-js-nonce' );
-		$context = WP_PLUGIN_DIR;
-
-		// get the credentials and if there aren't any credentials stored,
-		// display a form for the user to provide the credentials
-		if ( ( $credentials = request_filesystem_credentials( $url, '', false, $context, null ) ) === false  ) {			
-			return;
-		}
-
-		// check the credentials if they are valid
-		// if they aren't, display the form again
-		if ( ! WP_Filesystem( $credentials, $context ) ) {
-			request_filesystem_credentials( $url, '', true, $context, null );
-			return;
-		}
-
-		global $wp_filesystem;
-
-		// create the 'grid-accordion-custom' folder if it doesn't exist
-		if ( ! $wp_filesystem->exists( $context . '/grid-accordion-custom' ) ) {
-			$wp_filesystem->mkdir( $context . '/grid-accordion-custom' );
-		}
-
-		global $blog_id;
-		$file_suffix = '';
-
-		if ( ! is_main_site( $blog_id ) ) {
-			$file_suffix = '-' . $blog_id;
-		}
-
-		$wp_filesystem->put_contents( $context . '/grid-accordion-custom/custom' . $file_suffix . '.css', stripslashes( $custom_css ), FS_CHMOD_FILE );
-		$wp_filesystem->put_contents( $context . '/grid-accordion-custom/custom' . $file_suffix . '.js', stripslashes( $custom_js ), FS_CHMOD_FILE );
 	}
 
 	/**
@@ -1265,6 +1131,17 @@ class BQW_Grid_Accordion_Admin {
 	public function ajax_getting_started_close() {
 		update_option( 'grid_accordion_hide_getting_started_info', true );
 
+		die();
+	}
+
+	/**
+	 * AJAX call for closing the Custom CSS & JS warning box.
+	 *
+	 * @since 1.9.0
+	 */
+	public function ajax_close_custom_css_js_warning() {
+		update_option( 'grid_accordion_hide_custom_css_js_warning', true );
+ 
 		die();
 	}
 }

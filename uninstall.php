@@ -42,6 +42,8 @@ function bqw_grid_accordion_delete_all_data() {
 	delete_option( 'grid_accordion_cache_expiry_interval' );
 	delete_option( 'grid_accordion_access' );
 	delete_option( 'grid_accordion_version' );
+	delete_option( 'grid_accordion_hide_custom_css_js_warning' );
+	delete_option( 'grid_accordion_hide_image_size_warning' );
 
 	delete_transient( 'grid_accordion_post_names' );
 	delete_transient( 'grid_accordion_posts_data' );
