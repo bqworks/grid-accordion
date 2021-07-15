@@ -111,12 +111,13 @@ class BQW_Grid_Accordion_Admin {
 			if ( get_option( 'grid_accordion_load_unminified_scripts' ) == true ) {
 				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'grid-accordion/admin/assets/css/grid-accordion-admin.css' ), array(), BQW_Grid_Accordion::VERSION );
 				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'grid-accordion/public/assets/css/grid-accordion.css' ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.css' ), array(), BQW_Grid_Accordion::VERSION );
 			} else {
 				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'grid-accordion/admin/assets/css/grid-accordion-admin.min.css' ), array(), BQW_Grid_Accordion::VERSION );
 				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'grid-accordion/public/assets/css/grid-accordion.min.css' ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.min.css' ), array(), BQW_Grid_Accordion::VERSION );
 			}
 
-			wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.css' ), array(), BQW_Grid_Accordion::VERSION );
 			wp_enqueue_style( $this->plugin_slug . '-video-js-style', plugins_url( 'grid-accordion/public/assets/libs/video-js/video-js.min.css' ), array(), BQW_Grid_Accordion::VERSION );
 
 			if ( get_option( 'grid_accordion_is_custom_css') == true ) {
@@ -164,13 +165,14 @@ class BQW_Grid_Accordion_Admin {
 			if ( get_option( 'grid_accordion_load_unminified_scripts' ) == true ) {
 				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'grid-accordion/admin/assets/js/grid-accordion-admin.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
 				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'grid-accordion/public/assets/js/jquery.gridAccordion.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.js' ), array(), BQW_Grid_Accordion::VERSION );
 			} else {
 				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'grid-accordion/admin/assets/js/grid-accordion-admin.min.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
 				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'grid-accordion/public/assets/js/jquery.gridAccordion.min.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.min.js' ), array(), BQW_Grid_Accordion::VERSION );
 			}
 
 			wp_enqueue_script( $this->plugin_slug . '-easing-script', plugins_url( 'grid-accordion/public/assets/libs/easing/jquery.easing.1.3.min.js' ), array(), BQW_Grid_Accordion::VERSION );
-			wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.pack.js' ), array(), BQW_Grid_Accordion::VERSION );
 			wp_enqueue_script( $this->plugin_slug . '-video-js-script', plugins_url( 'grid-accordion/public/assets/libs/video-js/video.js' ), array(), BQW_Grid_Accordion::VERSION );
 
 			if ( get_option( 'grid_accordion_is_custom_js' ) == true && get_option( 'grid_accordion_load_custom_css_js' ) === 'in_files' ) {

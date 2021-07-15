@@ -147,11 +147,12 @@ class BQW_Grid_Accordion {
 	public function register_styles() {
 		if ( get_option( 'grid_accordion_load_unminified_scripts' ) == true ) {
 			wp_register_style( $this->plugin_slug . '-plugin-style', plugins_url( 'grid-accordion/public/assets/css/grid-accordion.css' ), array(), self::VERSION );
+			wp_register_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.css' ), array(), self::VERSION );
 		} else {
 			wp_register_style( $this->plugin_slug . '-plugin-style', plugins_url( 'grid-accordion/public/assets/css/grid-accordion.min.css' ), array(), self::VERSION );
+			wp_register_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.min.css' ), array(), self::VERSION );
 		}
-
-		wp_register_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.css' ), array(), self::VERSION );
+		
 		wp_register_style( $this->plugin_slug . '-video-js-style', plugins_url( 'grid-accordion/public/assets/libs/video-js/video-js.min.css' ), array(), self::VERSION );
 	}
 
@@ -163,12 +164,13 @@ class BQW_Grid_Accordion {
 	public function register_scripts() {
 		if ( get_option( 'grid_accordion_load_unminified_scripts' ) == true ) {
 			wp_register_script( $this->plugin_slug . '-plugin-script', plugins_url( 'grid-accordion/public/assets/js/jquery.gridAccordion.js' ), array( 'jquery' ), self::VERSION );
+			wp_register_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.js' ), array(), self::VERSION );
 		} else {
 			wp_register_script( $this->plugin_slug . '-plugin-script', plugins_url( 'grid-accordion/public/assets/js/jquery.gridAccordion.min.js' ), array( 'jquery' ), self::VERSION );
+			wp_register_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.min.js' ), array(), self::VERSION );
 		}
 		
 		wp_register_script( $this->plugin_slug . '-easing-script', plugins_url( 'grid-accordion/public/assets/libs/easing/jquery.easing.1.3.min.js' ), array(), self::VERSION );
-		wp_register_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.pack.js' ), array(), self::VERSION );
 		wp_register_script( $this->plugin_slug . '-video-js-script', plugins_url( 'grid-accordion/public/assets/libs/video-js/video.js' ), array(), self::VERSION );
 	}
 
