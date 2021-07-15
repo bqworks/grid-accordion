@@ -109,16 +109,16 @@ class BQW_Grid_Accordion_Admin {
 
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffixes ) ) {
 			if ( get_option( 'grid_accordion_load_unminified_scripts' ) == true ) {
-				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'grid-accordion/admin/assets/css/grid-accordion-admin.css' ), array(), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'grid-accordion/public/assets/css/grid-accordion.css' ), array(), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.css' ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'admin/assets/css/grid-accordion-admin.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'public/assets/css/grid-accordion.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'public/assets/libs/fancybox/jquery.fancybox.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 			} else {
-				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'grid-accordion/admin/assets/css/grid-accordion-admin.min.css' ), array(), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'grid-accordion/public/assets/css/grid-accordion.min.css' ), array(), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.min.css' ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'admin/assets/css/grid-accordion-admin.min.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'public/assets/css/grid-accordion.min.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'public/assets/libs/fancybox/jquery.fancybox.min.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 			}
 
-			wp_enqueue_style( $this->plugin_slug . '-video-js-style', plugins_url( 'grid-accordion/public/assets/libs/video-js/video-js.min.css' ), array(), BQW_Grid_Accordion::VERSION );
+			wp_enqueue_style( $this->plugin_slug . '-video-js-style', plugins_url( 'public/assets/libs/video-js/video-js.min.css', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 
 			if ( get_option( 'grid_accordion_is_custom_css') == true ) {
 				if ( get_option( 'grid_accordion_load_custom_css_js' ) === 'in_files' ) {
@@ -163,17 +163,17 @@ class BQW_Grid_Accordion_Admin {
 			}
 			
 			if ( get_option( 'grid_accordion_load_unminified_scripts' ) == true ) {
-				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'grid-accordion/admin/assets/js/grid-accordion-admin.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'grid-accordion/public/assets/js/jquery.gridAccordion.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.js' ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'admin/assets/js/grid-accordion-admin.js', dirname( __FILE__ ) ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'public/assets/js/jquery.gridAccordion.js', dirname( __FILE__ ) ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'public/assets/libs/fancybox/jquery.fancybox.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 			} else {
-				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'grid-accordion/admin/assets/js/grid-accordion-admin.min.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'grid-accordion/public/assets/js/jquery.gridAccordion.min.js' ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
-				wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'grid-accordion/public/assets/libs/fancybox/jquery.fancybox.min.js' ), array(), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'admin/assets/js/grid-accordion-admin.min.js', dirname( __FILE__ ) ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'public/assets/js/jquery.gridAccordion.min.js', dirname( __FILE__ ) ), array( 'jquery' ), BQW_Grid_Accordion::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'public/assets/libs/fancybox/jquery.fancybox.min.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 			}
 
-			wp_enqueue_script( $this->plugin_slug . '-easing-script', plugins_url( 'grid-accordion/public/assets/libs/easing/jquery.easing.1.3.min.js' ), array(), BQW_Grid_Accordion::VERSION );
-			wp_enqueue_script( $this->plugin_slug . '-video-js-script', plugins_url( 'grid-accordion/public/assets/libs/video-js/video.js' ), array(), BQW_Grid_Accordion::VERSION );
+			wp_enqueue_script( $this->plugin_slug . '-easing-script', plugins_url( 'public/assets/libs/easing/jquery.easing.1.3.min.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
+			wp_enqueue_script( $this->plugin_slug . '-video-js-script', plugins_url( 'public/assets/libs/video-js/video.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 
 			if ( get_option( 'grid_accordion_is_custom_js' ) == true && get_option( 'grid_accordion_load_custom_css_js' ) === 'in_files' ) {
 				global $blog_id;
@@ -196,7 +196,7 @@ class BQW_Grid_Accordion_Admin {
 			wp_localize_script( $this->plugin_slug . '-admin-script', 'ga_js_vars', array(
 				'admin' => admin_url( 'admin.php' ),
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'plugin' => plugins_url( 'grid-accordion' ),
+				'plugin' => plugins_url( '', dirname( __FILE__ ) ),
 				'page' => isset( $_GET['page'] ) && ( $_GET['page'] === 'grid-accordion-new' || ( isset( $_GET['id'] ) && isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) ) ? 'single' : 'all',
 				'id' => $id,
 				'lad_nonce' => wp_create_nonce( 'load-accordion-data' . $id ),
@@ -230,7 +230,7 @@ class BQW_Grid_Accordion_Admin {
 			$access,
 			$this->plugin_slug,
 			array( $this, 'render_accordion_page' ),
-			plugins_url( '/grid-accordion/admin/assets/css/images/ga-icon.png' )
+			plugins_url( 'admin/assets/css/images/ga-icon.png', dirname( __FILE__ ) )
 		);
 
 		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
@@ -454,7 +454,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function render_documentation_page() {
-		echo '<iframe class="grid-accordion-documentation" src="' . plugins_url( 'grid-accordion/documentation/documentation.html' ) . '" width="100%" height="100%"></iframe>';
+		echo '<iframe class="grid-accordion-documentation" src="' . plugins_url( 'documentation/documentation.html', dirname( __FILE__ ) ) . '" width="100%" height="100%"></iframe>';
 	}
 
 	/**
