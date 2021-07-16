@@ -450,8 +450,6 @@
 				'</div>'
 			).appendTo( 'body' );
 
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
-
 			dialog.find( '.dialog-ok' ).one( 'click', function( event ) {
 				event.preventDefault();
 
@@ -670,8 +668,6 @@
 					'		</div>' +
 					'	</div>' +
 					'</div>').appendTo( 'body' );
-
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
 
 			dialog.find( '.dialog-ok' ).one( 'click', function( event ) {
 				event.preventDefault();
@@ -1580,8 +1576,6 @@
 		init: function() {
 			var that = this;
 
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
-
 			this.$editor = $( '.background-image-editor' );
 
 			this.$editor.find( '.close-x' ).on( 'click', function( event ) {
@@ -1603,6 +1597,22 @@
 			this.$editor.find( 'input[name="background_source"]' ).on( 'input', function( event ) {
 				that.needsPreviewUpdate = true;
 			});
+
+			$( window ).on( 'resize.backgroundImageEditor', function() {
+				if ( that.$editor.find( '.modal-window' ).outerWidth() >= $( window ).width() ) {
+					that.$editor.addClass( 'modal-window-left' );
+				} else {
+					that.$editor.removeClass( 'modal-window-left' );
+				}
+
+				if ( that.$editor.find( '.modal-window' ).outerHeight() >= $( window ).height() ) {
+					that.$editor.addClass( 'modal-window-top' );
+				} else {
+					that.$editor.removeClass( 'modal-window-top' );
+				}
+			});
+
+			$( window ).trigger( 'resize.backgroundImageEditor' );
 		},
 
 		/**
@@ -1730,6 +1740,7 @@
 			this.$editor.find( '.retina-loader' ).off( 'click' );
 			this.$editor.find( '.clear-fieldset' ).off( 'click' );
 			this.$editor.find( 'input[name="background_source"]' ).off( 'input' );
+			$( window ).off( 'resize.backgroundImageEditor' );
 
 			$( 'body' ).find( '.modal-overlay, .modal-window-container' ).remove();
 		}
@@ -1799,8 +1810,6 @@
 		 */
 		init: function() {
 			var that = this;
-
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
 
 			this.$editor = $( '.html-editor' );
 
@@ -1942,8 +1951,6 @@
 		init: function() {
 			var that = this;
 
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
-
 			this.counter = 0;
 
 			this.$editor = $( '.layers-editor' );
@@ -1952,6 +1959,20 @@
 				event.preventDefault();
 				that.save();
 				that.close();
+			});
+
+			$( window ).on( 'resize.layersEditor', function() {
+				if ( that.$editor.find( '.modal-window' ).outerWidth() >= $( window ).width() ) {
+					that.$editor.addClass( 'modal-window-left' );
+				} else {
+					that.$editor.removeClass( 'modal-window-left' );
+				}
+
+				if ( that.$editor.find( '.modal-window' ).outerHeight() >= $( window ).height() ) {
+					that.$editor.addClass( 'modal-window-top' );
+				} else {
+					that.$editor.removeClass( 'modal-window-top' );
+				}
 			});
 
 			this.$editor.find( '.add-layer-group' ).on( 'click', function( event ) {
@@ -2031,6 +2052,8 @@
 			if ( this.layers.length !== 0 ) {
 				this.layers[ 0 ].triggerSelect();
 			}
+
+			$( window ).trigger( 'resize.layersEditor' );
 		},
 
 		/**
@@ -2204,6 +2227,8 @@
 					$( '<li class="list-layer" data-id="' + that.counter + '" data-position="' + that.layers.length + '">Layer ' + that.counter + '</li>' ).prependTo( that.$editor.find( '.list-layers' ) );
 
 					that.createLayer( { id: that.counter, type: type, createMode: 'new' } );
+
+					$( window ).trigger( 'resize.layersEditor' );
 				}
 			});
 		},
@@ -2292,6 +2317,8 @@
 					layerData.id = that.counter;
 					layerData.createMode = 'duplicate';
 					that.createLayer( layerData );
+
+					$( window ).trigger( 'resize.layersEditor' );
 				}
 			});
 		},
@@ -2326,6 +2353,7 @@
 			this.$editor.find( '.add-layer-group' ).off( 'click' );
 			this.$editor.find( '.delete-layer' ).off( 'click' );
 			this.$editor.find( '.duplicate-layer' ).off( 'click' );
+			$( window ).off( 'resize.layersEditor' );
 
 			$( '.list-layers' ).lightSortable( 'destroy' );
 
@@ -3266,8 +3294,6 @@
 		init: function() {
 			var that = this;
 
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
-
 			this.$editor = $( '.settings-editor' );
 			
 			this.$editor.find( '.close, .close-x' ).on( 'click', function( event ) {
@@ -3566,8 +3592,6 @@
 		init: function() {
 			var that = this;
 
-			$( '.modal-window-container' ).css( 'top', $( window ).scrollTop() );
-
 			this.previewWindow = $( '.preview-window .modal-window' );
 			this.accordion = this.previewWindow.find( '.grid-accordion' );
 
@@ -3601,6 +3625,18 @@
 
 				if ( isPercetageHeight === true ) {
 					that.previewWindow.css( 'height', $( window ).height() * ( parseInt( accordionHeight, 10 ) / 100 ) - 200 );
+				}
+
+				if ( that.previewWindow.outerWidth() >= $( window ).width() ) {
+					that.previewWindow.parent().addClass( 'modal-window-left' );
+				} else {
+					that.previewWindow.parent().removeClass( 'modal-window-left' );
+				}
+ 
+				if ( that.previewWindow.outerHeight() >= $( window ).height() - 40 ) {
+					that.previewWindow.parent().addClass( 'modal-window-top' );
+				} else {
+					that.previewWindow.parent().removeClass( 'modal-window-top' );
 				}
 			});
 
