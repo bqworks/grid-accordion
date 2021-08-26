@@ -65,9 +65,14 @@ When you select an image from the Media Library, in the right columns, under 'AT
 
 == Screenshots ==
 
-1. The list with all the created grid accordions.
-2. The user interface for creating and editing an accordion.
-3. The preview window in the admin area.
+1. Grid accordion with text layers.
+2. Simple grid accordion.
+3. Grid accordion with mixed content.
+4. The admin interface for creating and editing an accordion.
+5. The preview window in the admin area.
+6. The layer editor in the admin area.
+7. The background image editor in the admin area.
+8. Adding dynamic tags for accordions generated from posts.
 
 == Changelog ==
 
