@@ -33,6 +33,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/class-video-layer-renderer.p
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-grid-accordion-activation.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-grid-accordion-widget.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-grid-accordion-settings.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/class-grid-accordion-validation.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-flickr.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/class-hideable-gallery.php' );
 

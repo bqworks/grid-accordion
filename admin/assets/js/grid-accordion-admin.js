@@ -3601,21 +3601,21 @@
 
 			var accordionWidth = this.accordionData[ 'settings' ][ 'width' ],
 				accordionHeight = this.accordionData[ 'settings' ][ 'height' ],
-				isPercetageWidth = accordionWidth.indexOf( '%' ) !== -1,
-				isPercetageHeight = accordionHeight.indexOf( '%' ) !== -1;
+				isPercentageWidth = accordionWidth.toString().indexOf( '%' ) !== -1,
+				isPercentageHeight = accordionHeight.toString().indexOf( '%' ) !== -1;
 
-			if ( isPercetageWidth === true ) {
+			if ( isPercentageWidth === true ) {
 				this.accordion.gridAccordion('width', '100%');
 			} else {
 				accordionWidth = parseInt( accordionWidth, 10 );
 			}
 
-			if ( isPercetageHeight === true ) {
+			if ( isPercentageHeight === true ) {
 				this.accordion.gridAccordion('height', '100%');
 			}
 
 			$( window ).on( 'resize.gridAccordion', function() {
-				if ( isPercetageWidth === true ) {
+				if ( isPercentageWidth === true ) {
 					that.previewWindow.css( 'width', $( window ).width() * ( parseInt( accordionWidth, 10 ) / 100 ) - 100 );
 				} else if ( accordionWidth >= $( window ).width() - 100 ) {
 					that.previewWindow.css( 'width', $( window ).width() - 100 );
@@ -3623,7 +3623,7 @@
 					that.previewWindow.css( 'width', accordionWidth );
 				}
 
-				if ( isPercetageHeight === true ) {
+				if ( isPercentageHeight === true ) {
 					that.previewWindow.css( 'height', $( window ).height() * ( parseInt( accordionHeight, 10 ) / 100 ) - 200 );
 				}
 

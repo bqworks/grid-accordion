@@ -160,7 +160,7 @@ class BQW_Grid_Accordion_Admin {
 			wp_enqueue_script( $this->plugin_slug . '-easing-script', plugins_url( 'public/assets/libs/easing/jquery.easing.1.3.min.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 			wp_enqueue_script( $this->plugin_slug . '-video-js-script', plugins_url( 'public/assets/libs/video-js/video.js', dirname( __FILE__ ) ), array(), BQW_Grid_Accordion::VERSION );
 
-			$id = isset( $_GET['id'] ) ? $_GET['id'] : -1;
+			$id = isset( $_GET['id'] ) ? intval( $_GET['id'] ) : -1;
 
 			wp_localize_script( $this->plugin_slug . '-admin-script', 'ga_js_vars', array(
 				'admin' => admin_url( 'admin.php' ),
@@ -254,7 +254,7 @@ class BQW_Grid_Accordion_Admin {
 	 */
 	public function render_accordion_page() {
 		if ( isset( $_GET['id'] ) && isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) {
-			$accordion = $this->plugin->get_accordion( $_GET['id'] );
+			$accordion = $this->plugin->get_accordion( intval( $_GET['id'] ) );
 
 			if ( $accordion !== false ) {
 				$accordion_id = $accordion['id'];
@@ -315,8 +315,11 @@ class BQW_Grid_Accordion_Admin {
 			check_admin_referer( 'plugin-settings-update', 'plugin-settings-nonce' );
 
 			if ( isset( $_POST['load_stylesheets'] ) ) {
-				$load_stylesheets = $_POST['load_stylesheets'];
-				update_option( 'grid_accordion_load_stylesheets', $load_stylesheets );
+				$load_stylesheets = sanitize_text_field( $_POST['load_stylesheets'] );
+
+				if ( array_key_exists( $load_stylesheets , $plugin_settings['load_stylesheets']['available_values'] ) ) {
+					update_option( 'grid_accordion_load_stylesheets', $load_stylesheets );
+				}
 			}
 
 			if ( isset( $_POST['load_unminified_scripts'] ) ) {
@@ -328,7 +331,7 @@ class BQW_Grid_Accordion_Admin {
 			}
 
 			if ( isset( $_POST['cache_expiry_interval'] ) ) {
-				$cache_expiry_interval = $_POST['cache_expiry_interval'];
+				$cache_expiry_interval = intval( $_POST['cache_expiry_interval'] );
 				update_option( 'grid_accordion_cache_expiry_interval', $cache_expiry_interval );
 			}
 
@@ -349,8 +352,11 @@ class BQW_Grid_Accordion_Admin {
 			}
 
 			if ( isset( $_POST['access'] ) ) {
-				$access = $_POST['access'];
-				update_option( 'grid_accordion_access', $access );
+				$access = sanitize_text_field( $_POST['access'] );
+
+				if ( array_key_exists( $access, $plugin_settings['access']['available_values'] ) ) {
+					update_option( 'grid_accordion_access', $access );
+				}
 			}
 		}
 		
@@ -375,13 +381,13 @@ class BQW_Grid_Accordion_Admin {
 	 */
 	public function ajax_get_accordion_data() {
 		$nonce = $_GET['nonce'];
-		$id = $_GET['id'];
+		$id = intval( $_GET['id'] );
 
 		if ( ! wp_verify_nonce( $nonce, 'load-accordion-data' . $id ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
-		$accordion = $this->get_accordion_data( $_GET['id'] );
+		$accordion = $this->get_accordion_data( $id );
 
 		echo json_encode( $accordion );
 
@@ -410,10 +416,11 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_save_accordion() {
-		$accordion_data = json_decode( stripslashes( $_POST['data'] ), true );
-		$nonce = $accordion_data['nonce'];
-		$id = intval( $accordion_data['id'] );
-		$action = $accordion_data['action'];
+		$data = BQW_Grid_Accordion_Validation::validate_saved_data( json_decode( stripslashes( $_POST['data'] ), true ) );
+		$nonce = $data['nonce'];
+		$action = $data['action'];
+		$accordion_data = $data['accordion_data'];
+		$id = $accordion_data['id'];
 
 		if ( ! wp_verify_nonce( $nonce, 'save-accordion' . $id ) ) {
 			die( 'This action was stopped for security purposes.' );
@@ -422,7 +429,7 @@ class BQW_Grid_Accordion_Admin {
 		$accordion_id = $this->save_accordion( $accordion_data );
 
 		if ( $action === 'save' ) {
-			echo $accordion_id;
+			echo json_encode( $accordion_id );
 		} else if ( $action === 'import' ) {
 			$accordion_name = $accordion_data['name'];
 			$accordion_created = date( 'm-d-Y' );
@@ -452,7 +459,7 @@ class BQW_Grid_Accordion_Admin {
 	public function save_accordion( $accordion_data ) {
 		global $wpdb;
 
-		$id = intval( $accordion_data['id'] );
+		$id = $accordion_data['id'];
 		$panels_data = $accordion_data['panels'];
 
 		if ( $id === -1 ) {
@@ -541,8 +548,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_preview_accordion() {
-		$accordion = json_decode( stripslashes( $_POST['data'] ), true );
-		$accordion_name = $accordion['name'];
+		$accordion = BQW_Grid_Accordion_Validation::validate_grid_accordion_data( json_decode( stripslashes( $_POST['data'] ), true ) );
 		$accordion_output = $this->plugin->output_accordion( $accordion, false ) . $this->plugin->get_inline_scripts();
 
 		include( 'views/preview-window.php' );
@@ -563,7 +569,7 @@ class BQW_Grid_Accordion_Admin {
 	 */
 	public function ajax_duplicate_accordion() {
 		$nonce = $_POST['nonce'];
-		$original_accordion_id = $_POST['id'];
+		$original_accordion_id = intval( $_POST['id'] );
 
 		if ( ! wp_verify_nonce( $nonce, 'duplicate-accordion' . $original_accordion_id ) ) {
 			die( 'This action was stopped for security purposes.' );
@@ -697,7 +703,7 @@ class BQW_Grid_Accordion_Admin {
 	 * AJAX call for adding multiple or a single panel.
 	 *
 	 * If it receives any data, it tries to create multiple
-	 * panels by padding the data that was received, and if
+	 * panels by passing the data that was received, and if
 	 * it doesn't receive any data it tries to create a
 	 * single panel.
 	 *
@@ -705,7 +711,7 @@ class BQW_Grid_Accordion_Admin {
 	 */
 	public function ajax_add_panels() {
 		if ( isset( $_POST['data'] ) ) {
-			$panels_data = json_decode( stripslashes( $_POST['data'] ), true );
+			$panels_data = BQW_Grid_Accordion_Validation::validate_grid_accordion_panels( json_decode( stripslashes( $_POST['data'] ), true ) );
 
 			foreach ( $panels_data as $panel_data ) {
 				$this->create_panel( $panel_data );
@@ -729,8 +735,8 @@ class BQW_Grid_Accordion_Admin {
 	public function ajax_load_background_image_editor() {
 		$panel_default_settings = BQW_Grid_Accordion_Settings::getPanelSettings();
 
-		$data = json_decode( stripslashes( $_POST['data'] ), true );
-		$content_type = isset( $_POST['content_type'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
+		$data = reset( BQW_Grid_Accordion_Validation::validate_grid_accordion_panels( array( json_decode( stripslashes( $_POST['data'] ), true ) ) ) );
+		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
 		$content_class = $content_type === 'custom' ? 'custom' : 'dynamic';
 
 		include( 'views/background-image-editor.php' );
@@ -746,9 +752,31 @@ class BQW_Grid_Accordion_Admin {
 	public function ajax_load_html_editor() {
 		$panel_default_settings = BQW_Grid_Accordion_Settings::getPanelSettings();
 
-		$html_content = $_POST['data'];
-		$content_type = isset( $_POST['content_type'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
+		global $allowedposttags;
+ 
+		$allowed_html = array_merge(
+			$allowedposttags,
+			array(
+				'iframe' => array(
+					'src' => true,
+					'width' => true,
+					'height' => true,
+					'allow' => true,
+					'allowfullscreen' => true,
+					'class' => true,
+					'id' => true,
+					'data-*' => true
+				),
+				'source' => array(
+					'src' => true,
+					'type' => true
+				)
+			)
+		);
 
+		$html_content = wp_kses( $_POST['data'], $allowed_html );
+		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
+ 
 		include( 'views/html-editor.php' );
 
 		die();
@@ -763,9 +791,9 @@ class BQW_Grid_Accordion_Admin {
 		$panel_default_settings = BQW_Grid_Accordion_Settings::getPanelSettings();
 		$layer_default_settings = BQW_Grid_Accordion_Settings::getLayerSettings();
 
-		$layers = json_decode( stripslashes( $_POST['data'] ), true );
-		$content_type = isset( $_POST['content_type'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
-		
+		$layers = BQW_Grid_Accordion_Validation::validate_panel_layers( json_decode( stripslashes( $_POST['data'] ), true ) );
+		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
+	
 		include( 'views/layers-editor.php' );
 
 		die();
@@ -780,37 +808,59 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_add_layer_settings() {
+		$layer_default_settings = BQW_Grid_Accordion_Settings::getLayerSettings();
 		$layer = array();
-		$layer_id = $_POST['id'];
-		$layer_type = $_POST['type'];
+		$layer_id = intval( $_POST['id'] );
+		$layer_type = isset( $_POST['type'] ) && array_key_exists( $_POST['type'], $layer_default_settings['type']['available_values'] ) ? $_POST['type'] : $layer_default_settings['type']['default_value'];
 		$layer_settings;
+		global $allowedposttags;
 
 		if ( isset( $_POST['settings'] ) ) {
-			$layer_settings = json_decode( stripslashes( $_POST['settings'] ), true );
+			$layer_settings = BQW_Grid_Accordion_Validation::validate_layer_settings( json_decode( stripslashes( $_POST['settings'] ), true ) );
 		}
 
 		if ( isset( $_POST['text'] ) ) {
-			$layer['text'] = $_POST['text'];
+			$allowed_html = array_merge(
+				$allowedposttags,
+				array(
+					'iframe' => array(
+						'src' => true,
+						'width' => true,
+						'height' => true,
+						'allow' => true,
+						'allowfullscreen' => true,
+						'class' => true,
+						'id' => true,
+						'data-*' => true
+					),
+					'source' => array(
+						'src' => true,
+						'type' => true
+					)
+				)
+			);
+ 
+			$layer['text'] = wp_kses( $_POST['text'], $allowed_html );
 		}
 
 		if ( isset( $_POST['heading_type'] ) ) {
-			$layer['heading_type'] = $_POST['heading_type'];
+			$layer['heading_type'] = array_key_exists( $_POST['heading_type'], $layer_default_settings['heading_type']['available_values'] ) ? $_POST['heading_type'] : $layer_default_settings['heading_type']['default_value'];
 		}
 
 		if ( isset( $_POST['image_source'] ) ) {
-			$layer['image_source'] = $_POST['image_source'];
+			$layer['image_source'] = sanitize_text_field( $_POST['image_source'] );
 		}
 
 		if ( isset( $_POST['image_alt'] ) ) {
-			$layer['image_alt'] = $_POST['image_alt'];
+			$layer['image_alt'] = sanitize_text_field( $_POST['image_alt'] );
 		}
 
 		if ( isset( $_POST['image_link'] ) ) {
-			$layer['image_link'] = $_POST['image_link'];
+			$layer['image_link'] = sanitize_text_field( $_POST['image_link'] );
 		}
 
 		if ( isset( $_POST['image_retina'] ) ) {
-			$layer['image_retina'] = $_POST['image_retina'];
+			$layer['image_retina'] = sanitize_text_field( $_POST['image_retina'] );
 		}
 
 		$layer_default_settings = BQW_Grid_Accordion_Settings::getLayerSettings();
@@ -826,12 +876,10 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_load_settings_editor() {
-		$panel_settings = json_decode( stripslashes( $_POST['data'] ), true );
-
 		$panel_default_settings = BQW_Grid_Accordion_Settings::getPanelSettings();
-
-		$content_type = isset( $panel_settings['content_type'] ) ? $panel_settings['content_type'] : $panel_default_settings['content_type']['default_value'];
-
+		$panel_settings = BQW_Grid_Accordion_Validation::validate_panel_settings( json_decode( stripslashes( $_POST['data'] ), true ) );
+		$content_type = isset( $panel_settings['content_type'] ) && array_key_exists( $panel_settings['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $panel_settings['content_type'] : $panel_default_settings['content_type']['default_value'];
+ 
 		include( 'views/settings-editor.php' );
 
 		die();
@@ -847,8 +895,8 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_load_content_type_settings() {
-		$type = $_POST['type'];
-		$panel_settings = json_decode( stripslashes( $_POST['data'] ), true );
+		$type = isset( $_POST['type'] ) && array_key_exists( $_POST['type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['type'] : $panel_default_settings['content_type']['default_value'];
+		$panel_settings = BQW_Grid_Accordion_Validation::validate_panel_settings( json_decode( stripslashes( $_POST['data'] ), true ) );
 
 		echo $this->load_content_type_settings( $type, $panel_settings );
 
@@ -931,7 +979,12 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_get_taxonomies() {
-		$post_names = json_decode( stripslashes( $_GET['post_names'] ), true );
+		$post_names_raw = json_decode( stripslashes( $_GET['post_names'] ), true );
+		$post_names = array();
+ 
+		foreach ( $post_names_raw as $post_name ) {
+			array_push( $post_names, sanitize_text_field( $post_name ) );
+		}
 
 		echo json_encode( $this->get_taxonomies_for_posts( $post_names ) );
 
@@ -1016,7 +1069,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_add_breakpoint() {
-		$width = $_GET['data'];
+		$width = floatval( $_GET['data'] );
 
 		include( 'views/breakpoint.php' );
 
@@ -1029,7 +1082,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_add_breakpoint_setting() {
-		$setting_name = $_GET['data'];
+		$setting_name = sanitize_text_field( $_GET['data'] );
 
 		echo $this->create_breakpoint_setting( $setting_name, false );
 
@@ -1058,10 +1111,10 @@ class BQW_Grid_Accordion_Admin {
             $setting_html = '
             	<tr>
             		<td>
-            			<label data-info="' . $setting['description'] . '" for="breakpoint-' . $name . '-' . $uid . '">' . $setting['label'] . '</label>
+            			<label data-info="' . wp_kses_post( $setting['description'] ) . '" for="breakpoint-' . esc_attr( $name ) . '-' . $uid . '">' . esc_html( $setting['label'] ) . '</label>
             		</td>
             		<td class="setting-cell">
-            			<input id="breakpoint-' . $name . '-' . $uid . '" class="breakpoint-setting" type="text" name="' . $name . '" value="' . esc_attr( $setting_value ) . '" />
+            			<input id="breakpoint-' . esc_attr( $name ) . '-' . $uid . '" class="breakpoint-setting" type="text" name="' . esc_attr( $name ) . '" value="' . esc_attr( $setting_value ) . '" />
             			<span class="remove-breakpoint-setting"></span>
             		</td>
             	</tr>';
@@ -1069,10 +1122,10 @@ class BQW_Grid_Accordion_Admin {
             $setting_html = '
             	<tr>
             		<td>
-            			<label data-info="' . $setting['description'] . '" for="breakpoint-' . $name . '-' . $uid . '">' . $setting['label'] . '</label>
+            			<label data-info="' . wp_kses_post( $setting['description'] ) . '" for="breakpoint-' . esc_attr( $name ) . '-' . $uid . '">' . esc_html( $setting['label'] ) . '</label>
             		</td>
             		<td class="setting-cell">
-            			<input id="breakpoint-' . $name . '-' . $uid . '" class="breakpoint-setting" type="checkbox" name="' . $name . '"' . ( $setting_value === true ? ' checked="checked"' : '' ) . ' />
+            			<input id="breakpoint-' . esc_attr( $name ) . '-' . $uid . '" class="breakpoint-setting" type="checkbox" name="' . esc_attr( $name ) . '"' . ( $setting_value === true ? ' checked="checked"' : '' ) . ' />
             			<span class="remove-breakpoint-setting"></span>
             		</td>
             	</tr>';
@@ -1080,13 +1133,13 @@ class BQW_Grid_Accordion_Admin {
             $setting_html ='
             	<tr>
             		<td>
-            			<label data-info="' . $setting['description'] . '" for="breakpoint-' . $name . '-' . $uid . '">' . $setting['label'] . '</label>
+            			<label data-info="' . wp_kses_post( $setting['description'] ) . '" for="breakpoint-' . esc_attr( $name ) . '-' . $uid . '">' . esc_html( $setting['label'] ) . '</label>
             		</td>
             		<td class="setting-cell">
             			<select id="breakpoint-' . $name . '-' . $uid . '" class="breakpoint-setting" name="' . $name . '">';
             
             foreach ( $setting['available_values'] as $value_name => $value_label ) {
-                $setting_html .= '<option value="' . $value_name . '"' . ( $setting_value == $value_name ? ' selected="selected"' : '' ) . '>' . $value_label . '</option>';
+                $setting_html .= '<option value="' . esc_attr( $value_name ) . '"' . ( $setting_value == $value_name ? ' selected="selected"' : '' ) . '>' . esc_html( $value_label ) . '</option>';
             }
             
             $setting_html .= '

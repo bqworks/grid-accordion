@@ -6,7 +6,7 @@
 					<label><?php _e( 'Window width:', 'grid-accordion' ); ?></label>
 				</th>
 				<th>
-					<input type="text" name="breakpoint_width" value="<?php echo isset( $breakpoint_settings['breakpoint_width'] ) ? esc_attr( $breakpoint_settings['breakpoint_width'] ) : ( isset( $width ) ? $width : '' ); ?>" />
+					<input type="text" name="breakpoint_width" value="<?php echo isset( $breakpoint_settings['breakpoint_width'] ) ? esc_attr( $breakpoint_settings['breakpoint_width'] ) : ( isset( $width ) ? esc_attr( $width ) : '' ); ?>" />
 					
 					
 
@@ -36,7 +36,7 @@
 				foreach ( $default_breakpoint_settings as $setting_name ) {
 					if ( $setting_name !== 'breakpoint_width' ) {
 						$setting = BQW_Grid_Accordion_Settings::getSettings( $setting_name );
-						echo '<li><a href="#" data-type="' . $setting_name . '">' . $setting['label'] . '</a></li>';
+						echo '<li><a href="#" data-type="' . esc_attr( $setting_name ) . '">' . esc_html( $setting['label'] ) . '</a></li>';
 					}
 				}
 			?>

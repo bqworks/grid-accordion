@@ -117,14 +117,14 @@ class BQW_Grid_Accordion_Settings {
 				'width' => array(
 					'js_name' => 'width',
 					'label' => __( 'Width', 'grid-accordion' ),
-					'type' => 'number',
+					'type' => 'mixed',
 					'default_value' => 800,
 					'description' => __( 'Sets the width of the accordion. Can be set to a fixed value, like 900 (indicating 900 pixels), or to a percentage value, like 100%. In order to make the accordion responsive, it\'s not necessary to use percentage values. More about this in the description of the Responsive option.', 'grid-accordion' )
 				),
 				'height' => array(
 					'js_name' => 'height',
 					'label' => __( 'Height', 'grid-accordion' ),
-					'type' => 'number',
+					'type' => 'mixed',
 					'default_value' => 400,
 					'description' => __( 'Sets the height of the accordion. Can be set to a fixed value, like 400 (indicating 400 pixels). It\'s not recommended to set this to a percentage value, and it\'s not usually needed, as the accordion will be responsive even with a fixed value set for the height.', 'grid-accordion' )
 				),
@@ -748,7 +748,7 @@ class BQW_Grid_Accordion_Settings {
 				),
 				'display' => array(
 					'label' => __( 'Display', 'grid-accordion' ),
-					'type' => 'radio',
+					'type' => 'select',
 					'default_value' => 'always',
 					'available_values' => array(
 						'always' => __( 'Always', 'grid-accordion' ),
