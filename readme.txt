@@ -2,8 +2,8 @@
 Contributors: bqworks
 Tags: grid accordion, responsive grid, image grid, grid plugin, grid widget
 Requires at least: 3.6
-Tested up to: 5.8
-Stable tag: 1.8
+Tested up to: 5.8.1
+Stable tag: 1.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,6 @@ When you select an image from the Media Library, in the right columns, under 'AT
 
 == Changelog ==
 
-= 1.8 =
+= 1.8.0 =
 * initial release on WordPress.org
 * fix styling for sidebar panels
