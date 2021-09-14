@@ -10,7 +10,7 @@
 			<h3><?php _e( 'Getting started', 'grid-accordion' ); ?></h3>
 			<p><?php _e( 'If you want to reproduce one of the examples showcased online, you can easily import those examples into your own Grid Accordion installation.', 'grid-accordion' ); ?></p>
 			<p><?php _e( 'The examples can be found in the <i>examples</i> folder, which is included in the plugin\'s folder, and can be imported using the <i>Import Accordion</i> button below.', 'grid-accordion' ); ?></p>
-			<p><?php _e( 'For quick usage instructions, please see the video tutorials below. For more detailed instructions, please see the', 'grid-accordion' ); ?> <a href="<?php echo admin_url('admin.php?page=grid-accordion-documentation'); ?>"><?php _e( 'Documentation', 'grid-accordion' ); ?></a> <?php _e( 'page.', 'grid-accordion' ); ?></p>
+			<p><?php _e( 'For quick usage instructions, please see the video tutorials below. For more detailed instructions, please see the', 'grid-accordion' ); ?> <a href="http://bqworks.net/grid-accordion/documentation/documentation.html"><?php _e( 'Documentation', 'grid-accordion' ); ?></a> <?php _e( 'page.', 'grid-accordion' ); ?></p>
 			<ul class="video-tutorials-list">
 				<li><a href="http://bqworks.net/grid-accordion/screencasts/#simple-accordion" target="_blank"><?php _e( '1. Create and publish accordions', 'grid-accordion' ); ?></a></li>
 				<li><a href="http://bqworks.net/grid-accordion/screencasts/#accordion-from-posts" target="_blank"><?php _e( '2. Create accordions from posts', 'grid-accordion' ); ?></a></li>
