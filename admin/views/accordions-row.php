@@ -14,8 +14,8 @@
 	<td><?php echo esc_html( $accordion_id ); ?></td>
 	<td><?php echo esc_html( $accordion_name ); ?></td>
 	<td><?php echo '[grid_accordion id="' . esc_html( $accordion_id ) . '"]'; ?></td>
-	<td><?php echo $accordion_created; ?></td>
-	<td><?php echo $accordion_modified; ?></td>
+	<td><?php echo esc_html( $accordion_created ); ?></td>
+	<td><?php echo esc_html( $accordion_modified ); ?></td>
 	<td>
 		<a href="<?php echo esc_url( $edit_url ); ?>"><?php _e( 'Edit', 'grid-accordion' ); ?></a> |
 		<a class="preview-accordion" href="<?php echo esc_url( $preview_url ); ?>"><?php _e( 'Preview', 'grid-accordion' ); ?></a> |

@@ -74,11 +74,11 @@
                                                                 $value = isset( $accordion_settings ) && isset( $accordion_settings[ $setting_name ] ) ? $accordion_settings[ $setting_name ] : $setting['default_value'];
 
                                                                 if ( $setting['type'] === 'number' || $setting['type'] === 'text' || $setting['type'] === 'mixed' ) {
-                                                                    echo '<input id="' . $setting_name . '" class="setting" type="text" name="' . esc_attr( $setting_name ) . '" value="' . esc_attr( $value ) . '" />';
+                                                                    echo '<input id="' . esc_attr( $setting_name ) . '" class="setting" type="text" name="' . esc_attr( $setting_name ) . '" value="' . esc_attr( $value ) . '" />';
                                                                 } else if ( $setting['type'] === 'boolean' ) {
-                                                                    echo '<input id="' . $setting_name . '" class="setting" type="checkbox" name="' . esc_attr( $setting_name ) . '"' . ( $value === true ? ' checked="checked"' : '' ) . ' />';
+                                                                    echo '<input id="' . esc_attr( $setting_name ) . '" class="setting" type="checkbox" name="' . esc_attr( $setting_name ) . '"' . ( $value === true ? ' checked="checked"' : '' ) . ' />';
                                                                 } else if ( $setting['type'] === 'select' ) {
-                                                                    echo'<select id="' . $setting_name . '" class="setting" name="' . $setting_name . '">';
+                                                                    echo'<select id="' . esc_attr( $setting_name ) . '" class="setting" name="' . esc_attr( $setting_name ) . '">';
                                                                     
                                                                     foreach ( $setting['available_values'] as $value_name => $value_label ) {
                                                                         echo '<option value="' . esc_attr( $value_name ) . '"' . ( $value === $value_name ? ' selected="selected"' : '' ) . '>' . esc_html( $value_label ) . '</option>';
