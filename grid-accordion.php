@@ -4,7 +4,7 @@
 	Plugin Name: Grid Accordion
 	Plugin URI:  http://bqworks.net/grid-accordion/
 	Description: Responsive and touch-enabled grid accordion.
-	Version:     1.8.1
+	Version:     1.8.2
 	Author:      bqworks
 	Author URI:  http://bqworks.net
 */
