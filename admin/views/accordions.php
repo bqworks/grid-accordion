@@ -48,7 +48,7 @@
 			<?php
 			}
 			?>
-			<a href="#" class="custom-css-js-warning-close"><?php _e( 'Don\'t show this again.', 'grid-accordion' ); ?></a>
+			<a href="#" class="custom-css-js-warning-close"><?php _e( 'Delete the custom CSS & JS, and remove this note.', 'grid-accordion' ); ?></a>
 		</div>
 	<?php
 		}

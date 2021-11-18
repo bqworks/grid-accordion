@@ -168,6 +168,7 @@ class BQW_Grid_Accordion_Admin {
 				'plugin' => plugins_url( '', dirname( __FILE__ ) ),
 				'page' => isset( $_GET['page'] ) && ( $_GET['page'] === 'grid-accordion-new' || ( isset( $_GET['id'] ) && isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) ) ? 'single' : 'all',
 				'id' => $id,
+				'remove_custom_css_js_warning' => __( 'Are you sure you want to remove the existing custom CSS and/or JavaScript? <br/> Only do this after you\'ve copied the existing code in another place.', 'grid-accordion' ),
 				'lad_nonce' => wp_create_nonce( 'load-accordion-data' . $id ),
 				'sa_nonce' => wp_create_nonce( 'save-accordion' . $id ),
 				'no_image' => __( 'Click to add image', 'grid-accordion' ),
@@ -1172,10 +1173,15 @@ class BQW_Grid_Accordion_Admin {
 	/**
 	 * AJAX call for closing the Custom CSS & JS warning box.
 	 *
-	 * @since 1.9.0
+	 * @since 1.8.0
 	 */
 	public function ajax_close_custom_css_js_warning() {
 		update_option( 'grid_accordion_hide_custom_css_js_warning', true );
+
+		delete_option( 'grid_accordion_custom_css' );
+		delete_option( 'grid_accordion_custom_js' );
+		delete_option( 'grid_accordion_is_custom_css' );
+		delete_option( 'grid_accordion_is_custom_js' );
  
 		die();
 	}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Grid Accordion\n"
-"POT-Creation-Date: 2021-06-11 12:29+0300\n"
-"PO-Revision-Date: 2021-06-11 12:29+0300\n"
+"POT-Creation-Date: 2021-11-17 18:28+0200\n"
+"PO-Revision-Date: 2021-11-17 18:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -15,81 +15,73 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-grid-accordion-admin.php:202
+#: admin/class-grid-accordion-admin.php:171
+msgid ""
+"Are you sure you want to remove the existing custom CSS and/or JavaScript? "
+"<br/> Only do this after you've copied the existing code in another place."
+msgstr ""
+
+#: admin/class-grid-accordion-admin.php:174
 #: admin/views/background-image-editor.php:12
 #: admin/views/background-image-editor.php:47 admin/views/panel.php:10
 msgid "Click to add image"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:203
+#: admin/class-grid-accordion-admin.php:175
 msgid "Posts panels"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:204
+#: admin/class-grid-accordion-admin.php:176
 msgid "Gallery panels"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:205
+#: admin/class-grid-accordion-admin.php:177
 msgid "Flickr panels"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:206
+#: admin/class-grid-accordion-admin.php:178
 msgid "Are you sure you want to delete this accordion?"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:207
+#: admin/class-grid-accordion-admin.php:179
 msgid "Are you sure you want to delete this panel?"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:208
+#: admin/class-grid-accordion-admin.php:180
 msgid "Yes"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:209
+#: admin/class-grid-accordion-admin.php:181
 msgid "Cancel"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:210
+#: admin/class-grid-accordion-admin.php:182
 msgid "Grid accordion updated."
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:211
+#: admin/class-grid-accordion-admin.php:183
 msgid "Grid accordion created."
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:236
+#: admin/class-grid-accordion-admin.php:208
 msgid "Grid Accordion"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:237 admin/views/accordions.php:2
+#: admin/class-grid-accordion-admin.php:209 admin/views/accordions.php:2
 msgid "All Accordions"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:245 admin/views/accordion.php:2
+#: admin/class-grid-accordion-admin.php:217 admin/views/accordion.php:2
 msgid "Add New Accordion"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:246
+#: admin/class-grid-accordion-admin.php:218
 msgid "Add New"
 msgstr ""
 
-#: admin/class-grid-accordion-admin.php:254 admin/views/custom-css-js.php:2
-msgid "Custom CSS and JavaScript"
-msgstr ""
-
-#: admin/class-grid-accordion-admin.php:255
-msgid "Custom CSS & JS"
-msgstr ""
-
-#: admin/class-grid-accordion-admin.php:263
-#: admin/class-grid-accordion-admin.php:264 admin/views/custom-css-js.php:17
-#: admin/views/plugin-settings.php:2
+#: admin/class-grid-accordion-admin.php:226
+#: admin/class-grid-accordion-admin.php:227 admin/views/plugin-settings.php:2
 msgid "Plugin Settings"
-msgstr ""
-
-#: admin/class-grid-accordion-admin.php:272
-#: admin/class-grid-accordion-admin.php:273 admin/views/accordions.php:13
-msgid "Documentation"
 msgstr ""
 
 #: admin/views/accordion.php:2
@@ -133,7 +125,7 @@ msgid "Preview"
 msgstr ""
 
 #: admin/views/accordion.php:105 admin/views/accordion.php:148
-#: admin/views/background-image-editor.php:98 admin/views/custom-css-js.php:11
+#: admin/views/background-image-editor.php:98
 #: admin/views/custom-panel-settings.php:10 admin/views/export-window.php:15
 #: admin/views/flickr-panel-settings.php:49
 #: admin/views/gallery-panel-settings.php:10 admin/views/html-editor.php:15
@@ -143,7 +135,7 @@ msgid "Show info"
 msgstr ""
 
 #: admin/views/accordion.php:106 admin/views/accordion.php:149
-#: admin/views/background-image-editor.php:99 admin/views/custom-css-js.php:12
+#: admin/views/background-image-editor.php:99
 #: admin/views/custom-panel-settings.php:11 admin/views/export-window.php:16
 #: admin/views/flickr-panel-settings.php:50
 #: admin/views/gallery-panel-settings.php:11 admin/views/html-editor.php:16
@@ -173,10 +165,10 @@ msgid ""
 "global settings."
 msgstr ""
 
-#: admin/views/accordion.php:154 admin/views/custom-css-js.php:18
-#: admin/views/export-window.php:20 admin/views/gallery-panel-settings.php:17
-#: admin/views/import-window.php:24 admin/views/layers-editor.php:63
-#: admin/views/layers-editor.php:71 admin/views/posts-panel-settings.php:132
+#: admin/views/accordion.php:154 admin/views/export-window.php:20
+#: admin/views/gallery-panel-settings.php:17 admin/views/import-window.php:24
+#: admin/views/layers-editor.php:63 admin/views/layers-editor.php:71
+#: admin/views/posts-panel-settings.php:132
 msgid "See the video tutorial"
 msgstr ""
 
@@ -220,6 +212,10 @@ msgid ""
 msgstr ""
 
 #: admin/views/accordions.php:13
+msgid "Documentation"
+msgstr ""
+
+#: admin/views/accordions.php:13
 msgid "page."
 msgstr ""
 
@@ -240,52 +236,72 @@ msgid "4. Working with layers"
 msgstr ""
 
 #: admin/views/accordions.php:19
-msgid "5. Adding custom CSS"
+msgid "5. Working with breakpoints"
 msgstr ""
 
 #: admin/views/accordions.php:20
-msgid "6. Working with breakpoints"
+msgid "6. Import and Export accordions"
 msgstr ""
 
-#: admin/views/accordions.php:21
-msgid "7. Import and Export accordions"
+#: admin/views/accordions.php:30
+msgid "Custom CSS & JS"
 msgstr ""
 
-#: admin/views/accordions.php:33 admin/views/accordions.php:70
+#: admin/views/accordions.php:31
+msgid ""
+"Your grid accordions contain custom CSS and/or JavaScript. Please move this "
+"code in the Wordpress' CSS editor, in Customize, or a different place. Your "
+"current code will still work for now, but you won't be able to edit it. You "
+"can see your custom CSS/JS below."
+msgstr ""
+
+#: admin/views/accordions.php:36
+msgid "Custom CSS"
+msgstr ""
+
+#: admin/views/accordions.php:45
+msgid "Custom JS"
+msgstr ""
+
+#: admin/views/accordions.php:51
+msgid "Don't show this again."
+msgstr ""
+
+#: admin/views/accordions.php:60 admin/views/accordions.php:97
 #: admin/views/flickr-panel-settings.php:26
 #: includes/class-grid-accordion-settings.php:983
 msgid "ID"
 msgstr ""
 
-#: admin/views/accordions.php:34 admin/views/accordions.php:71
+#: admin/views/accordions.php:61 admin/views/accordions.php:98
 msgid "Name"
 msgstr ""
 
-#: admin/views/accordions.php:35 admin/views/accordions.php:72
+#: admin/views/accordions.php:62 admin/views/accordions.php:99
 msgid "Shortcode"
 msgstr ""
 
-#: admin/views/accordions.php:36 admin/views/accordions.php:73
+#: admin/views/accordions.php:63 admin/views/accordions.php:100
 msgid "Created"
 msgstr ""
 
-#: admin/views/accordions.php:37 admin/views/accordions.php:74
+#: admin/views/accordions.php:64 admin/views/accordions.php:101
 msgid "Modified"
 msgstr ""
 
-#: admin/views/accordions.php:38 admin/views/accordions.php:75
+#: admin/views/accordions.php:65 admin/views/accordions.php:102
 msgid "Actions"
 msgstr ""
 
-#: admin/views/accordions.php:52
+#: admin/views/accordions.php:79
 msgid "You don't have saved accordions."
 msgstr ""
 
-#: admin/views/accordions.php:81
+#: admin/views/accordions.php:108
 msgid "Create New Accordion"
 msgstr ""
 
-#: admin/views/accordions.php:82
+#: admin/views/accordions.php:109
 msgid "Import Accordion"
 msgstr ""
 
@@ -324,7 +340,7 @@ msgstr ""
 msgid "Opened Background Image"
 msgstr ""
 
-#: admin/views/background-image-editor.php:76 admin/views/layer-settings.php:59
+#: admin/views/background-image-editor.php:76 admin/views/layer-settings.php:57
 msgid "Link"
 msgstr ""
 
@@ -460,37 +476,6 @@ msgstr ""
 
 #: admin/views/breakpoint.php:31
 msgid "Add Setting"
-msgstr ""
-
-#: admin/views/custom-css-js.php:15
-msgid ""
-"The fields below can be used for all your custom CSS or JavaScript code."
-msgstr ""
-
-#: admin/views/custom-css-js.php:16
-msgid ""
-"If you want to target a specific accordion, you need to assign a <i>Custom "
-"Class</i> to the accordion, in the accordion's settings, and then use that "
-"custom class in the <i>Custom CSS</i> or <i>Custom JavaScript</i> fields "
-"below."
-msgstr ""
-
-#: admin/views/custom-css-js.php:17
-msgid ""
-"By default, the custom CSS and JavaScript code will be loaded inline, but in "
-"the"
-msgstr ""
-
-#: admin/views/custom-css-js.php:17
-msgid "page you can set to load the code in files instead of inline."
-msgstr ""
-
-#: admin/views/custom-css-js.php:28
-msgid "Custom CSS"
-msgstr ""
-
-#: admin/views/custom-css-js.php:33
-msgid "Custom JavaScript"
 msgstr ""
 
 #: admin/views/custom-panel-settings.php:14
@@ -638,123 +623,123 @@ msgstr ""
 #: admin/views/import-window.php:23
 msgid ""
 "In the field above you need to copy the new accordion's data, as it was "
-"exported. Then, click in the <i>Import</i> button."
+"exported. Then, click the <i>Import</i> button."
 msgstr ""
 
 #: admin/views/layer-settings.php:5
 msgid "Content"
 msgstr ""
 
-#: admin/views/layer-settings.php:21
+#: admin/views/layer-settings.php:19
 #: includes/class-grid-accordion-settings.php:736
 msgid "Heading Type"
 msgstr ""
 
-#: admin/views/layer-settings.php:46
+#: admin/views/layer-settings.php:44
 msgid "Source"
 msgstr ""
 
-#: admin/views/layer-settings.php:53
+#: admin/views/layer-settings.php:51
 msgid "Alt"
 msgstr ""
 
-#: admin/views/layer-settings.php:63
+#: admin/views/layer-settings.php:61
 msgid "Retina"
 msgstr ""
 
-#: admin/views/layer-settings.php:79
+#: admin/views/layer-settings.php:77
 msgid "Video Embed/Code"
 msgstr ""
 
-#: admin/views/layer-settings.php:88
+#: admin/views/layer-settings.php:86
 #: includes/class-grid-accordion-settings.php:574
 msgid "Appearance"
 msgstr ""
 
-#: admin/views/layer-settings.php:94
+#: admin/views/layer-settings.php:92
 #: includes/class-grid-accordion-settings.php:750
 msgid "Display"
 msgstr ""
 
-#: admin/views/layer-settings.php:105
+#: admin/views/layer-settings.php:103
 #: includes/class-grid-accordion-settings.php:176
 #: includes/class-grid-accordion-settings.php:785
 msgid "Horizontal"
 msgstr ""
 
-#: admin/views/layer-settings.php:109
+#: admin/views/layer-settings.php:107
 #: includes/class-grid-accordion-settings.php:119
 #: includes/class-grid-accordion-settings.php:773
 msgid "Width"
 msgstr ""
 
-#: admin/views/layer-settings.php:113
+#: admin/views/layer-settings.php:111
 msgid "Preset styles"
 msgstr ""
 
-#: admin/views/layer-settings.php:126
+#: admin/views/layer-settings.php:124
 #: includes/class-grid-accordion-settings.php:761
 msgid "Position"
 msgstr ""
 
-#: admin/views/layer-settings.php:137
+#: admin/views/layer-settings.php:135
 #: includes/class-grid-accordion-settings.php:177
 #: includes/class-grid-accordion-settings.php:791
 msgid "Vertical"
 msgstr ""
 
-#: admin/views/layer-settings.php:141
+#: admin/views/layer-settings.php:139
 #: includes/class-grid-accordion-settings.php:126
 #: includes/class-grid-accordion-settings.php:779
 msgid "Height"
 msgstr ""
 
-#: admin/views/layer-settings.php:145
+#: admin/views/layer-settings.php:143
 #: includes/class-grid-accordion-settings.php:217
 #: includes/class-grid-accordion-settings.php:809
 msgid "Custom Class"
 msgstr ""
 
-#: admin/views/layer-settings.php:156
+#: admin/views/layer-settings.php:154
 msgid "Animation"
 msgstr ""
 
-#: admin/views/layer-settings.php:162
+#: admin/views/layer-settings.php:160
 #: includes/class-grid-accordion-settings.php:815
 msgid "Show Transition"
 msgstr ""
 
-#: admin/views/layer-settings.php:173
+#: admin/views/layer-settings.php:171
 #: includes/class-grid-accordion-settings.php:828
 msgid "Show Offset"
 msgstr ""
 
-#: admin/views/layer-settings.php:177
+#: admin/views/layer-settings.php:175
 #: includes/class-grid-accordion-settings.php:834
 msgid "Show Delay"
 msgstr ""
 
-#: admin/views/layer-settings.php:181
+#: admin/views/layer-settings.php:179
 #: includes/class-grid-accordion-settings.php:840
 msgid "Show Duration"
 msgstr ""
 
-#: admin/views/layer-settings.php:187
+#: admin/views/layer-settings.php:185
 #: includes/class-grid-accordion-settings.php:846
 msgid "Hide Transition"
 msgstr ""
 
-#: admin/views/layer-settings.php:198
+#: admin/views/layer-settings.php:196
 #: includes/class-grid-accordion-settings.php:859
 msgid "Hide Offset"
 msgstr ""
 
-#: admin/views/layer-settings.php:202
+#: admin/views/layer-settings.php:200
 #: includes/class-grid-accordion-settings.php:865
 msgid "Hide Delay"
 msgstr ""
 
-#: admin/views/layer-settings.php:206
+#: admin/views/layer-settings.php:204
 #: includes/class-grid-accordion-settings.php:871
 msgid "Hide Duration"
 msgstr ""
@@ -843,7 +828,7 @@ msgstr ""
 msgid "Troubleshooting chapter"
 msgstr ""
 
-#: admin/views/plugin-settings.php:64
+#: admin/views/plugin-settings.php:46
 msgid "Clear all cache now"
 msgstr ""
 
@@ -1733,66 +1718,41 @@ msgid ""
 msgstr ""
 
 #: includes/class-grid-accordion-settings.php:1023
-msgid "Load custom CSS and JavaScript"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:1026
-msgid "Inline"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:1027
-msgid "In files"
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:1029
-msgid ""
-"By default, custom CSS and JavaScript code added to the accordion will be "
-"loaded inline. However, if you want to add large amounts of custom CSS or "
-"JavaScript, it's better to have the code loaded in files, rather than "
-"inline. If you chose to load the custom code in files, after selecting this "
-"option, you need to re-save the custom CSS and/or JavaScript and the plugin "
-"will automatically create the <i>grid-accordion-custom</i> folder inside "
-"<i>wp-plugins</i> and then <i>custom.css</i> and <i>custom.js</i> inside "
-"<i>grid-accordion-custom</i>. You might also be prompted to provide "
-"credentials if the files can't be created due to folder permission issues."
-msgstr ""
-
-#: includes/class-grid-accordion-settings.php:1032
 msgid "Load unminified scripts"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1034
+#: includes/class-grid-accordion-settings.php:1025
 msgid ""
 "Check this option if you want to load the unminified/uncompressed CSS and "
 "JavaScript files for the accordion. This is useful for debugging purposes."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1037
+#: includes/class-grid-accordion-settings.php:1028
 msgid "Cache expiry interval"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1039
+#: includes/class-grid-accordion-settings.php:1030
 msgid ""
 "Indicates the time interval after which a grid's cache will expire. If the "
 "cache of a grid has expired, the grid will be rendered again and cached the "
 "next time it is viewed."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1042
+#: includes/class-grid-accordion-settings.php:1033
 msgid "Hide inline info"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1044
+#: includes/class-grid-accordion-settings.php:1035
 msgid ""
 "Indicates whether the inline information will be displayed in admin panels "
 "and wherever it's available."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1047
+#: includes/class-grid-accordion-settings.php:1038
 msgid "Hide <i>Getting Started</i> info"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1049
+#: includes/class-grid-accordion-settings.php:1040
 msgid ""
 "Indicates whether the <i>Getting Started</i> information will be displayed "
 "in the <i>All Accordions</i> page, above the list of accordions. This "
@@ -1800,27 +1760,27 @@ msgid ""
 "information box."
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1052
+#: includes/class-grid-accordion-settings.php:1043
 msgid "Access"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1055
+#: includes/class-grid-accordion-settings.php:1046
 msgid "Administrator"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1056
+#: includes/class-grid-accordion-settings.php:1047
 msgid "Editor"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1057
+#: includes/class-grid-accordion-settings.php:1048
 msgid "Author"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1058
+#: includes/class-grid-accordion-settings.php:1049
 msgid "Contributor"
 msgstr ""
 
-#: includes/class-grid-accordion-settings.php:1060
+#: includes/class-grid-accordion-settings.php:1051
 msgid ""
 "Sets what category of users will have access to the plugin's admin area."
 msgstr ""
