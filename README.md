@@ -1,4 +1,4 @@
-# [Grid Accordion - WordPress accordion plugin](http://bqworks.net/grid-accordion/) #
+# [Grid Accordion - WordPress accordion plugin](https://bqworks.net/grid-accordion/) #
 
 >Grid Accordion combines the look and functionality of a grid with that of an accordion, allowing you to create image grids which are fully responsive and mobile-friendly.
 
@@ -27,19 +27,19 @@ Main features:
 * Action and filter hooks
 * Import and export grid accordions
 
-Check the plugin's [presentation page](http://bqworks.net/grid-accordion/) for examples and more details of the available features.
+Check the plugin's [presentation page](https://bqworks.net/grid-accordion/) for examples and more details of the available features.
 
 ## Getting started ##
 
 You can download the plugin from its [wordpress.org page](https://wordpress.org/plugins/grid-accordion/).
 
-For quick usage instructions please see these [video tutorials](http://bqworks.net/grid-accordion/screencasts/).
+For quick usage instructions please see these [video tutorials](https://bqworks.net/grid-accordion/screencasts/).
 
 ## Support ##
 
 If you found a bug or have a feature suggestion, please submit it in the [Issues tracker](https://github.com/bqworks/grid-accordion/issues) or in the [WordPress.org forum](https://wordpress.org/support/plugin/grid-accordion/).
 
-If you need help with implementing the slider in your project, please use the address indicated on [http://bqworks.net](http://bqworks.net).
+If you need help with implementing the slider in your project, please use the address indicated on [https://bqworks.net](https://bqworks.net).
 
 ## License ##
 

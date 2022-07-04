@@ -17,7 +17,7 @@
                     
                     <div class="info-content">
                         <p><?php _e( 'The text above represents the data of the accordion. Please copy the text and then paste it in the import accordion window, by clicking on the <i>Import Accordion</i> button in the <i>Grid Accordion</i> installation where you want to import the accordion.', 'grid-accordion' ); ?></p>
-                        <p><a href="http://bqworks.net/grid-accordion/screencasts/#import-export" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+                        <p><a href="https://bqworks.net/grid-accordion/screencasts/#import-export" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
                     </div>
                 </div>
         <?php

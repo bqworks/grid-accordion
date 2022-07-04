@@ -38,7 +38,7 @@ Features:
 * Action and filter hooks
 * Import and export grid accordions
 
-[These videos](http://bqworks.net/grid-accordion/screencasts/) demonstrate the full capabilities of the plugin.
+[These videos](https://bqworks.net/grid-accordion/screencasts/) demonstrate the full capabilities of the plugin.
 
 == Installation ==
 

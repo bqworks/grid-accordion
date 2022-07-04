@@ -129,7 +129,7 @@
                 	<p><?php _e( 'The list of taxonomies will be refreshed every time the list of post types is updated.', 'grid-accordion' ); ?></p>
                 	<p><?php _e( 'The <i>Match</i> parameter indicates whether, in order to be fetched, a post needs to have all the selected taxonomy terms, or at least one will be sufficient. The <i>With selected</i> parameter indicates whether posts that include the selected taxonomy terms will be loaded, or if posts that don\'t include them will be loaded.', 'grid-accordion' ); ?></p>
                 	<p><?php _e( 'The images and their data can be fetched through <i>dynamic tags</i>, which are enumerated in the Background, Layers and HTML editors.', 'grid-accordion' ); ?></p>
-                	<p><a href="http://bqworks.net/grid-accordion/screencasts/#accordion-from-posts" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+                	<p><a href="https://bqworks.net/grid-accordion/screencasts/#accordion-from-posts" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
             	</div>
             </div>
         <?php

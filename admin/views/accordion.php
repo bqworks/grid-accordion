@@ -151,7 +151,7 @@
                                     <div class="info-content">
                                         <p><?php _e( 'Breakpoints allow you to modify the look of the accordion for different window sizes.', 'grid-accordion' ); ?></p>
                                         <p><?php _e( 'Each breakpoint allows you to set the width of the window for which the breakpoint will apply, and then add several settings which will override the global settings.', 'grid-accordion' ); ?></p>
-                                        <p><a href="http://bqworks.net/grid-accordion/screencasts/#working-with-breakpoints" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
+                                        <p><a href="https://bqworks.net/grid-accordion/screencasts/#working-with-breakpoints" target="_blank"><?php _e( 'See the video tutorial', 'grid-accordion' ); ?> &rarr;</a></p>
                                     </div>
                                 </div>
                             <?php
