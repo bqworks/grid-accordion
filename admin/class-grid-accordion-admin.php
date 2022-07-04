@@ -229,6 +229,8 @@ class BQW_Grid_Accordion_Admin {
 			$this->plugin_slug . '-settings',
 			array( $this, 'render_plugin_settings_page' )
 		);
+
+		do_action('grid_accordion_admin_menu');
 	}
 
 	/**
