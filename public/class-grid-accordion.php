@@ -409,7 +409,7 @@ class BQW_Grid_Accordion {
 				wp_add_inline_style( $this->plugin_slug . '-plugin-style', stripslashes( get_option( 'grid_accordion_custom_css' ) ) );
 			}
 
-			do_action( 'grid_accordion_enqueue_styles' );
+			do_action( 'grid_accordion_enqueue_styles', $this->plugin_slug . '-plugin-style' );
 		}
 	}
 
