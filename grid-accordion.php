@@ -4,7 +4,7 @@
 	Plugin Name: Grid Accordion
 	Plugin URI:  https://bqworks.net/grid-accordion/
 	Description: Responsive and touch-enabled grid accordion.
-	Version:     1.8.2
+	Version:     1.9.0
 	Author:      bqworks
 	Author URI:  https://bqworks.net
 */
@@ -48,8 +48,12 @@ add_action( 'plugins_loaded', array( 'BQW_Hideable_Gallery', 'get_instance' ) );
 add_action( 'widgets_init', 'bqw_ga_register_widget' );
 
 if ( is_admin() ) {
+	require_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
+	require_once( ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-grid-accordion-admin.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-grid-accordion-add-ons.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-grid-accordion-updates.php' );
 	add_action( 'plugins_loaded', array( 'BQW_Grid_Accordion_Admin', 'get_instance' ) );
+	add_action( 'plugins_loaded', array( 'BQW_Grid_Accordion_Add_Ons', 'get_instance' ) );
 	add_action( 'admin_init', array( 'BQW_Grid_Accordion_Updates', 'get_instance' ) );
 }

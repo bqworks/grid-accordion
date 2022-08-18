@@ -674,7 +674,7 @@ class BQW_Grid_Accordion_Settings {
 				),
 
 				'miscellaneous' => array(
-					'label' => __( 'Miscellaneous', 'accordion-slider' ),
+					'label' => __( 'Miscellaneous', 'grid-accordion' ),
 					'list' => array(
 						'lazy_loading',
 						'hide_image_title',

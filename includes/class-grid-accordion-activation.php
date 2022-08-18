@@ -202,7 +202,7 @@ class BQW_Grid_Accordion_Activation {
 			update_option( 'grid_accordion_version', BQW_Grid_Accordion::VERSION );
 		}
 
-		$wpdb->query( "DELETE FROM " . $prefix . "options WHERE option_name LIKE '%grid_accordion_cache%' AND NOT option_name = 'grid_accordion_cache_expiry_interval'" );
+		$wpdb->query( "DELETE FROM " . $prefix . "options WHERE option_name LIKE '%grid_accordion_cache_%' AND NOT option_name = 'grid_accordion_cache_expiry_interval'" );
 	}
 	
 	/**

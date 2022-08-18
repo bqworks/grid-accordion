@@ -92,6 +92,10 @@ class BQW_Grid_Accordion_Updates {
 	 * @since 1.0.0
 	 */
 	private function single_update() {
+		if ( version_compare( $this->db_version, '1.9.0', '<' ) ) {
+			delete_option( 'grid_accordion_hide_getting_started_info' );
+		}
+
 		update_option( 'grid_accordion_version', BQW_Grid_Accordion::VERSION );
 	}
 }

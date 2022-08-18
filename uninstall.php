@@ -48,6 +48,7 @@ function bqw_grid_accordion_delete_all_data() {
 	delete_transient( 'grid_accordion_post_names' );
 	delete_transient( 'grid_accordion_posts_data' );
 	delete_transient( 'grid_accordion_update_notification_message' );
+	delete_transient( 'grid_accordion_add_ons_cached_data' );
 	
-	$wpdb->query( "DELETE FROM " . $prefix . "options WHERE option_name LIKE '%grid_accordion_cache%'" );
+	$wpdb->query( "DELETE FROM " . $prefix . "options WHERE option_name LIKE '%grid_accordion_cache_%'" );
 }
