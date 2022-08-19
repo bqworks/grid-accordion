@@ -212,6 +212,8 @@ class BQW_Grid_Accordion_Admin {
 		$plugin_settings = BQW_Grid_Accordion_Settings::getPluginSettings();
 		$access = get_option( 'grid_accordion_access', $plugin_settings['access']['default_value'] );
 
+		$restricted_pages = apply_filters( 'accordion_slider_restricted_pages' , array() );
+
 		add_menu_page(
 			'Grid Accordion',
 			'Grid Accordion',
@@ -221,41 +223,49 @@ class BQW_Grid_Accordion_Admin {
 			plugins_url( 'admin/assets/css/images/ga-icon.png', dirname( __FILE__ ) )
 		);
 
-		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
-			$this->plugin_slug,
-			__( 'Grid Accordion', 'grid-accordion' ),
-			__( 'All Accordions', 'grid-accordion' ),
-			$access,
-			$this->plugin_slug,
-			array( $this, 'render_accordion_page' )
-		);
+		if ( ! in_array( $this->plugin_slug, $restricted_pages ) ) {
+			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+				$this->plugin_slug,
+				__( 'Grid Accordion', 'grid-accordion' ),
+				__( 'All Accordions', 'grid-accordion' ),
+				$access,
+				$this->plugin_slug,
+				array( $this, 'render_accordion_page' )
+			);
+		}
 
-		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
-			$this->plugin_slug,
-			__( 'Add New Accordion', 'grid-accordion' ),
-			__( 'Add New', 'grid-accordion' ),
-			$access,
-			$this->plugin_slug . '-new',
-			array( $this, 'render_new_accordion_page' )
-		);
+		if ( ! in_array( $this->plugin_slug . '-new', $restricted_pages ) ) {
+			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+				$this->plugin_slug,
+				__( 'Add New Accordion', 'grid-accordion' ),
+				__( 'Add New', 'grid-accordion' ),
+				$access,
+				$this->plugin_slug . '-new',
+				array( $this, 'render_new_accordion_page' )
+			);
+		}
 
-		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
-			$this->plugin_slug,
-			__( 'Plugin Settings', 'grid-accordion' ),
-			__( 'Plugin Settings', 'grid-accordion' ),
-			$access,
-			$this->plugin_slug . '-settings',
-			array( $this, 'render_plugin_settings_page' )
-		);
+		if ( ! in_array( $this->plugin_slug . '-settings', $restricted_pages ) ) {
+			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+				$this->plugin_slug,
+				__( 'Plugin Settings', 'grid-accordion' ),
+				__( 'Plugin Settings', 'grid-accordion' ),
+				$access,
+				$this->plugin_slug . '-settings',
+				array( $this, 'render_plugin_settings_page' )
+			);
+		}
 
-		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
-			$this->plugin_slug,
-			__( 'Documentation', 'grid-accordion' ),
-			__( 'Documentation', 'grid-accordion' ),
-			$access,
-			$this->plugin_slug . '-documentation',
-			array( $this, 'render_documentation_page' )
-		);
+		if ( ! in_array( $this->plugin_slug . '-documentation', $restricted_pages ) ) {
+			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+				$this->plugin_slug,
+				__( 'Documentation', 'grid-accordion' ),
+				__( 'Documentation', 'grid-accordion' ),
+				$access,
+				$this->plugin_slug . '-documentation',
+				array( $this, 'render_documentation_page' )
+			);
+		}
 
 		do_action('grid_accordion_admin_menu');
 	}
