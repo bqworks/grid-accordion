@@ -342,7 +342,7 @@ class BQW_Grid_Accordion_Admin {
 		$hide_getting_started_info = get_option( 'grid_accordion_hide_getting_started_info', $plugin_settings['hide_getting_started_info']['default_value'] );
 		$access = get_option( 'grid_accordion_access', $plugin_settings['access']['default_value'] );
 
-		if ( isset( $_POST['plugin_settings_update'] ) ) {
+		if ( isset( $_POST['plugin_settings_update'] ) && current_user_can( 'customize' ) ) {
 			check_admin_referer( 'plugin-settings-update', 'plugin-settings-nonce' );
 
 			if ( isset( $_POST['load_stylesheets'] ) ) {
@@ -414,7 +414,7 @@ class BQW_Grid_Accordion_Admin {
 		$nonce = $_GET['nonce'];
 		$id = intval( $_GET['id'] );
 
-		if ( ! wp_verify_nonce( $nonce, 'load-accordion-data' . $id ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'load-accordion-data' . $id ) || ! current_user_can( 'customize' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
@@ -602,7 +602,7 @@ class BQW_Grid_Accordion_Admin {
 		$nonce = $_POST['nonce'];
 		$original_accordion_id = intval( $_POST['id'] );
 
-		if ( ! wp_verify_nonce( $nonce, 'duplicate-accordion' . $original_accordion_id ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'duplicate-accordion' . $original_accordion_id ) || ! current_user_can( 'customize' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
@@ -634,7 +634,7 @@ class BQW_Grid_Accordion_Admin {
 		$nonce = $_POST['nonce'];
 		$id = intval( $_POST['id'] );
 
-		if ( ! wp_verify_nonce( $nonce, 'delete-accordion' . $id ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'delete-accordion' . $id ) || ! current_user_can( 'customize' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
@@ -1198,7 +1198,7 @@ class BQW_Grid_Accordion_Admin {
 	public function ajax_clear_all_cache() {
 		$nonce = $_POST['nonce'];
 
-		if ( ! wp_verify_nonce( $nonce, 'clear-all-cache' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'clear-all-cache' ) || ! current_user_can( 'customize' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
