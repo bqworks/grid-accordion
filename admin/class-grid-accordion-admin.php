@@ -248,6 +248,15 @@ class BQW_Grid_Accordion_Admin {
 			array( $this, 'render_plugin_settings_page' )
 		);
 
+		$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+			$this->plugin_slug,
+			__( 'Documentation', $this->plugin_slug ),
+			__( 'Documentation', $this->plugin_slug ),
+			$access,
+			$this->plugin_slug . '-documentation',
+			array( $this, 'render_documentation_page' )
+		);
+
 		do_action('grid_accordion_admin_menu');
 	}
 
@@ -373,6 +382,15 @@ class BQW_Grid_Accordion_Admin {
 		}
 		
 		include_once( 'views/plugin-settings.php' );
+	}
+
+	/**
+	 * Renders the documentation page.
+	 * 
+	 * @since 1.0.0
+	 */
+	public function render_documentation_page() {
+		echo '<iframe class="grid-accordion-documentation" src="https://bqworks.net/grid-accordion/documentation/documentation.html?version=' . BQW_Grid_Accordion::VERSION . '" width="100%" height="100%"></iframe>';
 	}
 
 	/**
