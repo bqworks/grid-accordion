@@ -47,6 +47,8 @@ class BQW_GA_Div_Layer_Renderer extends BQW_GA_Layer_Renderer {
 			)
 		);
 
+		$allowed_html = apply_filters( 'grid_accordion_allowed_html', $allowed_html );
+
 		$html_output = "\r\n" . '			' . '<div class="' .  esc_attr( $this->get_classes() ) . '"' . $this->get_attributes() . '>' . wp_kses( $content, $allowed_html ) . '</div>';
 
 		$html_output = do_shortcode( $html_output );

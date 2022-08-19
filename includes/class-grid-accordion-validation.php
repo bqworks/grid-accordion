@@ -261,6 +261,8 @@ class BQW_Grid_Accordion_Validation {
 						)
 					);
 
+					$allowed_html = apply_filters( 'grid_accordion_allowed_html', $allowed_html );
+
 					$layer[ $name ] = wp_kses( $value, $allowed_html );
 				}
 			}

@@ -805,6 +805,8 @@ class BQW_Grid_Accordion_Admin {
 			)
 		);
 
+		$allowed_html = apply_filters( 'grid_accordion_allowed_html', $allowed_html );
+
 		$html_content = wp_kses( $_POST['data'], $allowed_html );
 		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
  
@@ -870,6 +872,8 @@ class BQW_Grid_Accordion_Admin {
 					)
 				)
 			);
+
+			$allowed_html = apply_filters( 'grid_accordion_allowed_html', $allowed_html );
  
 			$layer['text'] = wp_kses( $_POST['text'], $allowed_html );
 		}

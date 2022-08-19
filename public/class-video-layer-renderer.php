@@ -45,6 +45,8 @@ class BQW_GA_Video_Layer_Renderer extends BQW_GA_Layer_Renderer {
 				)
 			)
 		);
+
+		$allowed_html = apply_filters( 'grid_accordion_allowed_html', $allowed_html );
  
 		$content = wp_kses( $content, $allowed_html );
 
