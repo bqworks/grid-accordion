@@ -3,7 +3,7 @@ Contributors: bqworks
 Tags: grid accordion, responsive grid, image grid, grid plugin, grid widget
 Requires at least: 4.0
 Tested up to: 6.0
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,11 @@ When you select an image from the Media Library, in the right columns, under 'AT
 8. Adding dynamic tags for accordions generated from posts.
 
 == Changelog ==
+
+= 1.9.1 =
+* added code mirror editor to HTML textareas
+* add filter for allowed HTML tags
+* other fixes and improvements
 
 = 1.9.0 =
 * added the add-on installation interface
