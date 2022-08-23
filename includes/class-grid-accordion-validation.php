@@ -160,8 +160,8 @@ class BQW_Grid_Accordion_Validation {
 			$panel = array();
 
 			foreach ( $panel_data as $name => $value ) {
-				if ( $name === 'position' ) {
-					$panel['position'] = intval( $value );
+				if ( in_array( $name, array( 'position', 'background_width', 'background_height', 'opened_background_width', 'opened_background_height' ) ) ) {
+					$panel[ $name ] = intval( $value );
 				} else if ( $name === 'settings' ) {
 					$panel['settings'] = self::validate_panel_settings( $value );
 				} else if ( $name === 'layers' ) {
