@@ -17,7 +17,7 @@ class BQW_Grid_Accordion_Validation {
 	public static function validate_saved_data( $data ) {
 		$sanitized_data = array(
 			'nonce' => $data['nonce'],
-			'action' => sanitize_text_field( $data['name'] ),
+			'action' => sanitize_text_field( $data['action'] ),
 			'accordion_data' => self::validate_grid_accordion_data( $data )
 		);
 
