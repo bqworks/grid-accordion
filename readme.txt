@@ -1,13 +1,13 @@
 === Grid Accordion ===
 Contributors: bqworks
-Tags: grid accordion, responsive grid, image grid, grid plugin, grid widget
+Tags: grid accordion, responsive grid, post grid, image grid, grid plugin, grid widget, lightbox grid,
 Requires at least: 4.0
 Tested up to: 6.0
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Fully responsive and touch-enabled grid accordion plugin for WordPress.
+Grid Accordion is a responsive gallery plugin that includes Premium features for FREE, like animated layers, lightbox support, post content and more.
 
 == Description ==
 
@@ -75,6 +75,9 @@ When you select an image from the Media Library, in the right columns, under 'AT
 8. Adding dynamic tags for accordions generated from posts.
 
 == Changelog ==
+
+= 1.9.2 =
+* some fixes and improvements
 
 = 1.9.1 =
 * added code mirror editor to HTML textareas
