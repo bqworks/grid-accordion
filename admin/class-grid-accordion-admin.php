@@ -940,6 +940,8 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_load_content_type_settings() {
+		$panel_default_settings = BQW_Grid_Accordion_Settings::getPanelSettings();
+
 		$type = isset( $_POST['type'] ) && array_key_exists( $_POST['type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['type'] : $panel_default_settings['content_type']['default_value'];
 		$panel_settings = BQW_Grid_Accordion_Validation::validate_panel_settings( json_decode( stripslashes( $_POST['data'] ), true ) );
 
