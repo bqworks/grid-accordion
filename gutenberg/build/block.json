@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "bqworks/grid-accordion",
+  "version": "1.0.0",
+  "title": "Grid Accordion",
+  "category": "widgets",
+  "icon": "slides",
+  "description": "Insert a Grid Accordion instance.",
+  "keywords": [
+    "grid",
+    "accordion"
+  ],
+  "attributes": {
+    "accordionId": {
+      "type": "integer",
+      "default": -1
+    }
+  },
+  "supports": {
+    "html": false,
+    "customClassName": false
+  },
+  "example": {
+    "attributes": {
+      "accordionId": 1
+    }
+  },
+  "textdomain": "grid-accordion",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}

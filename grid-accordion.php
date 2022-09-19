@@ -47,6 +47,10 @@ add_action( 'plugins_loaded', array( 'BQW_Hideable_Gallery', 'get_instance' ) );
 // register the widget
 add_action( 'widgets_init', 'bqw_ga_register_widget' );
 
+// Gutenberg block
+require_once( plugin_dir_path( __FILE__ ) . 'gutenberg/class-grid-accordion-block.php' );
+add_action( 'plugins_loaded', array( 'BQW_Grid_Accordion_Block', 'get_instance' ) );
+
 if ( is_admin() ) {
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php' );
