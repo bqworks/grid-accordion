@@ -101,11 +101,11 @@ export default function edit( props ) {
 							<div className='sp-gutenberg-accordion-placeholder-content'> { __( 'You don\'t have any created accordions yet.', 'grid-accordion' ) } </div>
 						: (
 							getAccordion( attributes.accordionId ) === false ?
-								<div className='sp-gutenberg-accordion-placeholder-content'> { __( 'Select a accordion from the Block settings.', 'grid-accordion' ) } </div>
+								<div className='sp-gutenberg-accordion-placeholder-content'> { __( 'Select an accordion from the Block settings.', 'grid-accordion' ) } </div>
 							: (
 								<div className='sp-gutenberg-accordion-placeholder-content'>
 									<p className='sp-gutenberg-accordion-identifier'> { getAccordionLabel( attributes.accordionId ) } </p>
-									<a className='sp-gutenberg-edit-accordion' href={`${ sp_gutenberg_js_vars.admin_url }?page=grid-accordion&id=${ attributes.accordionId }&action=edit`} target='_blank'> { __( 'Edit Accordion', 'grid-accordion' ) } </a>
+									<a className='sp-gutenberg-edit-accordion' href={`${ ga_gutenberg_js_vars.admin_url }?page=grid-accordion&id=${ attributes.accordionId }&action=edit`} target='_blank'> { __( 'Edit Accordion', 'grid-accordion' ) } </a>
 								</div>
 							)
 						)
@@ -116,7 +116,7 @@ export default function edit( props ) {
 			<InspectorControls>
 				<SelectControl
 					className='sp-gutenberg-select-accordion'
-					label={ __( 'Select a accordion from the list:', 'grid-accordion' ) }
+					label={ __( 'Select an accordion from the list:', 'grid-accordion' ) }
 					options={ [ { label: __( 'None', 'grid-accordion'), value: -1 }, ...accordions ] }
 					value={ attributes.accordionId }
 					onChange={ ( newAccordionId ) => setAttributes( { accordionId: parseInt( newAccordionId ) } ) }
@@ -126,7 +126,7 @@ export default function edit( props ) {
 					<p 
 						className='sp-gutenberg-no-accordions-text'
 						dangerouslySetInnerHTML={{
-							__html: sprintf( __( 'You don\'t have any created accordions yet. You can create and manage accordions in the <a href="%s" target="_blank">dedicated area</a>, and then use the block to load the accordions.', 'grid-accordion' ), `${ sp_gutenberg_js_vars.admin_url }?page=grid-accordion` )
+							__html: sprintf( __( 'You don\'t have any created accordions yet. You can create and manage accordions in the <a href="%s" target="_blank">dedicated area</a>, and then use the block to load the accordions.', 'grid-accordion' ), `${ ga_gutenberg_js_vars.admin_url }?page=grid-accordion` )
 						}}>
 					</p>
 				}
