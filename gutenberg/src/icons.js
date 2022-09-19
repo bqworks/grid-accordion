@@ -1,1 +1,2 @@
-export const gridAccordionIcon = <svg viewBox="0 0 24 24" height="24" width="24"><path stroke="#000" stroke-width="1" fill="none" d="M1 20 L1 9 L16 9 L16 20 L1 20 Z M4 9 L4 6 L19 6 L19 17 L16 17 M7 6 L7 3 L22 3 L22 14 L19 14"/></svg>
+export const gridAccordionIcon = <svg viewBox="0 0 24 24" height="24" width="24"><path stroke="#000" stroke-width="1" fill="none" d="M1 1 L6 1 L6 6 L1 6 L1 1 Z M9 1 L14 1 L14 6 L9 6 L9 1 Z M17 1 L22 1 L22 6 L17 6 L17 1 Z
+M1 9 L6 9 L6 14 L1 14 L1 9 Z M9 9 L14 9 L14 14 L9 14 L9 9 Z M17 9 L22 9 L22 14 L17 14 L17 9 Z M1 17 L6 17 L6 22 L1 22 L1 17 Z M9 17 L14 17 L14 22 L9 22 L9 17 Z M17 17 L22 17 L22 22 L17 22 L17 17 Z"/></svg>
