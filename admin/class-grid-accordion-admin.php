@@ -592,7 +592,7 @@ class BQW_Grid_Accordion_Admin {
 		$accordion = BQW_Grid_Accordion_Validation::validate_grid_accordion_data( json_decode( stripslashes( $_POST['data'] ), true ) );
 		$accordion_output = $this->plugin->output_accordion( $accordion, false ) . $this->plugin->get_inline_scripts();
 
-		include( 'views/accordion/preview-window.php' );
+		echo $accordion_output;
 
 		die();	
 	}

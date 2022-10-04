@@ -703,6 +703,8 @@ class BQW_Grid_Accordion_Settings {
 			);
 		}
 
+		self::$accordion_settings_panels = apply_filters( 'grid_accordion_accordion_settings_panels', self::$accordion_settings_panels );
+
 		return self::$accordion_settings_panels;
 	}
 	

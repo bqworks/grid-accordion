@@ -3673,15 +3673,26 @@
 			var that = this,
 				spinner = $( '.preview-spinner' ).css( { 'display': 'inline-block', 'visibility': 'visible' } );
 
+			$( 'body' ).append( '<div class="modal-overlay"></div>' +
+				'<div class="modal-window-container preview-window">' +
+				'	<div class="modal-window">' +
+				'		<span class="close-x"></span>' +
+				'	</div>' +
+				'</div>');
+
+			that.init();
+
 			$.ajax({
 				url: ga_js_vars.ajaxurl,
 				type: 'post',
 				data: { action: 'grid_accordion_preview_accordion', data: JSON.stringify( data ) },
 				complete: function( data ) {
-					$( 'body' ).append( data.responseText );
-					that.init();
-
+					that.previewWindow.append( data.responseText );
+					that.previewWindow.css( 'visibility', '' );
+					
 					spinner.css( { 'display': '', 'visibility': '' } );
+
+					$( window ).trigger( 'resize' );
 				}
 			});
 		},
@@ -3700,6 +3711,8 @@
 
 			this.previewWindow = $( '.preview-window .modal-window' );
 			this.accordion = this.previewWindow.find( '.grid-accordion' );
+
+			this.previewWindow.css( 'visibility', 'hidden' );
 
 			this.previewWindow.find( '.close-x' ).on( 'click', function( event ) {
 				that.close();
@@ -3745,9 +3758,6 @@
 					that.previewWindow.parent().removeClass( 'modal-window-top' );
 				}
 			});
-
-			$( window ).trigger( 'resize' );
-			$( window ).trigger( 'resize' );
 		},
 
 		/**
