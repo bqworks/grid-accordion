@@ -77,7 +77,9 @@
 			this.initPanels();
 
 			if ( parseInt( ga_js_vars.id, 10 ) !== -1 ) {
-				this.loadAccordionData();
+				this.loadAccordionData( function() {
+					$( '.panels-container' ).attr( 'data-loaded', 'true' );
+				});
 			}
 
 			$( 'form' ).on( 'submit', function( event ) {
@@ -282,7 +284,7 @@
 		 *
 		 * @since 1.0.0
 		 */
-		loadAccordionData: function() {
+		loadAccordionData: function( callback ) {
 			var that = this;
 
 			$( '.panel-spinner' ).css( { 'display': 'inline-block', 'visibility': 'visible' } );
@@ -312,6 +314,8 @@
 					});
 
 					$( '.panel-spinner' ).css( { 'display': '', 'visibility': '' } );
+
+					callback();
 				}
 			});
 		},
