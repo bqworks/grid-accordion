@@ -19,16 +19,16 @@ class BQW_Grid_Accordion_Settings {
 	protected static $settings = array();
 
 	/**
-	 * The groups of settings.
+	 * The groups of accordion settings panels.
 	 *
 	 * The settings are grouped for the purpose of generating
-	 * the accordion's admin sidebar.
+	 * the accordion's admin sidebar panels.
 	 *
 	 * @since 1.0.0
 	 * 
 	 * @var array
 	 */
-	protected static $setting_groups = array();
+	protected static $accordion_settings_panels = array();
 
 	/**
 	 * Layer settings.
@@ -553,23 +553,27 @@ class BQW_Grid_Accordion_Settings {
 			self::$settings = apply_filters( 'grid_accordion_default_settings', self::$settings );
 		}
 
-		if ( ! is_null( $name ) ) {
-			return self::$settings[ $name ];
+		if ( is_null( $name ) ) {
+			return self::$settings;
 		}
 
-		return self::$settings;
+		if ( is_null( self::$settings[ $name ] ) ) {
+			return null;
+		}
+
+		return self::$settings[ $name ];
 	}
 
 	/**
-	 * Return the setting groups.
+	 * Return the accordion settings panels.
 	 *
 	 * @since 1.0.0
 	 * 
-	 * @return array The array of setting groups.
+	 * @return array The array of settings panels.
 	 */
-	public static function getSettingGroups() {
-		if ( empty( self::$setting_groups ) ) {
-			self::$setting_groups = array(
+	public static function getAccordionSettingsPanels() {
+		if ( empty( self::$accordion_settings_panels ) ) {
+			self::$accordion_settings_panels = array(
 				'appearance' => array(
 					'label' => __( 'Appearance', 'grid-accordion' ),
 					'list' => array(
@@ -587,7 +591,8 @@ class BQW_Grid_Accordion_Settings {
 						'start_page',
 						'shuffle',
 						'custom_class'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'animations' => array(
@@ -604,7 +609,8 @@ class BQW_Grid_Accordion_Settings {
 						'close_panel_duration',
 						'page_scroll_duration',
 						'page_scroll_easing'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'autoplay' => array(
@@ -614,7 +620,8 @@ class BQW_Grid_Accordion_Settings {
 						'autoplay_delay',
 						'autoplay_direction',
 						'autoplay_on_hover'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'mouse_wheel' => array(
@@ -623,7 +630,8 @@ class BQW_Grid_Accordion_Settings {
 						'mouse_wheel',
 						'mouse_wheel_sensitivity',
 						'mouse_wheel_target'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'keyboard' => array(
@@ -632,7 +640,8 @@ class BQW_Grid_Accordion_Settings {
 						'keyboard',
 						'keyboard_only_on_focus',
 						'keyboard_target'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'swap_background' => array(
@@ -640,7 +649,8 @@ class BQW_Grid_Accordion_Settings {
 					'list' => array(
 						'swap_background_duration',
 						'fade_out_background'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'touch_swipe' => array(
@@ -648,7 +658,8 @@ class BQW_Grid_Accordion_Settings {
 					'list' => array(
 						'touch_swipe',
 						'touch_swipe_threshold'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'lightbox' => array(
@@ -656,6 +667,7 @@ class BQW_Grid_Accordion_Settings {
 					'list' => array(
 						'lightbox'
 					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php',
 					'inline_info' => array(
 						__( 'By default, the accordion will open the background image in the lightbox, but at its full size.' , 'grid-accordion' ),
 						__( 'If you want to open a different image or other content, you need to specify the custom content in the <i>Background Image</i> editor, in the <i>Link</i> field.' , 'grid-accordion' )
@@ -670,7 +682,8 @@ class BQW_Grid_Accordion_Settings {
 						'play_video_action',
 						'pause_video_action',
 						'end_video_action'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
 				),
 
 				'miscellaneous' => array(
@@ -679,12 +692,18 @@ class BQW_Grid_Accordion_Settings {
 						'lazy_loading',
 						'hide_image_title',
 						'link_target'
-					)
+					),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/default-panel.php'
+				),
+
+				'breakpoints' => array(
+					'label' => __( 'Breakpoints', 'grid-accordion' ),
+					'renderer' => GRID_ACCORDION_DIR_PATH . 'admin/views/accordion-settings/breakpoints-panel.php'
 				)
 			);
 		}
 
-		return self::$setting_groups;
+		return self::$accordion_settings_panels;
 	}
 	
 	/**
@@ -714,9 +733,10 @@ class BQW_Grid_Accordion_Settings {
 	 *
 	 * @since 1.0.0
 	 * 
-	 * @return array The array of layer settings.
+	 * @param  string $name The name of the setting. Optional.
+	 * @return array        The array of layer settings.
 	 */
-	public static function getLayerSettings() {
+	public static function getLayerSettings( $name = null ) {
 		if ( empty( self::$layer_settings ) ) {
 			self::$layer_settings = array(
 				'type' => array(
@@ -878,7 +898,15 @@ class BQW_Grid_Accordion_Settings {
 			self::$layer_settings = apply_filters( 'grid_accordion_default_layer_settings', self::$layer_settings );
 		}
 
-		return self::$layer_settings;
+		if ( is_null( $name ) ) {
+			return self::$layer_settings;
+		}
+
+		if ( is_null( self::$layer_settings[ $name ] ) ) {
+			return null;
+		}
+
+		return self::$layer_settings[ $name ];
 	}
 
 	/**
@@ -886,9 +914,10 @@ class BQW_Grid_Accordion_Settings {
 	 *
 	 * @since 1.0.0
 	 * 
-	 * @return array The array of panel settings.
+	 * @param  string $name The name of the setting. Optional.
+	 * @return array        The array of panel settings.
 	 */
-	public static function getPanelSettings() {
+	public static function getPanelSettings( $name = null ) {
 		if ( empty( self::$panel_settings ) ) {
 			self::$panel_settings = array(
 				'content_type' => array(
@@ -996,7 +1025,15 @@ class BQW_Grid_Accordion_Settings {
 			self::$panel_settings = apply_filters( 'grid_accordion_default_panel_settings', self::$panel_settings );
 		}
 
-		return self::$panel_settings;
+		if ( is_null( $name ) ) {
+			return self::$panel_settings;
+		}
+
+		if ( is_null( self::$panel_settings[ $name ] ) ) {
+			return null;
+		}
+		
+		return self::$panel_settings[ $name ];
 	}
 
 	/**

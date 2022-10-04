@@ -222,7 +222,7 @@ class BQW_Grid_Accordion_Admin {
 		$plugin_settings = BQW_Grid_Accordion_Settings::getPluginSettings();
 		$access = get_option( 'grid_accordion_access', $plugin_settings['access']['default_value'] );
 
-		$restricted_pages = apply_filters( 'accordion_slider_restricted_pages' , array() );
+		$restricted_pages = apply_filters( 'grid_accordion_restricted_pages' , array() );
 
 		add_menu_page(
 			'Grid Accordion',
@@ -301,19 +301,19 @@ class BQW_Grid_Accordion_Admin {
 				$accordion_id = $accordion['id'];
 				$accordion_name = $accordion['name'];
 				$accordion_settings = $accordion['settings'];
-				$accordion_panels_state = $accordion['panels_state'];
+				$panels_state = $accordion['panels_state'];
 
 				$panels = isset( $accordion['panels'] ) ? $accordion['panels'] : false;
 
 				delete_transient( 'grid_accordion_post_names' );
 				delete_transient( 'grid_accordion_posts_data' );
 
-				include_once( 'views/accordion.php' );
+				include_once( 'views/accordion/accordion.php' );
 			} else {
-				include_once( 'views/accordions.php' );
+				include_once( 'views/accordions/accordions.php' );
 			}
 		} else {
-			include_once( 'views/accordions.php' );
+			include_once( 'views/accordions/accordions.php' );
 		}
 	}
 
@@ -332,7 +332,7 @@ class BQW_Grid_Accordion_Admin {
 		delete_transient( 'grid_accordion_post_names' );
 		delete_transient( 'grid_accordion_posts_data' );
 
-		include_once( 'views/accordion.php' );
+		include_once( 'views/accordion/accordion.php' );
 	}
 
 	/**
@@ -401,7 +401,7 @@ class BQW_Grid_Accordion_Admin {
 			}
 		}
 		
-		include_once( 'views/plugin-settings.php' );
+		include_once( 'views/settings/plugin-settings.php' );
 	}
 
 	/**
@@ -476,7 +476,7 @@ class BQW_Grid_Accordion_Admin {
 			$accordion_created = date( 'm-d-Y' );
 			$accordion_modified = date( 'm-d-Y' );
 
-			include( 'views/accordions-row.php' );
+			include( 'views/accordions/accordions-row.php' );
 		}
 
 		die();
@@ -592,7 +592,7 @@ class BQW_Grid_Accordion_Admin {
 		$accordion = BQW_Grid_Accordion_Validation::validate_grid_accordion_data( json_decode( stripslashes( $_POST['data'] ), true ) );
 		$accordion_output = $this->plugin->output_accordion( $accordion, false ) . $this->plugin->get_inline_scripts();
 
-		include( 'views/preview-window.php' );
+		include( 'views/accordion/preview-window.php' );
 
 		die();	
 	}
@@ -623,7 +623,7 @@ class BQW_Grid_Accordion_Admin {
 			$accordion_created = date( 'm-d-Y' );
 			$accordion_modified = date( 'm-d-Y' );
 
-			include( 'views/accordions-row.php' );
+			include( 'views/accordions/accordions-row.php' );
 		}
 
 		die();
@@ -697,7 +697,7 @@ class BQW_Grid_Accordion_Admin {
 			unset( $accordion['id'] );
 			$export_string = json_encode( $accordion );
 
-			include( 'views/export-window.php' );
+			include( 'views/accordions/export-window.php' );
 		}
 
 		die();
@@ -710,7 +710,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_import_accordion() {
-		include( 'views/import-window.php' );
+		include( 'views/accordions/import-window.php' );
 
 		die();
 	}
@@ -737,7 +737,7 @@ class BQW_Grid_Accordion_Admin {
 			$panel_image = isset( $data['background_source'] ) ? $data['background_source'] : $panel_image;
 		}
 
-		include( 'views/panel.php' );
+		include( 'views/panel/panel.php' );
 	}
 	
 	/**
@@ -780,7 +780,7 @@ class BQW_Grid_Accordion_Admin {
 		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
 		$content_class = $content_type === 'custom' ? 'custom' : 'dynamic';
 
-		include( 'views/background-image-editor.php' );
+		include( 'views/panel-editors/background-image-editor.php' );
 
 		die();
 	}
@@ -820,7 +820,7 @@ class BQW_Grid_Accordion_Admin {
 		$html_content = wp_kses( $_POST['data'], $allowed_html );
 		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
  
-		include( 'views/html-editor.php' );
+		include( 'views/panel-editors/html-editor.php' );
 
 		die();
 	}
@@ -837,7 +837,7 @@ class BQW_Grid_Accordion_Admin {
 		$layers = BQW_Grid_Accordion_Validation::validate_panel_layers( json_decode( stripslashes( $_POST['data'] ), true ) );
 		$content_type = isset( $_POST['content_type'] ) && array_key_exists( $_POST['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['content_type'] : $panel_default_settings['content_type']['default_value'];
 	
-		include( 'views/layers-editor.php' );
+		include( 'views/panel-editors/layers-editor.php' );
 
 		die();
 	}
@@ -910,7 +910,7 @@ class BQW_Grid_Accordion_Admin {
 
 		$layer_default_settings = BQW_Grid_Accordion_Settings::getLayerSettings();
 
-		include( 'views/layer-settings.php' );
+		include( 'views/panel-settings/layer-settings.php' );
 
 		die();
 	}
@@ -925,7 +925,7 @@ class BQW_Grid_Accordion_Admin {
 		$panel_settings = BQW_Grid_Accordion_Validation::validate_panel_settings( json_decode( stripslashes( $_POST['data'] ), true ) );
 		$content_type = isset( $panel_settings['content_type'] ) && array_key_exists( $panel_settings['content_type'], $panel_default_settings['content_type']['available_values'] ) ? $panel_settings['content_type'] : $panel_default_settings['content_type']['default_value'];
  
-		include( 'views/settings-editor.php' );
+		include( 'views/panel-editors/settings-editor.php' );
 
 		die();
 	}
@@ -967,13 +967,13 @@ class BQW_Grid_Accordion_Admin {
 		if ( $type === 'posts' ) {
 			$post_names = $this->get_post_names();
 
-			include( 'views/posts-panel-settings.php' );
+			include( 'views/panel-settings/posts-panel-settings.php' );
 		} else if ( $type === 'gallery' ) {
-			include( 'views/gallery-panel-settings.php' );
+			include( 'views/panel-settings/gallery-panel-settings.php' );
 		} else if ( $type === 'flickr' ) {
-			include( 'views/flickr-panel-settings.php' );
+			include( 'views/panel-settings/flickr-panel-settings.php' );
 		} else {
-			include( 'views/custom-panel-settings.php' );
+			include( 'views/panel-settings/custom-panel-settings.php' );
 		}
 	}
 
@@ -1118,7 +1118,7 @@ class BQW_Grid_Accordion_Admin {
 	public function ajax_add_breakpoint() {
 		$width = floatval( $_GET['data'] );
 
-		include( 'views/breakpoint.php' );
+		include( 'views/accordion/breakpoint.php' );
 
 		die();
 	}
