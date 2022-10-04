@@ -234,7 +234,7 @@ class BQW_Grid_Accordion_Admin {
 		);
 
 		if ( ! in_array( $this->plugin_slug, $restricted_pages ) ) {
-			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+			$this->plugin_screen_hook_suffixes['all_accordions'] = add_submenu_page(
 				$this->plugin_slug,
 				__( 'Grid Accordion', 'grid-accordion' ),
 				__( 'All Accordions', 'grid-accordion' ),
@@ -245,7 +245,7 @@ class BQW_Grid_Accordion_Admin {
 		}
 
 		if ( ! in_array( $this->plugin_slug . '-new', $restricted_pages ) ) {
-			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+			$this->plugin_screen_hook_suffixes['add_new'] = add_submenu_page(
 				$this->plugin_slug,
 				__( 'Add New Accordion', 'grid-accordion' ),
 				__( 'Add New', 'grid-accordion' ),
@@ -256,7 +256,7 @@ class BQW_Grid_Accordion_Admin {
 		}
 
 		if ( ! in_array( $this->plugin_slug . '-settings', $restricted_pages ) ) {
-			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+			$this->plugin_screen_hook_suffixes['plugin_settings'] = add_submenu_page(
 				$this->plugin_slug,
 				__( 'Plugin Settings', 'grid-accordion' ),
 				__( 'Plugin Settings', 'grid-accordion' ),
@@ -267,7 +267,7 @@ class BQW_Grid_Accordion_Admin {
 		}
 
 		if ( ! in_array( $this->plugin_slug . '-documentation', $restricted_pages ) ) {
-			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+			$this->plugin_screen_hook_suffixes['documentation'] = add_submenu_page(
 				$this->plugin_slug,
 				__( 'Documentation', 'grid-accordion' ),
 				__( 'Documentation', 'grid-accordion' ),
