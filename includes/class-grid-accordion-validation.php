@@ -57,9 +57,7 @@ class BQW_Grid_Accordion_Validation {
 		$default_panels_state = BQW_Grid_Accordion_Settings::getPanelsState();
 
 		foreach ( $data as $panel_name => $panel_state) {
-			if ( array_key_exists( $panel_name, $default_panels_state ) ) {
-				$grid_accordion_panels_state[ $panel_name ] = ( $panel_state === 'closed' || $panel_state === '' ) ? $panel_state : 'closed';
-			}
+			$grid_accordion_panels_state[ $panel_name ] = ( $panel_state === 'closed' || $panel_state === '' ) ? $panel_state : 'closed';
 		}
 
 		return $grid_accordion_panels_state;
