@@ -3766,6 +3766,11 @@
 		GridAccordionAdmin.init();
 	});
 
+	window.gridAccordion = window.gridAccordion || {};
+
+	window.gridAccordion.admin = GridAccordionAdmin;
+	window.gridAccordion.preview = PreviewWindow;
+
 })( jQuery );
 
 /*
