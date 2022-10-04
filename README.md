@@ -39,7 +39,7 @@ For quick usage instructions please see these [video tutorials](https://bqworks.
 
 If you found a bug or have a feature suggestion, please submit it in the [Issues tracker](https://github.com/bqworks/grid-accordion/issues) or in the [WordPress.org forum](https://wordpress.org/support/plugin/grid-accordion/).
 
-If you need help with implementing the slider in your project, please use the address indicated on [https://bqworks.net](https://bqworks.net).
+If you need help with implementing the grid accordion in your project, please use the address indicated on [https://bqworks.net](https://bqworks.net).
 
 ## License ##
 

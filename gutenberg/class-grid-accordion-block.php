@@ -41,7 +41,7 @@ class BQW_Grid_Accordion_Block {
 
 	/**
 	 * Register the block using the block.json file.
-	 * Register a route that will allow the fetching of some slider data (name and id).
+	 * Register a route that will allow the fetching of some accordion data (name and id).
 	 *
 	 * @since 1.9.3
 	 */
@@ -67,7 +67,7 @@ class BQW_Grid_Accordion_Block {
 
 	/**
 	 * Endpoint for the 'grid-accordion/v1/accordions' route that returns
-	 * the id and name of the sliders.
+	 * the id and name of the accordions.
 	 *
 	 * @since 1.9.3
 	 */

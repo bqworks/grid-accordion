@@ -86,7 +86,7 @@ class BQW_GA_Panel_Renderer {
 	 * @param array $data         The data of the panel.
 	 * @param int   $accordion_id The id of the accordion.
 	 * @param int   $panel_index  The index of the panel.
-	 * @param bool  $extra_data   Extra settings data for the slider.
+	 * @param bool  $extra_data   Extra settings data for the accordion.
 	 */
 	public function set_data( $data, $accordion_id, $panel_index, $extra_data ) {
 		$this->data = $data;
