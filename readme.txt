@@ -1,5 +1,6 @@
 === Grid Accordion ===
 Contributors: bqworks
+Donate link: https://bqworks.net/premium-add-ons/
 Tags: grid accordion, responsive grid, post grid, image grid, grid plugin, grid widget, lightbox grid,
 Requires at least: 4.0
 Tested up to: 6.0
@@ -15,8 +16,8 @@ Grid Accordion combines the look and functionality of a grid with that of an acc
 
 Features:
 
-* Fully responsive
-* Touch support
+* Fully responsive on any device
+* Touch support for touch-enabled screens
 * Customizable number of columns
 * Possibility to change the aspect and configuration of the grid based on screen size
 * Animated and static layers, which can contain text, images or any HTML content
@@ -24,8 +25,8 @@ Features:
 * Mouse wheel navigation
 * Pagination for the panels
 * Retina support
-* Lazy loading
-* Deep linking
+* Lazy loading for images
+* Deep linking (link to specific slide inside the accordion)
 * Lightbox integration
 * Swap image when the panel is opened
 * Clean and intuitive admin interface
@@ -34,11 +35,17 @@ Features:
 * Publish grid accordions in any post (including pages and custom post types), in PHP code, and widget areas
 * Caching system for quick loading times
 * Optimized file loading. The JavaScript and CSS files are loaded only in pages where there are grid accordions
-* Load images and content dynamically, from posts (including custom post types), WordPress galleries and Flickr
-* Action and filter hooks
+* Load images (e.g., featured images) and content dynamically, from posts (including custom post types), WordPress galleries and Flickr
+* Action and filter hooks to add to the functionality of the plugin
 * Import and export grid accordions
 
 [These videos](https://bqworks.net/grid-accordion/screencasts/) demonstrate the full capabilities of the plugin.
+
+[Premium Add-ons](https://bqworks.net/premium-add-ons/#grid-accordion) allow you to further extend the functionality of the grid accordion:
+
+* [Custom CSS and JavaScript](https://bqworks.net/premium-add-ons/#custom-css-js-for-grid-accordion): Allows you to add custom CSS and JavaScript code to your grid accordions in a syntax highlighting code editor. It also features a revisions system that will backup all your code edits, allow you to compare between multiple revisions and restore a certain revision.
+* [Revisions](https://bqworks.net/premium-add-ons/#revisions-for-grid-accordion): Automatically stores a record of each edit/update of your accordions, for comparison or backup purposes. Each accordion will have its own list of revisions, allowing you to easily preview a revision, analyze its settings, compare it to other revisions or restore it.
+
 
 == Installation ==
 
