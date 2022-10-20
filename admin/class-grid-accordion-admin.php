@@ -910,7 +910,7 @@ class BQW_Grid_Accordion_Admin {
 
 		$layer_default_settings = BQW_Grid_Accordion_Settings::getLayerSettings();
 
-		include( 'views/panel-settings/layer-settings.php' );
+		include( 'views/panel-editors/layer-settings.php' );
 
 		die();
 	}
