@@ -424,7 +424,7 @@ class BQW_Grid_Accordion_Admin {
 		$nonce = $_GET['nonce'];
 		$id = intval( $_GET['id'] );
 
-		if ( ! wp_verify_nonce( $nonce, 'load-accordion-data' . $id ) || ! current_user_can( 'customize' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'load-accordion-data' . $id ) || ! current_user_can( 'edit_posts' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
@@ -612,7 +612,7 @@ class BQW_Grid_Accordion_Admin {
 		$nonce = $_POST['nonce'];
 		$original_accordion_id = intval( $_POST['id'] );
 
-		if ( ! wp_verify_nonce( $nonce, 'duplicate-accordion' . $original_accordion_id ) || ! current_user_can( 'customize' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'duplicate-accordion' . $original_accordion_id ) || ! current_user_can( 'edit_posts' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
@@ -644,7 +644,7 @@ class BQW_Grid_Accordion_Admin {
 		$nonce = $_POST['nonce'];
 		$id = intval( $_POST['id'] );
 
-		if ( ! wp_verify_nonce( $nonce, 'delete-accordion' . $id ) || ! current_user_can( 'customize' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'delete-accordion' . $id ) || ! current_user_can( 'delete_posts' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
@@ -1210,7 +1210,7 @@ class BQW_Grid_Accordion_Admin {
 	public function ajax_clear_all_cache() {
 		$nonce = $_POST['nonce'];
 
-		if ( ! wp_verify_nonce( $nonce, 'clear-all-cache' ) || ! current_user_can( 'customize' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'clear-all-cache' ) || ! current_user_can( 'edit_posts' ) ) {
 			die( 'This action was stopped for security purposes.' );
 		}
 
