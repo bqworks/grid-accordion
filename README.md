@@ -1,3 +1,8 @@
+[![Version](https://img.shields.io/wordpress/plugin/v/grid-accordion)](https://wordpress.org/plugins/grid-accordion/)
+[![License](https://img.shields.io/github/license/bqworks/grid-accordion)](https://wordpress.org/plugins/grid-accordion/)
+[![Downloads](https://img.shields.io/wordpress/plugin/dt/grid-accordion)](https://wordpress.org/plugins/grid-accordion/)
+[![Installs](https://img.shields.io/wordpress/plugin/installs/grid-accordion)](https://wordpress.org/plugins/grid-accordion/)
+
 # [Grid Accordion - WordPress accordion plugin](https://bqworks.net/grid-accordion/) #
 
 >Grid Accordion combines the look and functionality of a grid with that of an accordion, allowing you to create image grids which are fully responsive and mobile-friendly.
