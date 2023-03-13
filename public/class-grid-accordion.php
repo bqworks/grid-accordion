@@ -448,6 +448,18 @@ class BQW_Grid_Accordion {
 		}
 		
 		$inline_js = "\r\n" . '<script type="text/javascript">' .
+					"\r\n" . 'if (window.jQuery && window.jQuery?.fn.gridAccordion) {' .
+					"\r\n" . '		initGridAccordion();' .
+					"\r\n" . '} else {' .
+					"\r\n" . '	const initGridAccordionTimer = setInterval(() => {' .
+					"\r\n" . '		if (window.jQuery && window.jQuery?.fn.gridAccordion) {' .
+					"\r\n" . '			initGridAccordion();' .
+					"\r\n" . '			clearInterval(initGridAccordionTimer);' .
+					"\r\n" . '		}' .
+					"\r\n" . '	}, 100);' .
+					"\r\n" . '}' . "\r\n" .
+	
+					"\r\n" . 'function initGridAccordion() {' .
 					"\r\n" . '	jQuery( document ).ready(function( $ ) {' .
 					$this->js_output;
 
@@ -458,6 +470,7 @@ class BQW_Grid_Accordion {
 		}
 
 		$inline_js .= "\r\n" . '	});' .
+					"\r\n" . '}' .
 					"\r\n" . '</script>' . "\r\n\r\n";
 
 		$inline_js = apply_filters( 'grid_accordion_javascript', $inline_js );
