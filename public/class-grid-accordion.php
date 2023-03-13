@@ -448,11 +448,11 @@ class BQW_Grid_Accordion {
 		}
 		
 		$inline_js = "\r\n" . '<script type="text/javascript">' .
-					"\r\n" . 'if (window.jQuery && window.jQuery?.fn.gridAccordion) {' .
+					"\r\n" . 'if (window.jQuery && window.jQuery.fn.gridAccordion) {' .
 					"\r\n" . '		initGridAccordion();' .
 					"\r\n" . '} else {' .
 					"\r\n" . '	const initGridAccordionTimer = setInterval(() => {' .
-					"\r\n" . '		if (window.jQuery && window.jQuery?.fn.gridAccordion) {' .
+					"\r\n" . '		if (window.jQuery && window.jQuery.fn.gridAccordion) {' .
 					"\r\n" . '			initGridAccordion();' .
 					"\r\n" . '			clearInterval(initGridAccordionTimer);' .
 					"\r\n" . '		}' .
