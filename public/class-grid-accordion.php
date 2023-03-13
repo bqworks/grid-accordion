@@ -13,7 +13,7 @@ class BQW_Grid_Accordion {
 	 * 
 	 * @var string
 	 */
-	const VERSION = '1.9.5';
+	const VERSION = '1.9.6';
 
 	/**
 	 * Plugin slug.
