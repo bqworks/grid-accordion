@@ -3,7 +3,7 @@ Contributors: bqworks
 Donate link: https://bqworks.net/premium-add-ons/
 Tags: grid accordion, responsive grid, post grid, image grid, grid plugin, grid widget, lightbox grid,
 Requires at least: 4.0
-Tested up to: 6.1
+Tested up to: 6.2
 Stable tag: 1.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
