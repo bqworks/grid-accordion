@@ -199,6 +199,7 @@ class BQW_Grid_Accordion_Admin {
 				'remove_custom_css_js_warning' => __( 'Are you sure you want to remove the existing custom CSS and/or JavaScript? <br/> Only do this after you\'ve copied the existing code in another place.', 'grid-accordion' ),
 				'lad_nonce' => wp_create_nonce( 'load-accordion-data' . $id ),
 				'sa_nonce' => wp_create_nonce( 'save-accordion' . $id ),
+				'cp_nonce' => wp_create_nonce( 'close-panel' ),
 				'no_image' => __( 'Click to add image', 'grid-accordion' ),
 				'posts_panels' => __( 'Posts panels', 'grid-accordion' ),
 				'gallery_panels' => __( 'Gallery panels', 'grid-accordion' ),
@@ -1229,6 +1230,12 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_getting_started_close() {
+		$nonce = $_POST['nonce'];
+
+		if ( ! wp_verify_nonce( $nonce, 'close-panel' ) || ! current_user_can( 'manage_options' ) ) {
+			die( 'This action was stopped for security purposes.' );
+		}
+		
 		update_option( 'grid_accordion_hide_getting_started_info', true );
 
 		die();
@@ -1240,6 +1247,12 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.8.0
 	 */
 	public function ajax_close_custom_css_js_warning() {
+		$nonce = $_POST['nonce'];
+
+		if ( ! wp_verify_nonce( $nonce, 'close-panel' ) || ! current_user_can( 'manage_options' ) ) {
+			die( 'This action was stopped for security purposes.' );
+		}
+
 		update_option( 'grid_accordion_hide_custom_css_js_warning', true );
 
 		delete_option( 'grid_accordion_custom_css' );

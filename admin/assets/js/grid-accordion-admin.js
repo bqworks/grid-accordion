@@ -230,7 +230,10 @@
 				$.ajax({
 					url: ga_js_vars.ajaxurl,
 					type: 'post',
-					data: { action: 'grid_accordion_getting_started_close' }
+					data: {
+						action: 'grid_accordion_getting_started_close',
+						nonce: ga_js_vars.cp_nonce
+					}
 				});
 			});
 
@@ -258,7 +261,10 @@
 					$.ajax({
 						url: ga_js_vars.ajaxurl,
 						type: 'post',
-						data: { action: 'grid_accordion_close_custom_css_js_warning' }
+						data: {
+							action: 'grid_accordion_close_custom_css_js_warning',
+							nonce: ga_js_vars.cp_nonce
+						}
 					});
 
 					dialog.remove();
