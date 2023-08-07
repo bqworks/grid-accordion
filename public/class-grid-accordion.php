@@ -555,7 +555,7 @@ class BQW_Grid_Accordion {
 				return 'A grid accordion with the ID of ' . $id . ' doesn\'t exist.';
 			}
 
-			$accordion = array( 'settings' => array() );
+			$accordion['name'] = isset( $atts['name'] ) ? $atts['name'] : '';
 		}
 
 		// add the if of the accordion to the array of accordion data
