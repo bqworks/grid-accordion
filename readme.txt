@@ -4,7 +4,7 @@ Donate link: https://bqworks.net/premium-add-ons/
 Tags: grid accordion, responsive grid, post grid, image grid, grid plugin, grid widget, lightbox grid,
 Requires at least: 4.0
 Tested up to: 6.3
-Stable tag: 1.9.7
+Stable tag: 1.9.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,6 +82,9 @@ When you select an image from the Media Library, in the right columns, under 'AT
 8. Adding dynamic tags for accordions generated from posts.
 
 == Changelog ==
+
+= 1.9.8 =
+* fix deprecation notice regarding optional parameter in php 8
 
 = 1.9.7 =
 * minor security hardening
