@@ -946,7 +946,7 @@ class BQW_Grid_Accordion_Admin {
 		$type = isset( $_POST['type'] ) && array_key_exists( $_POST['type'], $panel_default_settings['content_type']['available_values'] ) ? $_POST['type'] : $panel_default_settings['content_type']['default_value'];
 		$panel_settings = BQW_Grid_Accordion_Validation::validate_panel_settings( json_decode( stripslashes( $_POST['data'] ), true ) );
 
-		echo $this->load_content_type_settings( $type, $panel_settings );
+		echo $this->load_content_type_settings( $type, $panel_default_settings, $panel_settings );
 
 		die();
 	}
@@ -962,9 +962,7 @@ class BQW_Grid_Accordion_Admin {
 	 * @param  string $type           The panel's content type.
 	 * @param  array  $panel_settings The panel's settings.
 	 */
-	public function load_content_type_settings( $type, $panel_settings = NULL ) {
-		$panel_default_settings = BQW_Grid_Accordion_Settings::getPanelSettings();
-
+	public function load_content_type_settings( $type, $panel_default_settings, $panel_settings = NULL ) {
 		if ( $type === 'posts' ) {
 			$post_names = $this->get_post_names();
 
