@@ -52,6 +52,15 @@ class BQW_GA_Panel_Renderer {
 	protected $lightbox = null;
 
 	/**
+	 * Indicates whether the image title will be hidden.
+	 *
+	 * @since 1.9.11
+	 * 
+	 * @var bool
+	 */
+	protected $hide_image_title = null;
+
+	/**
 	 * Indicates the target of the panel links.
 	 *
 	 * @since 1.2.0
