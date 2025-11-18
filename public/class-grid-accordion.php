@@ -13,7 +13,7 @@ class BQW_Grid_Accordion {
 	 * 
 	 * @var string
 	 */
-	const VERSION = '1.9.13';
+	const VERSION = '1.9.14';
 
 	/**
 	 * Plugin slug.
@@ -660,6 +660,8 @@ class BQW_Grid_Accordion {
 			foreach ( $atts as $key => $value ) {
 				if ( $key === 'posts_post_types' || $key === 'posts_taxonomies' ) {
 					$value = explode( ',', $value );
+				} else {
+					$value = sanitize_text_field( $value );
 				}
 
 				$panel['settings'][ $key ] = $value;
@@ -715,11 +717,12 @@ class BQW_Grid_Accordion {
 		$content = do_shortcode( $content );
 
 		$attributes = array( 'layer_settings' => array() );
+		$name = sanitize_text_field( $atts[$key] );
 
 		foreach ( $atts as $key => $value ) {
 			if ( $key === 'name' ) {
-				$attributes[ $atts['name'] ] = $content;
-			} else if ( isset( $atts['name'] ) && $atts['name'] === 'layer' ) {
+				$attributes[ $name ] = $content;
+			} else if ( isset( $name ) && $name === 'layer' ) {
 				if ( $value === 'true' ) {
 					$value = true;
 				} else if ( $value === 'false' ) {
@@ -728,7 +731,9 @@ class BQW_Grid_Accordion {
 					$value = explode( ',', $value );
 				}
 
-				$attributes['layer_settings'][ $key ] = $value;
+				$attributes['layer_settings'][ $key ] = sanitize_text_field( $value );
+			} else {
+				$value = sanitize_text_field( $value );
 			}
 		}
 
