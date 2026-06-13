@@ -3727,7 +3727,7 @@
 			$.ajax({
 				url: ga_js_vars.ajaxurl,
 				type: 'post',
-				data: { action: 'grid_accordion_preview_accordion', data: JSON.stringify( data ) },
+				data: { action: 'grid_accordion_preview_accordion', data: JSON.stringify( data ), nonce: ga_js_vars.pa_nonce },
 				complete: function( data ) {
 					that.previewWindow.append( data.responseText );
 					that.previewWindow.css( 'visibility', '' );

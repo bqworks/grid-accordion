@@ -200,6 +200,7 @@ class BQW_Grid_Accordion_Admin {
 				'lad_nonce' => wp_create_nonce( 'load-accordion-data' . $id ),
 				'sa_nonce' => wp_create_nonce( 'save-accordion' . $id ),
 				'cp_nonce' => wp_create_nonce( 'close-panel' ),
+				'pa_nonce' => wp_create_nonce( 'preview-accordion' ),
 				'no_image' => __( 'Click to add image', 'grid-accordion' ),
 				'posts_panels' => __( 'Posts panels', 'grid-accordion' ),
 				'gallery_panels' => __( 'Gallery panels', 'grid-accordion' ),
@@ -590,6 +591,12 @@ class BQW_Grid_Accordion_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_preview_accordion() {
+		$nonce = $_POST['nonce'];
+
+		if ( ! wp_verify_nonce( $nonce, 'preview-accordion' ) || ! current_user_can( 'edit_posts' ) ) {
+			die( 'This action was stopped for security purposes.' );
+		}
+
 		$accordion = BQW_Grid_Accordion_Validation::validate_grid_accordion_data( json_decode( stripslashes( $_POST['data'] ), true ) );
 		$accordion_output = $this->plugin->output_accordion( $accordion, false ) . $this->plugin->get_inline_scripts();
 
