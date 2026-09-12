@@ -117,6 +117,10 @@ class BQW_Grid_Accordion_Validation {
 		$breakpoints = array();
 
 		foreach ( $breakpoints_data as $breakpoint_data ) {
+			if ( ! is_array( $breakpoint_data ) || ! isset( $breakpoint_data['breakpoint_width'] ) ) {
+				continue;
+			}
+
 			$breakpoint = array(
 				'breakpoint_width' => floatval( $breakpoint_data['breakpoint_width'] )
 			);

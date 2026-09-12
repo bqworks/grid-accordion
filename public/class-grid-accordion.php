@@ -567,6 +567,10 @@ class BQW_Grid_Accordion {
 		foreach ( $atts as $key => $value ) {
 			if ( $key === 'breakpoints' ) {
 				$value = json_decode( stripslashes( $value ), true );
+
+				// validate the breakpoints passed through the shortcode, the same way the
+				// breakpoints loaded from the database are validated
+				$value = is_array( $value ) ? BQW_Grid_Accordion_Validation::validate_grid_accordion_breakpoint_settings( $value ) : array();
 			} else if ( $value === 'true' ) {
 				$value = true;
 			} else if ( $value === 'false' ) {
